@@ -1,0 +1,458 @@
+{
+  "merchant": {
+    "name": "Pizzaria La sabore"
+  },
+  "scrapedAt": "2026-06-26T21:41:13.963Z",
+  "source": "https://lasaborepizzaria.menudino.com/",
+  "categories": [
+    {
+      "title": "CERVEJA",
+      "items": [
+        {
+          "name": "CERVEJA AMSTEL ULTRA  LATA 350ML",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": null
+        },
+        {
+          "name": "CERVEJA AMSTELL LATA 350ML",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/925f8397-1b07-495f-a06e-c60a6be4f0ff_20260502212318.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/925f8397-1b07-495f-a06e-c60a6be4f0ff_20260502212318.webp"
+        },
+        {
+          "name": "CERVEJA ANTARCTICA BOA LATA 350ML",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/1a6245c2-90ac-444c-a454-674808b57fe0_20260407220029.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/1a6245c2-90ac-444c-a454-674808b57fe0_20260407220029.webp"
+        },
+        {
+          "name": "CERVEJA BRAHMA LATA 350ML",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/7e540a4c-97f0-4b92-952d-feb5bc557313_20260205233606.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/7e540a4c-97f0-4b92-952d-feb5bc557313_20260205233606.webp"
+        },
+        {
+          "name": "CERVEJA HEINEKEN  LATA 350ML",
+          "description": "",
+          "price": "R$ 9,00",
+          "image": null
+        },
+        {
+          "name": "CERVEJA HEINEKEN LATA  ZERO 350ML",
+          "description": "",
+          "price": "R$ 9,00",
+          "image": "/images/cardapio/b1775e17-6088-45f2-a1ae-b96ccbcc8b62_20260407214242.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/b1775e17-6088-45f2-a1ae-b96ccbcc8b62_20260407214242.webp"
+        },
+        {
+          "name": "CERVEJA SKOL LATA 350ML",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/28a53c47-c608-4997-a636-b616d6958895_20260205233607.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/28a53c47-c608-4997-a636-b616d6958895_20260205233607.webp"
+        },
+        {
+          "name": "CERVEJA STELLA ARTOIS GOLD  LATA 350ML",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": null
+        }
+      ]
+    },
+    {
+      "title": "Porções",
+      "items": [
+        {
+          "name": "CAMARÃO RECHEADO EMPANADO",
+          "description": "",
+          "price": "R$ 69,00",
+          "image": "/images/cardapio/79390eab-ec54-4761-821f-6f0736c32e29_20260407215900.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/79390eab-ec54-4761-821f-6f0736c32e29_20260407215900.webp"
+        },
+        {
+          "name": "FRITAS COM CHEDDAR E BACON - INTEIRA",
+          "description": "",
+          "price": "R$ 40,00",
+          "image": "/images/cardapio/8b47d887-80b8-4aec-b582-37c4c8536d91_20260407214244.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/8b47d887-80b8-4aec-b582-37c4c8536d91_20260407214244.webp"
+        },
+        {
+          "name": "FRITAS COM CHEDDAR E BACON- MEIA",
+          "description": "",
+          "price": "R$ 35,00",
+          "image": "/images/cardapio/6aebdb99-9511-4813-91b4-553a6286991c_20260407214244.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/6aebdb99-9511-4813-91b4-553a6286991c_20260407214244.webp"
+        },
+        {
+          "name": "FRITAS INTEIRA",
+          "description": "",
+          "price": "R$ 35,00",
+          "image": "/images/cardapio/ec4fb0e6-fa5b-4eb6-9cff-57b6ab283746_20260407214245.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/ec4fb0e6-fa5b-4eb6-9cff-57b6ab283746_20260407214245.webp"
+        },
+        {
+          "name": "FRITAS MEIA",
+          "description": "",
+          "price": "R$ 25,00",
+          "image": "/images/cardapio/12c11f48-6867-4b69-9b02-ecb70189bdf1_20260407214246.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/12c11f48-6867-4b69-9b02-ecb70189bdf1_20260407214246.webp"
+        },
+        {
+          "name": "MANDIOCA FRITA",
+          "description": "",
+          "price": "R$ 20,00",
+          "image": "/images/cardapio/831eec0e-e1ea-4b28-a416-6ac55f5b56fd_20260407214247.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/831eec0e-e1ea-4b28-a416-6ac55f5b56fd_20260407214247.webp"
+        },
+        {
+          "name": "PASTELZINHO DE CAMARÃO",
+          "description": "",
+          "price": "R$ 32,00",
+          "image": "/images/cardapio/13c901b0-d924-4bbd-a291-5a7d02508d90_20260407215902.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/13c901b0-d924-4bbd-a291-5a7d02508d90_20260407215902.webp"
+        },
+        {
+          "name": "PASTELZINHO DE CARNE",
+          "description": "",
+          "price": "R$ 30,00",
+          "image": "/images/cardapio/57dd49ef-54fa-4239-afe3-105bf5e0e9c3_20260506232924.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/57dd49ef-54fa-4239-afe3-105bf5e0e9c3_20260506232924.webp"
+        },
+        {
+          "name": "PASTELZINHO DE QUEIJO",
+          "description": "",
+          "price": "R$ 30,00",
+          "image": "/images/cardapio/0db45a86-ec4d-420f-aaad-1180026d7657_20260407215903.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/0db45a86-ec4d-420f-aaad-1180026d7657_20260407215903.webp"
+        }
+      ]
+    },
+    {
+      "title": "Pizzas",
+      "items": [
+        {
+          "name": "Pizza À Moda - La Sabore",
+          "description": "Molho de tomate, muçarela, palmito, lombinho canadense, calabresa, milho, catupiry, tomate, parmesão, orégano e azeitonas.",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/7c6b4193-0f7c-4978-aed9-555b90550e6d_20260205233611.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/7c6b4193-0f7c-4978-aed9-555b90550e6d_20260205233611.webp"
+        },
+        {
+          "name": "Pizza Abacaxi Nevado",
+          "description": "Creme de leite, muçarela, abacaxi, chocolate branco e açucar.",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/7ca7a110-b7ca-4149-a064-07029053255f_20260602215317.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/7ca7a110-b7ca-4149-a064-07029053255f_20260602215317.webp"
+        },
+        {
+          "name": "Pizza Baiana",
+          "description": "Molho de tomate, muçarela, calabresa, pimenta calabresa, cebola, orégano e azeitonas.",
+          "price": "A partir de R$ 30,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Banana",
+          "description": "Creme de leite, muçarela, banana, açúcar e canela.",
+          "price": "A partir de R$ 35,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Banana Nevada",
+          "description": "Creme de leite, muçarela, banana, chocolate branco e açucar.",
+          "price": "A partir de R$ 40,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Brigadeiro",
+          "description": "Creme de leite, muçarela, chocolate ao leite e chocolate granulado.",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/dc23b941-160d-41ae-8b5f-cc4dddbd8a0a_20260425020454.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/dc23b941-160d-41ae-8b5f-cc4dddbd8a0a_20260425020454.webp"
+        },
+        {
+          "name": "Pizza Brócolis com Palmito",
+          "description": "Molho de tomate, muçarela, brócolis, palmito, tomate, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": "/images/cardapio/90c13de9-bac9-4ee1-a5fa-f1be6ad51357_20260513220914.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/90c13de9-bac9-4ee1-a5fa-f1be6ad51357_20260513220914.webp"
+        },
+        {
+          "name": "Pizza Brocolis Especial com Bacon",
+          "description": "Molho de tomate, muçarela, brócolis, bacon, tomate, catupiry, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Caipira",
+          "description": "Molho de tomate, muçarela, frango, milho, catupiiry, tomate, orégano, e azeitonas.",
+          "price": "A partir de R$ 40,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Calabresa",
+          "description": "Molho de tomate, muçarela, calabresa, orégano e azeitonas.",
+          "price": "A partir de R$ 30,00",
+          "image": "/images/cardapio/614e9875-b706-4124-a96d-7973ff472d49_20260426234527.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/614e9875-b706-4124-a96d-7973ff472d49_20260426234527.webp"
+        },
+        {
+          "name": "Pizza Calabresa Acebolada",
+          "description": "Molho de tomate, muçarela, calabresa, cebola, orégano e azeitonas.",
+          "price": "A partir de R$ 30,00",
+          "image": "/images/cardapio/d5378fad-86f9-4c92-b0cc-96550a3306af_20260426234533.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/d5378fad-86f9-4c92-b0cc-96550a3306af_20260426234533.webp"
+        },
+        {
+          "name": "Pizza Chocolate branco",
+          "description": "Creme de leite, muçarela e chocolate branco.",
+          "price": "A partir de R$ 40,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Cinco Queijos",
+          "description": "Molho de tomate, muçarela,  provolone, cheddar, catupiry, gorgonzola, orégano e azeitonas.",
+          "price": "A partir de R$ 40,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Clássica",
+          "description": "Molho de tomate, muçarela, presunto,tomate, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Costela Bovina",
+          "description": "Molho de tomate, muçarela, costela bovina desfiada, catupiry, azeitonas, pimenta biquinho e azeitonas.",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/a6bb957f-f123-4b72-b2cf-22561c342006_20260411221121.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/a6bb957f-f123-4b72-b2cf-22561c342006_20260411221121.webp"
+        },
+        {
+          "name": "Pizza Dois Amores",
+          "description": "Creme de leite, muçarela, chocolate preto e chocolate branco.",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/57ae7173-15ed-417c-9b0c-fc2d46808b92_20260205233624.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/57ae7173-15ed-417c-9b0c-fc2d46808b92_20260205233624.webp"
+        },
+        {
+          "name": "Pizza Dois Amores Coroado",
+          "description": "Creme de leite, muçarela, chocolate preto, chocolate branco e chocolate granulado.",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/a0990126-13ef-48a4-9eff-ef9b6819e166_20260407214249.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/a0990126-13ef-48a4-9eff-ef9b6819e166_20260407214249.webp"
+        },
+        {
+          "name": "Pizza Especial",
+          "description": "Molho de tomate, muçarela, catupiry, cheddar, presunto, palmito, ovo cozido, milho, ervilha, tomate, cebola, orégano e azeitonas.",
+          "price": "A partir de R$ 40,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Frango e Catupiry",
+          "description": "Molho de tomate, muçarela, frango, catupiry, orégano e azeitonas",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/2de9b25d-c0aa-483a-9611-a5c31d8de515_20260205233625.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/2de9b25d-c0aa-483a-9611-a5c31d8de515_20260205233625.webp"
+        },
+        {
+          "name": "Pizza Grand Brie",
+          "description": "Molho de tomate, muçarela, queijo Brie, geléia de pimenta e orégano.",
+          "price": "A partir de R$ 40,00",
+          "image": null
+        },
+        {
+          "name": "Pizza kitkat",
+          "description": "Creme de leite, muçarela, chocolate preto e kitkat.",
+          "price": "A partir de R$ 40,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Lombinho Canadense",
+          "description": "Molho de tomate, muçarela, lombo canadense, catupiry,  pêssego, orégano e azeitonas.",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/848a53eb-fd0a-4265-828f-2398c8d91c0f_20260205233628.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/848a53eb-fd0a-4265-828f-2398c8d91c0f_20260205233628.webp"
+        },
+        {
+          "name": "Pizza M&M",
+          "description": "Creme de leite, muçarela, chocolate preto e M&M.",
+          "price": "A partir de R$ 40,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Marguerita",
+          "description": "Molho de tomate, muçarela, tomate,  parmesão, manjericão, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": "/images/cardapio/85988403-2301-44c3-8998-3f93372669c7_20260205233635.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/85988403-2301-44c3-8998-3f93372669c7_20260205233635.webp"
+        },
+        {
+          "name": "Pizza Muçarela",
+          "description": "Molho de tomate, muçarela,tomate, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": "/images/cardapio/ee8e2215-31f1-4735-8be3-5b8fe67520f6_20260205233638.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/ee8e2215-31f1-4735-8be3-5b8fe67520f6_20260205233638.webp"
+        },
+        {
+          "name": "Pizza Palmito Especial",
+          "description": "Molho de tomate, muçarela, palmito, catupiry, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": "/images/cardapio/7b8cb53d-2135-4fbd-aa2d-ebf3b48d8dfd_20260513220920.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/7b8cb53d-2135-4fbd-aa2d-ebf3b48d8dfd_20260513220920.webp"
+        },
+        {
+          "name": "Pizza Paulista",
+          "description": "Molho de tomate , muçarela, calabresa, catupiry, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": "/images/cardapio/7b712505-2ae4-4c8a-a2f5-bf3ae296efb2_20260426234536.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/7b712505-2ae4-4c8a-a2f5-bf3ae296efb2_20260426234536.webp"
+        },
+        {
+          "name": "Pizza Pepperoni",
+          "description": "Molho de tomate, muçarela, pepperoni, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": "/images/cardapio/dcce328f-43a6-4311-83c7-870e3f48eb27_20260408213624.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/dcce328f-43a6-4311-83c7-870e3f48eb27_20260408213624.webp"
+        },
+        {
+          "name": "Pizza Portuguesa",
+          "description": "Molho de tomate, muçarela,  presunto, palmito, ovo cozido, milho, ervilha, tomate, cebola, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": "/images/cardapio/75240be9-6dae-4144-8735-4d7510669fbf_20260205233658.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/75240be9-6dae-4144-8735-4d7510669fbf_20260205233658.webp"
+        },
+        {
+          "name": "Pizza Quatro Queijos",
+          "description": "Molho de tomate, muçarela, provolone, catupiry, parmesão, orégano e azeitonas.",
+          "price": "A partir de R$ 40,00",
+          "image": "/images/cardapio/4cf1f5a3-a940-4f0b-8d75-265fb51f328f_20260205233706.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/4cf1f5a3-a940-4f0b-8d75-265fb51f328f_20260205233706.webp"
+        },
+        {
+          "name": "Pizza Strogonoff de Carne Bovina",
+          "description": "Molho de Tomate, muçarela, strogonoff de carne bovina, batata palha, orégano e Azeitonas.",
+          "price": "A partir de R$ 45,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Toscana",
+          "description": "Molho de tomate, mussarela, calabresa, bacon, catupiry, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": null
+        },
+        {
+          "name": "Pizza Vegetariana",
+          "description": "Molho de tomate, muçarela, brócolis, champignon, palmito, milho, ervilha, tomate, orégano e azeitonas.",
+          "price": "A partir de R$ 35,00",
+          "image": null
+        }
+      ]
+    },
+    {
+      "title": "Refrigerantes",
+      "items": [
+        {
+          "name": "AGUA 510ML",
+          "description": "",
+          "price": "R$ 3,00",
+          "image": "/images/cardapio/d24d2104-841f-4520-a068-71d7ba9260ab_20260425020451.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/d24d2104-841f-4520-a068-71d7ba9260ab_20260425020451.webp"
+        },
+        {
+          "name": "AGUA COM GÁS 510ML",
+          "description": "",
+          "price": "R$ 3,00",
+          "image": "/images/cardapio/058d4f38-3f7b-4b17-ac96-f60ec2dadc66_20260425020451.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/058d4f38-3f7b-4b17-ac96-f60ec2dadc66_20260425020451.webp"
+        },
+        {
+          "name": "Coca Cola 1,5 Litro (desc)",
+          "description": "Coca Cola",
+          "price": "R$ 13,00",
+          "image": "/images/cardapio/ac9d1e43-cf29-4980-95d0-f69f92d302da_20260411223819.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/ac9d1e43-cf29-4980-95d0-f69f92d302da_20260411223819.webp"
+        },
+        {
+          "name": "Coca Cola 1,5 Litro-  zero (desc)",
+          "description": "Coca Cola",
+          "price": "R$ 13,00",
+          "image": "/images/cardapio/b28c88e4-d4e4-471e-b786-6fa7143f4f33_20260411223819.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/b28c88e4-d4e4-471e-b786-6fa7143f4f33_20260411223819.webp"
+        },
+        {
+          "name": "Coca Cola lata 350ml",
+          "description": "Coca Cola lata",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/166e3954-7093-44cb-847e-e7348fd22ed8_20260205233608.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/166e3954-7093-44cb-847e-e7348fd22ed8_20260205233608.webp"
+        },
+        {
+          "name": "Coca Cola ZERO lata 350ml",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/bd841986-fa1d-4fdf-ae9a-5668c7ae5aa3_20260205233608.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/bd841986-fa1d-4fdf-ae9a-5668c7ae5aa3_20260205233608.webp"
+        },
+        {
+          "name": "Fanta 1,5 litros",
+          "description": "Fanta",
+          "price": "R$ 13,00",
+          "image": "/images/cardapio/90b677e0-6f91-4785-8707-2d2cfb4f23ef_20260502212324.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/90b677e0-6f91-4785-8707-2d2cfb4f23ef_20260502212324.webp"
+        },
+        {
+          "name": "Fanta lata 350ml",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/4bce01a6-9f37-4138-a15c-255bbe90c905_20260502212324.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/4bce01a6-9f37-4138-a15c-255bbe90c905_20260502212324.webp"
+        },
+        {
+          "name": "Guaraná Antarctica 1,5L",
+          "description": "Guaraná Antarctica",
+          "price": "R$ 13,00",
+          "image": "/images/cardapio/8eac9885-7fed-490d-a1b0-b33bc7774273_20260502212324.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/8eac9885-7fed-490d-a1b0-b33bc7774273_20260502212324.webp"
+        },
+        {
+          "name": "Guaraná Antarctica Lata 350 ml",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/5c590638-734e-4d6f-9703-98f2e0d07437_20260210205426.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/5c590638-734e-4d6f-9703-98f2e0d07437_20260210205426.webp"
+        },
+        {
+          "name": "Guaraná Antarctica zero 1,5L",
+          "description": "Guaraná Antarctica",
+          "price": "R$ 13,00",
+          "image": "/images/cardapio/0445d3b0-1b7f-4f63-935a-ac2941b5247e_20260502212324.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/0445d3b0-1b7f-4f63-935a-ac2941b5247e_20260502212324.webp"
+        },
+        {
+          "name": "Guaraná Antarctica ZERO 2 Litros",
+          "description": "Guaraná Antarctica",
+          "price": "R$ 15,00",
+          "image": null
+        },
+        {
+          "name": "Guaraná Antarctica Zero Lata 350 ml",
+          "description": "",
+          "price": "R$ 6,00",
+          "image": "/images/cardapio/6079e2ad-7316-403e-b925-1350b5f07dfe_20260502212324.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/6079e2ad-7316-403e-b925-1350b5f07dfe_20260502212324.webp"
+        },
+        {
+          "name": "H2OH 500 ml",
+          "description": "refrigerante H2OH 500ML limão e limoneto",
+          "price": "R$ 7,00",
+          "image": "/images/cardapio/6e52f2d3-bf6d-4ff6-83a9-fe39d8549b1e_20260425020452.webp",
+          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/small/6e52f2d3-bf6d-4ff6-83a9-fe39d8549b1e_20260425020452.webp"
+        }
+      ]
+    }
+  ]
+}
