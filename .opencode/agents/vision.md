@@ -1,7 +1,7 @@
 ---
 description: Analyzes images and screenshots. Use when the user needs to understand visual content from image files (screenshots, photos, designs). Invoke this agent when the main model cannot process image inputs.
 mode: subagent
-model: openrouter/google/gemma-4-31b-it:free
+model: google/gemini-2.5-flash
 permission:
   read: allow
   glob: allow
