@@ -8,6 +8,9 @@ export default function Localizacao() {
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-[#dc2626] mb-3">Onde Estamos</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white">Localização</h2>
         </div>
+        <div className="max-w-3xl mx-auto mb-10 rounded-xl overflow-hidden">
+          <img src="/images/localizacao.jpg" alt="Localização La Sabore" className="w-full h-auto object-cover" />
+        </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center shrink-0">
