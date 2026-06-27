@@ -18,15 +18,9 @@ export default function Hero() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6 max-w-4xl mx-auto"
           {...fadeUp(0.2)}
         >
-          A verdadeira pizza italiana
+          Sua pizza artesanal em Miguelópolis
         </motion.h1>
-        <motion.p
-          className="text-base sm:text-lg text-[rgba(255,255,255,0.65)] max-w-xl mx-auto mb-10 leading-relaxed"
-          {...fadeUp(0.35)}
-        >
-          Feita com ingredientes frescos, massa fermentada naturalmente e assada no forno a lenha
-        </motion.p>
-        <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-4" {...fadeUp(0.5)}>
+        <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10" {...fadeUp(0.5)}>
           <a href="#cardapio" className="w-full sm:w-auto bg-[#dc2626] text-white text-base font-semibold px-8 py-4 rounded-lg hover:bg-[#b91c1c] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] text-center transition-all duration-300">Ver Cardápio</a>
           <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-transparent text-white text-base font-medium px-8 py-4 rounded-lg border border-[rgba(255,255,255,0.25)] hover:border-[#dc2626] hover:text-[#dc2626] text-center transition-all duration-300">Peça Agora</a>
         </motion.div>
