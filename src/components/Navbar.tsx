@@ -25,20 +25,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-center transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300 ${
         scrolled
           ? 'backdrop-blur-xl bg-[rgba(10,10,10,0.92)] border-b border-[rgba(255,255,255,0.06)]'
           : 'bg-transparent'
       }`}
     >
-      <div className="container-section flex items-center">
-        <div className="flex-1" />
+      <div className="container-section h-full flex items-center justify-center md:justify-between">
         <div className="hidden md:flex items-center gap-8">
           {links.map(l => (
             <a key={l.label} href={l.href} className="text-sm font-medium text-[rgba(255,255,255,0.7)] hover:text-white transition-colors">{l.label}</a>
           ))}
         </div>
-        <div className="flex-1 flex justify-end">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 md:static md:translate-y-0">
           <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="hidden md:block bg-[#dc2626] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#b91c1c] transition-colors">Peça Agora</a>
           <button className="md:hidden text-white" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}

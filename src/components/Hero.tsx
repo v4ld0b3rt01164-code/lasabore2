@@ -20,9 +20,9 @@ export default function Hero() {
         >
           Sua pizza artesanal em Miguelópolis
         </motion.h1>
-        <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10" {...fadeUp(0.5)}>
-          <a href="#cardapio" className="w-full sm:w-auto bg-[#dc2626] text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-[#b91c1c] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] text-center transition-all duration-300">Ver Cardápio</a>
-          <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-transparent text-white text-sm sm:text-base font-medium px-6 sm:px-8 py-3 sm:py-4 rounded-lg border border-[rgba(255,255,255,0.25)] hover:border-[#dc2626] hover:text-[#dc2626] text-center transition-all duration-300">Peça Agora</a>
+        <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-10" {...fadeUp(0.5)}>
+          <a href="#cardapio" className="w-full sm:w-auto bg-[#dc2626] text-white text-xs sm:text-base font-semibold px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg hover:bg-[#b91c1c] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] text-center transition-all duration-300">Ver Cardápio</a>
+          <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-transparent text-white text-xs sm:text-base font-medium px-4 sm:px-8 py-2.5 sm:py-4 rounded-lg border border-[rgba(255,255,255,0.25)] hover:border-[#dc2626] hover:text-[#dc2626] text-center transition-all duration-300">Peça Agora</a>
         </motion.div>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce-down">
