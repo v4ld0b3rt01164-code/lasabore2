@@ -6,184 +6,120 @@
 - **Styling:** Tailwind CSS v4 (via @tailwindcss/vite plugin)
 - **Animation:** framer-motion 12
 - **Icons:** lucide-react 21
-- **Font:** Inter (Google Fonts) — weights 400, 500, 600, 700
-- **Deploy:** Cloudflare Pages (`npm run build` → dist/)
+- **Fonts:** Inter (400,500,600,700) + Playfair Display (500i,700i) via Google Fonts
+- **Deploy:** Cloudflare Pages (`npm run build` → dist/, auto via GitHub)
 
-## Project Structure
+## Key State (Jun 2026)
+- Navbar: sem "La Sabore", só links centrados + CTA "Peça Agora" à direita
+- Hero: logo `h-24` (`top-2`, `sm:left-16`), título "Sua pizza artesanal em Miguelópolis", sem subtítulo
+- Destaques: Entrega Rápida → "Do forno direto pra sua mesa, sempre quentinha" (sem "30 min")
+- CTA Final: "Faça seu pedido agora e receba no conforto da sua casa" (sem "30 min")
+- Sobre: highlights em vermelho `text-[#dc2626]` com classe `highlight` (Playfair Display italic `text-2xl`)
+- Localização: inclui horários (Seg-Sáb 18h-23h, Dom 12h-22h)
+- Footer: 2 colunas (logo centralizada + Redes Sociais), sem navegação, sem horários
+
+## Layout Pattern (CRITICAL)
+```tsx
+<section className="w-full flex justify-center bg-[...] py-24 sm:py-28">
+  <div className="container-section">
+    <!-- content -->
+  </div>
+</section>
 ```
-lasabore-site/
-├── index.html              ← SEO meta tags, OG, theme-color, favicon (logo oficial)
-├── vite.config.ts          ← Vite + React + Tailwind plugins
-├── tsconfig.json
-├── package.json
-├── AGENTS.md
-├── opencode.json           ← Config do Opencode (agente vision)
-├── captura.png             ← Screenshot do site (desatualizado)
-├── .opencode/
-│   └── agents/
-│       └── vision.md       ← Agente com OpenRouter + nemotron (visão)
-├── public/
-│   ├── _redirects          ← SPA fallback: /* /index.html 200
-│   └── images/
-│       ├── cardapio/       ← Imagens fornecidas pelo usuário + Unsplash (0 MenuDino)
-│       ├── localizacao.jpg
-│       └── sobre.jpg
-└── src/
-    ├── main.tsx
-    ├── index.css           ← Tailwind + custom utilities + scroll-padding
-    ├── App.tsx             ← Root layout (Nav > main > Footer)
-    ├── data/
-    │   └── cardapio-limpo.json  ← 66 itens, 4 categorias, paths locais
-    └── components/
-        ├── Navbar.tsx      ← h-16, sticky glass, mobile scroll-lock
-        ├── Hero.tsx        ← 100vh, Unsplash bg, gradient overlay
-        ├── Destaques.tsx   ← 3 glass cards grid
-        ├── Cardapio.tsx    ← Tabs topo+fim, grid 1/2/3, emoji fallback
-        ├── Entrega.tsx     ← 3 cards info (sem horários, sem botão)
-        ├── Sobre.tsx       ← Split 50/50, highlights badge style
-        ├── CtaFinal.tsx    ← Gradiente vermelho, botões duais
-        ├── Localizacao.tsx ← Endereço + telefone + imagem
-        └── Footer.tsx      ← 3 colunas (brand, nav, horários)
-```
+- `container-section`: `max-w-6xl` + px responsivo (utility custom no `index.css`)
+- `mx-auto` NÃO usar como método primário de centralização (falhou no Tailwind v4)
 
 ## Design System
 
 ### Colors
 | Token | Hex | Uso |
 |-------|-----|-----|
-| Background | `#0a0a0a` | Fundo principal (seções ímpares) |
-| Background alt | `#0d0d0d` | Fundo alternado (seções pares, com border-t) |
-| Text | `#ffffff` | Títulos e texto principal |
-| Text secondary | `rgba(255,255,255,0.55)` | Descrições, parágrafos |
-| Text muted | `rgba(255,255,255,0.45)` | Labels, links no footer |
-| Accent | `#dc2626` | Vermelho — CTAs, destaques, stats |
-| Accent hover | `#b91c1c` | Hover dos botões |
-| Surface | `rgba(26,26,26,0.5)` | Fundo dos glass cards |
-| Border | `rgba(255,255,255,0.07)` | Borda sutil dos cards |
-| Section divider | `rgba(255,255,255,0.03)` | border-t entre seções alternadas |
-| Gradient CTA | `from-[#dc2626] to-[#991b1b]` | Fundo do CTA final |
-
-### Typography
-| Nível | Classe | Tamanho |
-|-------|--------|---------|
-| Hero title | `text-4xl sm:5xl md:6xl lg:7xl` | Fluido |
-| Section h2 | `text-3xl sm:text-4xl` | Fluido |
-| Card title | `text-lg font-semibold` | 18px |
-| Body text | `text-base` | 16px |
-| Card desc | `text-sm` | 14px |
-| Section tag | `text-xs uppercase tracking-[0.12em]` | 12px |
-
-### Spacing
-- **Section padding:** `py-24 sm:py-28` (96px/112px)
-- **Container:** custom `container-section` (max-w-6xl + px responsivo)
-- **Grid gap:** `gap-6` entre cards
-- **Navbar height:** `h-16` (64px)
+| Background | `#0a0a0a` | Seções ímpares |
+| Background alt | `#0d0d0d` | Seções pares (com `border-t`) |
+| Text | `#ffffff` | Títulos |
+| Text secondary | `rgba(255,255,255,0.55)` | Descrições |
+| Text muted | `rgba(255,255,255,0.45)` | Labels, footer |
+| Accent | `#dc2626` | CTAs, destaques, highlights |
+| Accent hover | `#b91c1c` | Hover botões |
+| Surface | `rgba(26,26,26,0.5)` | Glass cards bg |
+| Border | `rgba(255,255,255,0.07)` | Borda cards |
+| Section divider | `rgba(255,255,255,0.03)` | `border-t` entre seções |
+| Gradient CTA | `from-[#dc2626] to-[#991b1b]` | Fundo CTA final |
 
 ### Effects
-- **Cards:** `bg-[rgba(26,26,26,0.5)] backdrop-blur-xl border border-[rgba(255,255,255,0.07)] rounded-xl`
-- **Card hover:** `hover:border-[rgba(220,38,38,0.3)] hover:-translate-y-1`
-- **Button primary:** `bg-[#dc2626] rounded-lg hover:bg-[#b91c1c]`
-- **Button outline:** `bg-transparent border border-[rgba(255,255,255,0.25)] hover:border-[#dc2626]`
-- **Navbar on scroll:** `backdrop-blur-xl bg-[rgba(10,10,10,0.92)]`
-- **Scroll padding:** `scroll-padding-top: 5rem` (para navbar fixed não cobrir âncoras)
+- Cards: `bg-[rgba(26,26,26,0.5)] backdrop-blur-xl border border-[rgba(255,255,255,0.07)] rounded-xl`
+- Card hover: `hover:border-[rgba(220,38,38,0.3)] hover:-translate-y-1`
+- Button primary: `bg-[#dc2626] rounded-lg hover:bg-[#b91c1c]`
+- Button outline: `bg-transparent border border-[rgba(255,255,255,0.25)] hover:border-[#dc2626]`
+- Navbar on scroll (>20px): `backdrop-blur-xl bg-[rgba(10,10,10,0.92)]`
 
-## Layout Pattern (CRITICAL)
-Every section follows this exact pattern:
-```tsx
-<section className="w-full flex justify-center bg-[...] py-24 sm:py-28">
-  <div className="container-section">
-    <!-- content centered here -->
-  </div>
-</section>
-```
-- `flex justify-center` no pai força centralização em QUALQUER viewport
-- `container-section` é utility custom (`max-w-6xl` + padding responsivo)
-- `mx-auto` NÃO é usado como método primário de centralização (falhou)
+## Custom CSS Utilities (`src/index.css`)
+- `container-section`: max-w-6xl + padding responsivo
+- `highlight`: Playfair Display italic, font-weight 700
 
 ## Component-Specific Notes
 
 ### Navbar
-- `h-16`, links centrados, CTA à direita
-- Mobile: hamburger com `overflow:hidden` no body quando aberto
-- Scroll: backdrop-blur aparece após 20px de scroll
+- `h-16`, sem texto "La Sabore"
+- Estrutura: `<div class="flex-1" />` (spacer) + links centrados + CTA
+- Mobile: hamburger com `overflow:hidden` no body, overlay fullscreen
+- Scroll: backdrop-blur após 20px
 
 ### Hero
 - `h-screen min-h-[600px]`, fundo Unsplash + gradiente overlay
-- Texto centralizado com `max-w-xl` dentro do container
-- Scroll indicator com bounce animation
-
-### Entrega
-- 3 cards info (sem horários, sem botão "Fazer Pedido")
-- Categorias hardcoded em `cats`: Pizzas → Porções → Bebidas (CERVEJA + Refrigerantes mergeados)
+- Logo absoluto: `top-2 left-1/2 -translate-x-1/2 sm:left-16 sm:translate-x-0 h-24`
+- Scroll indicator: ChevronDown com bounce animation
 
 ### Cardápio
-- State `active` começa `null` (tudo oculto até clicar numa aba)
-- Abas duplicadas no topo E no fim da lista de itens
+- `active` começa `null` (tudo oculto até clicar)
+- Abas duplicadas no topo E no fim
 - Grid: `grid-cols-1 sm:2 lg:3 gap-6`
-- Imagens SEM `loading="lazy"` (lazy quebra com AnimatePresence)
-- `bg-white` no wrapper da imagem + `object-cover`
+- Imagens SEM `loading="lazy"` (lazy + AnimatePresence quebra o carregamento)
 - Fallback: emoji por categoria (🍕🥩🥤) quando `item.image` é null
-- Itens sem imagem no JSON exibem o emoji no lugar
 
 ### Sobre
 - Grid split: `grid-cols-1 lg:grid-cols-2 gap-16 items-center`
-- Imagem `aspect-[4/5]` com gradiente overlay
+- Imagem: `aspect-[3/5] object-contain`, SEM `loading="lazy"`
+- Highlights: `<span className="text-[#dc2626] highlight text-2xl">`
+- `loading="lazy"` NÃO usar — CSS global `img[loading="lazy"] { opacity: 0 }` esconde permanentemente se combinado com animação de entrada (motion opacity:0)
+
+### Entrega
+- 3 cards info (sem horários, sem botão "Fazer Pedido")
+
+### Localização
+- Endereço + Telefone + Horários (ícones MapPin, Phone, Clock)
 
 ## Animations (framer-motion)
-- **Scroll reveal:** `whileInView={{ opacity:1, y:0 }}` com `viewport={{ once:true, margin:'-80px' }}`
-- **Stagger:** `delay: i * 0.12` em grids
-- **Cardápio tabs:** `AnimatePresence mode="wait"` com fade + slide 250ms
-- **Hero:** fade + slide com stagger de 0.2s entre elementos
+- **Scroll reveal:** `whileInView={{ opacity:1, y:0 }}`, `viewport={{ once:true, margin:'-80px' }}`
+- **Stagger:** `delay: i * 0.12`
+- **Cardápio tabs:** `AnimatePresence mode="wait"` fade + slide 250ms
+- **Hero:** fade + slide com stagger de 0.2s
 
 ## Images
-- Hero: `https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=80`
-- Cardápio: imagens fornecidas pelo usuário + Unsplash em `public/images/cardapio/`
-- Sobre: `/images/sobre.jpg` (imagem local fornecida pelo usuário)
-- Localização: `/images/localizacao.jpg` (imagem local fornecida pelo usuário)
-- `loading="lazy"` removido das imagens do cardápio (quebra com AnimatePresence)
+- Hero bg: `https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=80`
+- Cardápio: `/images/cardapio/<nome>.jpg` (Unsplash + fornecidas)
+- Sobre: `/images/sobre.jpg` (local, fornecida pelo usuário)
+- Localização: `/images/localizacao.jpg` (local)
+- Logo: `/images/logo.png` (local, usada no Hero `h-24` e Footer `h-14`)
 - `preconnect` para `images.unsplash.com` no HTML
 
 ## Cardápio Data
-- `src/data/cardapio-limpo.json`: scraped do MenuDino, 66 itens em 4 categorias
-- Categorias expostas no front: Pizzas (33), Porções (9), Bebidas (22 = 8 cervejas + 14 refrigerantes)
-- `image`: path local `/images/cardapio/<nome>.jpg`
+- `src/data/cardapio-limpo.json`: 66 itens, 4 categorias (Pizzas 33, Porções 9, Bebidas 22)
+- Paths locais: `/images/cardapio/<nome>.jpg`
 
 ## Commands
 ```bash
-npm run dev       # Dev server (localhost:5173)
-npm run build     # Build production → dist/
-npm run preview   # Preview production build (localhost:4173)
+npm run dev       # Dev server localhost:5173
+npm run build     # Build → dist/
+npm run preview   # Preview build localhost:4173
 ```
 
-## GitHub
-- Repo: `github.com/v4ld0b3rt01164-code/lasabore`
-- Branch: `master`
-- Deploy automático via Cloudflare Pages (conectado ao GitHub)
-
 ## Cloudflare Pages
-- Build command: `npm run build`
-- Output directory: `dist/`
-- SPA: `_redirects` configurado (`/* /index.html 200`)
-- Deploy manual: `npx wrangler pages deploy dist/ --project-name lasabore --branch master`
+- Build: `npm run build`, output: `dist/`
+- SPA: `public/_redirects` → `/* /index.html 200`
+- Auto-deploy via GitHub (branch `master`)
+- Manual: `npx wrangler pages deploy dist/ --project-name lasabore --branch master`
 
-## Opencode Config
-- `opencode.json` na raiz do projeto
-- Agente `vision`: `openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` (modelo com suporte a imagem)
-  - Arquivo: `.opencode/agents/vision.md`
-  - Uso: `@image-analyzer <comando>` no TUI
-  - Permissões: leitura permitida, escrita negada
-
-## Known Issues
-- `loading="lazy"` NÃO usar em `<img>` dentro de `AnimatePresence` — o lazy loading combinado com a animação de entrada (opacity/y) faz o navegador nunca disparar o carregamento da imagem
-- Webp do MenuDino convertidas pra JPEG via ffmpeg (show_frame=0 no cabeçalho VP8)
-- Thumbnails "small" do MenuDino (126×126) não são mais usadas
-- `unsplash-pizza-002.jpg` e `unsplash-pizza-011.jpg` eram o mesmo arquivo (hash idêntico) — 011 removido, chocolate items agora usam `unsplash-choco-001.jpg`
-
-## Pending / To Polish
-
-## Design Rationale
-- **Dark theme:** Dramático, destacar comida, contrastar com vermelho
-- **Glass cards:** Profundidade sem poluir visual, backdrop-blur funciona bem em dark
-- **Alternar bg #0a0a0a/#0d0d0d:** Separar seções sem usar divisores agressivos
-- **Flex justify-center em vez de mx-auto:** mx-auto falhou em centralizar corretamente em alguns contextos no Tailwind v4
-- **scroll-padding-top 5rem:** Compensar navbar fixed ao navegar por âncoras
+## Known Gotchas
+- `loading="lazy"` + motion `opacity:0` inicial = imagem nunca carrega (CSS global esconde lazy images e o navegador não dispara o fetch). Remover `loading="lazy"` de qualquer `<img>` dentro de motion com opacity animado.
+- Webp do MenuDino convertidas pra JPEG (show_frame=0 no VP8)
