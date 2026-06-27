@@ -201,7 +201,7 @@
           "name": "Pizza Chocolate branco",
           "description": "Creme de leite, muçarela e chocolate branco.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-choco-001.jpg"
+          "image": "/images/cardapio/pizza-choc-branco.jpg"
         },
         {
           "name": "Pizza Cinco Queijos",
@@ -259,7 +259,7 @@
           "name": "Pizza kitkat",
           "description": "Creme de leite, muçarela, chocolate preto e kitkat.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-choco-001.jpg"
+          "image": "/images/cardapio/pizza-kitkat.jpg"
         },
         {
           "name": "Pizza Lombinho Canadense",
@@ -272,7 +272,7 @@
           "name": "Pizza M&M",
           "description": "Creme de leite, muçarela, chocolate preto e M&M.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-choco-001.jpg"
+          "image": "/images/cardapio/pizza-mm.jpg"
         },
         {
           "name": "Pizza Marguerita",
