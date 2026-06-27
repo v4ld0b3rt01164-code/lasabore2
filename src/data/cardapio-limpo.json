@@ -36,13 +36,13 @@
           "name": "CERVEJA HEINEKEN  LATA 350ML",
           "description": "",
           "price": "R$ 9,00",
-          "image": "/images/cardapio/Heineken.jpg"
+          "image": "/images/cardapio/heineken.jpg"
         },
         {
           "name": "CERVEJA HEINEKEN LATA  ZERO 350ML",
           "description": "",
           "price": "R$ 9,00",
-          "image": "/images/cardapio/heinken-zero.jpg"
+          "image": "/images/cardapio/heineken-zero.jpg"
         },
         {
           "name": "CERVEJA SKOL LATA 350ML",
