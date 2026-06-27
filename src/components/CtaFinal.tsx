@@ -18,8 +18,8 @@ export default function CtaFinal() {
           Faça seu pedido agora e receba no conforto da sua casa
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-          <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white text-[#dc2626] text-xs sm:text-base font-bold px-4 sm:px-10 py-2.5 sm:py-4 rounded-lg hover:bg-[#f5f5f5] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] text-center transition-all duration-300">Fazer Pedido</a>
-          <a href="https://wa.me/5516992315122" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent text-white text-xs sm:text-base font-semibold px-4 sm:px-10 py-2.5 sm:py-4 rounded-lg border-2 border-[rgba(255,255,255,0.35)] hover:border-white hover:bg-[rgba(255,255,255,0.1)] text-center transition-all duration-300">
+          <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="bg-white text-[#dc2626] text-sm sm:text-base font-bold px-4 sm:px-10 py-2.5 sm:py-4 rounded-lg hover:bg-[#f5f5f5] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] text-center transition-all duration-300">Fazer Pedido</a>
+          <a href="https://wa.me/5516992315122" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-transparent text-white text-sm sm:text-base font-semibold px-4 sm:px-10 py-2.5 sm:py-4 rounded-lg border-2 border-[rgba(255,255,255,0.35)] hover:border-white hover:bg-[rgba(255,255,255,0.1)] text-center transition-all duration-300">
             <MessageCircle size={20} /> WhatsApp
           </a>
         </div>
