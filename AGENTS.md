@@ -19,14 +19,12 @@ lasabore-site/
 ├── AGENTS.md
 ├── opencode.json           ← Config do Opencode (agente vision)
 ├── captura.png             ← Screenshot do site
-├── scripts/
-│   └── download-large.mjs  ← Script pra baixar imagens large do MenuDino
 ├── .opencode/
 │   └── agents/
 │       └── vision.md       ← Agente com google/gemini-2.5-flash (visão)
 ├── public/
 │   ├── _redirects          ← SPA fallback: /* /index.html 200
-│   └── images/cardapio/    ← 45 imagens JPEG 400×400 (large do MenuDino)
+│   └── images/cardapio/    ← 51 imagens: MenuDino (400×400) + Unsplash (800×800)
 └── src/
     ├── main.tsx
     ├── index.css           ← Tailwind + custom utilities + scroll-padding
@@ -39,7 +37,7 @@ lasabore-site/
         ├── Destaques.tsx   ← 3 glass cards grid
         ├── Cardapio.tsx    ← Tabs topo+fim, grid 1/2/3, emoji fallback
         ├── Entrega.tsx     ← Cards + horários CTA box
-        ├── Sobre.tsx       ← Split 50/50, stats row
+        ├── Sobre.tsx       ← Split 50/50, highlights em vermelho
         ├── CtaFinal.tsx    ← Gradiente vermelho, botões duais
         └── Footer.tsx      ← 4 colunas, social icons SVG
 ```
@@ -132,7 +130,7 @@ Every section follows this exact pattern:
 
 ## Images
 - Hero: `https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=80`
-- Cardápio: 45 JPEGs large do MenuDino (400×400) em `public/images/cardapio/`
+- Cardápio: 45 JPEGs MenuDino (400×400) + 22 Unsplash (800×800) em `public/images/cardapio/`
 - Sobre: `https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80`
 - `loading="lazy"` removido das imagens do cardápio (quebra com AnimatePresence)
 - `preconnect` para `images.unsplash.com` no HTML
@@ -172,6 +170,7 @@ npm run preview   # Preview production build (localhost:4173)
 - `loading="lazy"` NÃO usar em `<img>` dentro de `AnimatePresence` — o lazy loading combinado com a animação de entrada (opacity/y) faz o navegador nunca disparar o carregamento da imagem
 - Imagens webp do MenuDino vieram com `show_frame=0` no cabeçalho VP8 — convertidas pra JPEG via ffmpeg
 - Versões "small" do MenuDino são 126×126 thumbnails; usar "large" (400×400)
+- `unsplash-pizza-002.jpg` e `unsplash-pizza-011.jpg` eram o mesmo arquivo (hash idêntico) — 011 removido, chocolate items agora usam `unsplash-choco-001.jpg`
 
 ## Pending / To Polish
 

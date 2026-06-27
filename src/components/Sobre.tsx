@@ -54,19 +54,6 @@ export default function Sobre() {
               <span className="text-[#dc2626] font-semibold">sabor</span>.
             </p>
           </div>
-
-          <div className="flex gap-12 mt-8">
-            {[
-              { v: '5+', l: 'Anos' },
-              { v: '50k+', l: 'Pizzas' },
-              { v: '4.9', l: 'Avaliação' },
-            ].map(s => (
-              <div key={s.l}>
-                <div className="text-3xl font-bold text-[#dc2626]">{s.v}</div>
-                <div className="text-sm text-[rgba(255,255,255,0.45)] mt-1">{s.l}</div>
-              </div>
-            ))}
-          </div>
         </motion.div>
         <motion.div
           className="relative rounded-xl overflow-hidden aspect-[4/5] border border-[rgba(255,255,255,0.07)]"

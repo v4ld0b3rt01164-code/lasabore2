@@ -70,64 +70,55 @@
           "name": "CAMARÃO RECHEADO EMPANADO",
           "description": "",
           "price": "R$ 69,00",
-          "image": "/images/cardapio/79390eab-ec54-4761-821f-6f0736c32e29_20260407215900.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/79390eab-ec54-4761-821f-6f0736c32e29_20260407215900.webp"
+          "image": "/images/cardapio/unsplash-porcao-004.jpg"
         },
         {
           "name": "FRITAS COM CHEDDAR E BACON - INTEIRA",
           "description": "",
           "price": "R$ 40,00",
-          "image": "/images/cardapio/8b47d887-80b8-4aec-b582-37c4c8536d91_20260407214244.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/8b47d887-80b8-4aec-b582-37c4c8536d91_20260407214244.webp"
+          "image": "/images/cardapio/unsplash-porcao-001.jpg"
         },
         {
           "name": "FRITAS COM CHEDDAR E BACON- MEIA",
           "description": "",
           "price": "R$ 35,00",
-          "image": "/images/cardapio/6aebdb99-9511-4813-91b4-553a6286991c_20260407214244.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/6aebdb99-9511-4813-91b4-553a6286991c_20260407214244.webp"
+          "image": "/images/cardapio/unsplash-porcao-001.jpg"
         },
         {
           "name": "FRITAS INTEIRA",
           "description": "",
           "price": "R$ 35,00",
-          "image": "/images/cardapio/ec4fb0e6-fa5b-4eb6-9cff-57b6ab283746_20260407214245.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/ec4fb0e6-fa5b-4eb6-9cff-57b6ab283746_20260407214245.webp"
+          "image": "/images/cardapio/unsplash-porcao-002.jpg"
         },
         {
           "name": "FRITAS MEIA",
           "description": "",
           "price": "R$ 25,00",
-          "image": "/images/cardapio/12c11f48-6867-4b69-9b02-ecb70189bdf1_20260407214246.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/12c11f48-6867-4b69-9b02-ecb70189bdf1_20260407214246.webp"
+          "image": "/images/cardapio/unsplash-porcao-002.jpg"
         },
         {
           "name": "MANDIOCA FRITA",
           "description": "",
           "price": "R$ 20,00",
-          "image": "/images/cardapio/831eec0e-e1ea-4b28-a416-6ac55f5b56fd_20260407214247.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/831eec0e-e1ea-4b28-a416-6ac55f5b56fd_20260407214247.webp"
+          "image": "/images/cardapio/unsplash-porcao-003.jpg"
         },
         {
           "name": "PASTELZINHO DE CAMARÃO",
           "description": "",
           "price": "R$ 32,00",
-          "image": "/images/cardapio/13c901b0-d924-4bbd-a291-5a7d02508d90_20260407215902.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/13c901b0-d924-4bbd-a291-5a7d02508d90_20260407215902.webp"
+          "image": "/images/cardapio/unsplash-porcao-005.jpg"
         },
         {
           "name": "PASTELZINHO DE CARNE",
           "description": "",
           "price": "R$ 30,00",
-          "image": "/images/cardapio/57dd49ef-54fa-4239-afe3-105bf5e0e9c3_20260506232924.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/57dd49ef-54fa-4239-afe3-105bf5e0e9c3_20260506232924.webp"
+          "image": "/images/cardapio/unsplash-porcao-005.jpg"
         },
         {
           "name": "PASTELZINHO DE QUEIJO",
           "description": "",
           "price": "R$ 30,00",
-          "image": "/images/cardapio/0db45a86-ec4d-420f-aaad-1180026d7657_20260407215903.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/0db45a86-ec4d-420f-aaad-1180026d7657_20260407215903.webp"
+          "image": "/images/cardapio/unsplash-porcao-005.jpg"
         }
       ]
     },
@@ -190,7 +181,7 @@
           "name": "Pizza Caipira",
           "description": "Molho de tomate, muçarela, frango, milho, catupiiry, tomate, orégano, e azeitonas.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-005.jpg"
+          "image": "/images/cardapio/unsplash-pizza-004.jpg"
         },
         {
           "name": "Pizza Calabresa",
@@ -210,19 +201,19 @@
           "name": "Pizza Chocolate branco",
           "description": "Creme de leite, muçarela e chocolate branco.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-007.jpg"
+          "image": "/images/cardapio/unsplash-choco-001.jpg"
         },
         {
           "name": "Pizza Cinco Queijos",
           "description": "Molho de tomate, muçarela,  provolone, cheddar, catupiry, gorgonzola, orégano e azeitonas.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-004.jpg"
+          "image": "/images/cardapio/unsplash-pizza-005.jpg"
         },
         {
           "name": "Pizza Clássica",
           "description": "Molho de tomate, muçarela, presunto,tomate, orégano e azeitonas.",
           "price": "A partir de R$ 35,00",
-          "image": "/images/cardapio/unsplash-pizza-001.jpg"
+          "image": "/images/cardapio/unsplash-pizza-006.jpg"
         },
         {
           "name": "Pizza Costela Bovina",
@@ -249,7 +240,7 @@
           "name": "Pizza Especial",
           "description": "Molho de tomate, muçarela, catupiry, cheddar, presunto, palmito, ovo cozido, milho, ervilha, tomate, cebola, orégano e azeitonas.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-006.jpg"
+          "image": "/images/cardapio/unsplash-pizza-007.jpg"
         },
         {
           "name": "Pizza Frango e Catupiry",
@@ -262,13 +253,13 @@
           "name": "Pizza Grand Brie",
           "description": "Molho de tomate, muçarela, queijo Brie, geléia de pimenta e orégano.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-004.jpg"
+          "image": "/images/cardapio/unsplash-pizza-005.jpg"
         },
         {
           "name": "Pizza kitkat",
           "description": "Creme de leite, muçarela, chocolate preto e kitkat.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-007.jpg"
+          "image": "/images/cardapio/unsplash-choco-001.jpg"
         },
         {
           "name": "Pizza Lombinho Canadense",
@@ -281,7 +272,7 @@
           "name": "Pizza M&M",
           "description": "Creme de leite, muçarela, chocolate preto e M&M.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-007.jpg"
+          "image": "/images/cardapio/unsplash-choco-001.jpg"
         },
         {
           "name": "Pizza Marguerita",
@@ -336,19 +327,19 @@
           "name": "Pizza Strogonoff de Carne Bovina",
           "description": "Molho de Tomate, muçarela, strogonoff de carne bovina, batata palha, orégano e Azeitonas.",
           "price": "A partir de R$ 45,00",
-          "image": "/images/cardapio/unsplash-pizza-007.jpg"
+          "image": "/images/cardapio/unsplash-pizza-008.jpg"
         },
         {
           "name": "Pizza Toscana",
           "description": "Molho de tomate, mussarela, calabresa, bacon, catupiry, orégano e azeitonas.",
           "price": "A partir de R$ 35,00",
-          "image": "/images/cardapio/unsplash-pizza-001.jpg"
+          "image": "/images/cardapio/unsplash-pizza-009.jpg"
         },
         {
           "name": "Pizza Vegetariana",
           "description": "Molho de tomate, muçarela, brócolis, champignon, palmito, milho, ervilha, tomate, orégano e azeitonas.",
           "price": "A partir de R$ 35,00",
-          "image": "/images/cardapio/unsplash-pizza-006.jpg"
+          "image": "/images/cardapio/unsplash-pizza-010.jpg"
         }
       ]
     },
