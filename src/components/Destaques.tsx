@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Flame, Clock, Leaf } from 'lucide-react'
 
 const items = [
-  { icon: Flame, title: 'Massa Artesanal', desc: 'Massa fermentada por 72 horas, crocante por fora, macia por dentro' },
+  { icon: Flame, title: 'Massa Artesanal', desc: 'Preparada com ingredientes selecionados e muito cuidado em cada detalhe' },
   { icon: Clock, title: 'Entrega Rápida', desc: 'Do forno direto pra sua mesa, sempre quentinha' },
   { icon: Leaf, title: 'Ingredientes Frescos', desc: 'Selecionados diariamente, sem conservantes artificiais' },
 ]
