@@ -33,6 +33,11 @@
   }
 }
 
+@utility highlight {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+}
+
 @utility container-section {
   width: 100%;
   max-width: 72rem;
