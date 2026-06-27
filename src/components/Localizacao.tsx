@@ -1,4 +1,4 @@
-import { MapPin, Phone } from 'lucide-react'
+import { MapPin, Phone, Clock } from 'lucide-react'
 
 export default function Localizacao() {
   return (
@@ -29,6 +29,16 @@ export default function Localizacao() {
             <div>
               <p className="text-sm font-semibold text-white">Telefone</p>
               <p className="text-sm text-[rgba(255,255,255,0.55)]">(16) 99231-5122</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center shrink-0">
+              <Clock size={20} className="text-[#dc2626]" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-white">Horários</p>
+              <p className="text-sm text-[rgba(255,255,255,0.55)]">Seg - Sáb: 18h às 23h</p>
+              <p className="text-sm text-[rgba(255,255,255,0.55)]">Dom: 12h às 22h</p>
             </div>
           </div>
         </div>

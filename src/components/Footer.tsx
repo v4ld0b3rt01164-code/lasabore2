@@ -23,21 +23,14 @@ export default function Footer() {
   return (
     <footer id="contato" className="w-full flex justify-center bg-[#0a0a0a] border-t border-[rgba(255,255,255,0.04)] py-16 sm:py-20">
       <div className="container-section">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          <div className="sm:col-span-2 lg:col-span-1 text-center">
-            <img src="/images/logo.png" alt="La Sabore" className="h-14 w-auto object-contain mb-3 mx-auto" />
-            <p className="text-sm text-[rgba(255,255,255,0.45)] leading-relaxed max-w-xs mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+          <div className="text-center sm:text-left">
+            <img src="/images/logo.png" alt="La Sabore" className="h-14 w-auto object-contain mb-3 mx-auto sm:mx-0" />
+            <p className="text-sm text-[rgba(255,255,255,0.45)] leading-relaxed max-w-xs mx-auto sm:mx-0">
               Sua pizza artesanal em Miguelópolis.
             </p>
           </div>
 
-          <div>
-            <h4 className="text-xs font-semibold text-[rgba(255,255,255,0.6)] uppercase tracking-wider mb-4">Horários</h4>
-            <div className="flex flex-col gap-3">
-              <span className="text-sm text-[rgba(255,255,255,0.45)]">Seg - Sáb: 18h às 23h</span>
-              <span className="text-sm text-[rgba(255,255,255,0.45)]">Dom: 12h às 22h</span>
-            </div>
-          </div>
           <div>
             <h4 className="text-xs font-semibold text-[rgba(255,255,255,0.6)] uppercase tracking-wider mb-4">Redes Sociais</h4>
             <div className="flex gap-3">
