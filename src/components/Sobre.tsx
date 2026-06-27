@@ -12,7 +12,7 @@ export default function Sobre() {
     <section id="sobre" className="w-full flex justify-center bg-[#0d0d0d] border-t border-[rgba(255,255,255,0.03)] py-24 sm:py-28">
       <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div {...fadeIn('left')}>
-          <span className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-[#dc2626] mb-3">Sobre Nós</span>
+          <span className="inline-block text-xs highlight text-[#dc2626] mb-3">sobre nós</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">Uma paixão que virou tradição</h2>
 
           <div className="space-y-5 text-justify text-[rgba(255,255,255,0.55)] leading-relaxed">
