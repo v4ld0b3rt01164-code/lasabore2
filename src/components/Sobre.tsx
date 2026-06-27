@@ -56,13 +56,13 @@ export default function Sobre() {
           </div>
         </motion.div>
         <motion.div
-          className="relative rounded-xl overflow-hidden aspect-[4/5] border border-[rgba(255,255,255,0.07)]"
+          className="relative rounded-xl overflow-hidden aspect-[3/5] border border-[rgba(255,255,255,0.07)]"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease: 'easeOut' as const, delay: 0.1 }}
         >
-          <img src="/images/sobre.jpg" alt="Pizzaiolo preparando massa artesanal" className="w-full h-full object-cover" />
+          <img src="/images/sobre.jpg" alt="Pizzaiolo preparando massa artesanal" className="w-full h-full object-contain" />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.5)] to-transparent" />
         </motion.div>
       </div>
