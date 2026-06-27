@@ -12,41 +12,37 @@
           "name": "CERVEJA AMSTEL ULTRA  LATA 350ML",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/unsplash-beer-001.jpg"
+          "image": "/images/cardapio/amstel-ultra.jpg"
         },
         {
-          "name": "CERVEJA AMSTELL LATA 350ML",
+          "name": "CERVEJA AMSTEL LATA 350ML",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/925f8397-1b07-495f-a06e-c60a6be4f0ff_20260502212318.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/925f8397-1b07-495f-a06e-c60a6be4f0ff_20260502212318.webp"
+          "image": "/images/cardapio/amstel.jpg"
         },
         {
           "name": "CERVEJA ANTARCTICA BOA LATA 350ML",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/1a6245c2-90ac-444c-a454-674808b57fe0_20260407220029.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/1a6245c2-90ac-444c-a454-674808b57fe0_20260407220029.webp"
+          "image": "/images/cardapio/boa.jpg"
         },
         {
           "name": "CERVEJA BRAHMA LATA 350ML",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/7e540a4c-97f0-4b92-952d-feb5bc557313_20260205233606.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/7e540a4c-97f0-4b92-952d-feb5bc557313_20260205233606.webp"
+          "image": "/images/cardapio/brahma.jpg"
         },
         {
           "name": "CERVEJA HEINEKEN  LATA 350ML",
           "description": "",
           "price": "R$ 9,00",
-          "image": "/images/cardapio/unsplash-heineken-001.jpg"
+          "image": "/images/cardapio/Heineken.jpg"
         },
         {
           "name": "CERVEJA HEINEKEN LATA  ZERO 350ML",
           "description": "",
           "price": "R$ 9,00",
-          "image": "/images/cardapio/b1775e17-6088-45f2-a1ae-b96ccbcc8b62_20260407214242.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/b1775e17-6088-45f2-a1ae-b96ccbcc8b62_20260407214242.webp"
+          "image": "/images/cardapio/heinken-zero.jpg"
         },
         {
           "name": "CERVEJA SKOL LATA 350ML",
