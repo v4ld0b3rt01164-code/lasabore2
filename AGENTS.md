@@ -18,13 +18,16 @@ lasabore-site/
 ├── package.json
 ├── AGENTS.md
 ├── opencode.json           ← Config do Opencode (agente vision)
-├── captura.png             ← Screenshot do site
+├── captura.png             ← Screenshot do site (desatualizado)
 ├── .opencode/
 │   └── agents/
-│       └── vision.md       ← Agente com google/gemini-2.5-flash (visão)
+│       └── vision.md       ← Agente com OpenRouter + nemotron (visão)
 ├── public/
 │   ├── _redirects          ← SPA fallback: /* /index.html 200
-│   └── images/cardapio/    ← 51 imagens: MenuDino (400×400) + Unsplash (800×800)
+│   └── images/
+│       ├── cardapio/       ← Imagens fornecidas pelo usuário + Unsplash (0 MenuDino)
+│       ├── localizacao.jpg
+│       └── sobre.jpg
 └── src/
     ├── main.tsx
     ├── index.css           ← Tailwind + custom utilities + scroll-padding
@@ -36,10 +39,11 @@ lasabore-site/
         ├── Hero.tsx        ← 100vh, Unsplash bg, gradient overlay
         ├── Destaques.tsx   ← 3 glass cards grid
         ├── Cardapio.tsx    ← Tabs topo+fim, grid 1/2/3, emoji fallback
-        ├── Entrega.tsx     ← Cards + horários CTA box
-        ├── Sobre.tsx       ← Split 50/50, highlights em vermelho
+        ├── Entrega.tsx     ← 3 cards info (sem horários, sem botão)
+        ├── Sobre.tsx       ← Split 50/50, highlights badge style
         ├── CtaFinal.tsx    ← Gradiente vermelho, botões duais
-        └── Footer.tsx      ← 4 colunas, social icons SVG
+        ├── Localizacao.tsx ← Endereço + telefone + imagem
+        └── Footer.tsx      ← 3 colunas (brand, nav, horários)
 ```
 
 ## Design System
@@ -108,8 +112,11 @@ Every section follows this exact pattern:
 - Texto centralizado com `max-w-xl` dentro do container
 - Scroll indicator com bounce animation
 
-### Cardápio
+### Entrega
+- 3 cards info (sem horários, sem botão "Fazer Pedido")
 - Categorias hardcoded em `cats`: Pizzas → Porções → Bebidas (CERVEJA + Refrigerantes mergeados)
+
+### Cardápio
 - State `active` começa `null` (tudo oculto até clicar numa aba)
 - Abas duplicadas no topo E no fim da lista de itens
 - Grid: `grid-cols-1 sm:2 lg:3 gap-6`
@@ -130,16 +137,16 @@ Every section follows this exact pattern:
 
 ## Images
 - Hero: `https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=80`
-- Cardápio: 45 JPEGs MenuDino (400×400) + 22 Unsplash (800×800) em `public/images/cardapio/`
-- Sobre: `https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80`
+- Cardápio: imagens fornecidas pelo usuário + Unsplash em `public/images/cardapio/`
+- Sobre: `/images/sobre.jpg` (imagem local fornecida pelo usuário)
+- Localização: `/images/localizacao.jpg` (imagem local fornecida pelo usuário)
 - `loading="lazy"` removido das imagens do cardápio (quebra com AnimatePresence)
 - `preconnect` para `images.unsplash.com` no HTML
 
 ## Cardápio Data
 - `src/data/cardapio-limpo.json`: scraped do MenuDino, 66 itens em 4 categorias
 - Categorias expostas no front: Pizzas (33), Porções (9), Bebidas (22 = 8 cervejas + 14 refrigerantes)
-- `image`: path local `/images/cardapio/<uuid>.jpg`
-- Para re-scraping: `scripts/download-large.mjs` baixa versões large e converte pra JPEG
+- `image`: path local `/images/cardapio/<nome>.jpg`
 
 ## Commands
 ```bash
@@ -161,15 +168,15 @@ npm run preview   # Preview production build (localhost:4173)
 
 ## Opencode Config
 - `opencode.json` na raiz do projeto
-- Agente `vision`: `google/gemini-2.5-flash` (modelo com suporte a imagem)
+- Agente `vision`: `openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` (modelo com suporte a imagem)
   - Arquivo: `.opencode/agents/vision.md`
-  - Uso: `@vision <comando>` no TUI
+  - Uso: `@image-analyzer <comando>` no TUI
   - Permissões: leitura permitida, escrita negada
 
 ## Known Issues
 - `loading="lazy"` NÃO usar em `<img>` dentro de `AnimatePresence` — o lazy loading combinado com a animação de entrada (opacity/y) faz o navegador nunca disparar o carregamento da imagem
-- Imagens webp do MenuDino vieram com `show_frame=0` no cabeçalho VP8 — convertidas pra JPEG via ffmpeg
-- Versões "small" do MenuDino são 126×126 thumbnails; usar "large" (400×400)
+- Webp do MenuDino convertidas pra JPEG via ffmpeg (show_frame=0 no cabeçalho VP8)
+- Thumbnails "small" do MenuDino (126×126) não são mais usadas
 - `unsplash-pizza-002.jpg` e `unsplash-pizza-011.jpg` eram o mesmo arquivo (hash idêntico) — 011 removido, chocolate items agora usam `unsplash-choco-001.jpg`
 
 ## Pending / To Polish
