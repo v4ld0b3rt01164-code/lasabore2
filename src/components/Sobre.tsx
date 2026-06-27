@@ -62,7 +62,7 @@ export default function Sobre() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease: 'easeOut' as const, delay: 0.1 }}
         >
-          <img src="/images/sobre.jpg" alt="Pizzaiolo preparando massa artesanal" loading="lazy" className="w-full h-full object-cover" />
+          <img src="/images/sobre.jpg" alt="Pizzaiolo preparando massa artesanal" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.5)] to-transparent" />
         </motion.div>
       </div>
