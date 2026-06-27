@@ -18,11 +18,11 @@ export default function Sobre() {
           <div className="space-y-5 text-justify text-[rgba(255,255,255,0.55)] leading-relaxed">
             <p>
               Acreditamos que uma pizza de verdade é feita com{' '}
-              <span className="text-[#dc2626] highlight text-lg">paixão</span>. Foi desse sentimento que nasceu a La Sabore
+              <span className="text-[#dc2626] highlight text-base">paixão</span>. Foi desse sentimento que nasceu a La Sabore
               Pizzaria. Antes de ser um negócio, ela era um{' '}
-              <span className="text-[#dc2626] highlight text-lg">sonho</span>: levar para Miguelópolis uma experiência
+              <span className="text-[#dc2626] highlight text-base">sonho</span>: levar para Miguelópolis uma experiência
               diferente, com sabores{' '}
-              <span className="text-[#dc2626] highlight text-lg">exclusivos</span>, ingredientes de qualidade e um cuidado
+              <span className="text-[#dc2626] highlight text-base">exclusivos</span>, ingredientes de qualidade e um cuidado
               em cada detalhe que a cidade ainda não conhecia.
             </p>
 
@@ -30,14 +30,14 @@ export default function Sobre() {
               Desde o primeiro dia, nosso compromisso sempre foi oferecer pizzas de massa fina, preparadas com
               ingredientes selecionados e um sabor que faz cada momento à mesa ser especial. E, para tornar essa
               experiência ainda mais completa, nossas{' '}
-              <span className="text-[#dc2626] highlight text-lg">bordas recheadas</span> se tornaram um dos grandes
-              <span className="text-[#dc2626] highlight text-lg"> diferenciais</span> da La Sabore, conquistando clientes e
+              <span className="text-[#dc2626] highlight text-base">bordas recheadas</span> se tornaram um dos grandes
+              <span className="text-[#dc2626] highlight text-base"> diferenciais</span> da La Sabore, conquistando clientes e
               transformando cada fatia em uma surpresa.
             </p>
 
             <p>
               Mais do que preparar pizzas, buscamos criar{' '}
-              <span className="text-[#dc2626] highlight text-lg">momentos</span>. Queremos que cada pedido reúna famílias,
+              <span className="text-[#dc2626] highlight text-base">momentos</span>. Queremos que cada pedido reúna famílias,
               amigos e boas histórias ao redor da mesa.
             </p>
 
@@ -50,8 +50,8 @@ export default function Sobre() {
           <div className="mt-8 p-5 rounded-xl bg-[rgba(220,38,38,0.08)] border border-[rgba(220,38,38,0.15)] text-center">
             <p className="text-lg font-bold text-white">La Sabore Pizzaria</p>
             <p className="text-sm text-[rgba(255,255,255,0.6)] italic">
-              Feita com <span className="text-[#dc2626] highlight text-lg">paixão</span>. Servida com{' '}
-              <span className="text-[#dc2626] highlight text-lg">sabor</span>.
+              Feita com <span className="text-[#dc2626] highlight text-base">paixão</span>. Servida com{' '}
+              <span className="text-[#dc2626] highlight text-base">sabor</span>.
             </p>
           </div>
         </motion.div>
