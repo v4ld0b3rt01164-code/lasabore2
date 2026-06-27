@@ -12,7 +12,7 @@
 ## Project Structure
 ```
 lasabore-site/
-├── index.html              ← SEO meta tags, OG, theme-color, favicon (emoji)
+├── index.html              ← SEO meta tags, OG, theme-color, favicon (logo oficial)
 ├── vite.config.ts          ← Vite + React + Tailwind plugins
 ├── tsconfig.json
 ├── package.json
