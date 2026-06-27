@@ -31,17 +31,10 @@ export default function Footer() {
       <div className="container-section">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="sm:col-span-2 lg:col-span-1">
-            <span className="text-xl font-bold text-white block mb-3">La Sabore</span>
+            <img src="/images/logo.png" alt="La Sabore" className="h-12 w-auto object-contain mb-3" />
             <p className="text-sm text-[rgba(255,255,255,0.45)] leading-relaxed max-w-xs">
-              A verdadeira pizza italiana, feita com amor e tradição desde 2010.
+              Sua pizza artesanal em Miguelópolis.
             </p>
-            <div className="flex gap-3 mt-6">
-              {socials.map(s => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-10 h-10 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center hover:bg-[#dc2626] hover:border-[#dc2626] transition-all duration-200">
-                  {s.svg}
-                </a>
-              ))}
-            </div>
           </div>
           <div>
             <h4 className="text-xs font-semibold text-[rgba(255,255,255,0.6)] uppercase tracking-wider mb-4">Navegação</h4>
@@ -56,6 +49,16 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <span className="text-sm text-[rgba(255,255,255,0.45)]">Seg - Sáb: 18h às 23h</span>
               <span className="text-sm text-[rgba(255,255,255,0.45)]">Dom: 12h às 22h</span>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-xs font-semibold text-[rgba(255,255,255,0.6)] uppercase tracking-wider mb-4">Redes Sociais</h4>
+            <div className="flex gap-3">
+              {socials.map(s => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-10 h-10 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center hover:bg-[#dc2626] hover:border-[#dc2626] transition-all duration-200">
+                  {s.svg}
+                </a>
+              ))}
             </div>
           </div>
         </div>
