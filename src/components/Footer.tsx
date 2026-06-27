@@ -1,11 +1,5 @@
 import { MessageCircle } from 'lucide-react'
 
-const links = [
-  { label: 'Cardápio', href: '#cardapio' },
-  { label: 'Entrega', href: '#entrega' },
-  { label: 'Sobre', href: '#sobre' },
-]
-
 const socials = [
   {
     label: 'Instagram',
@@ -29,21 +23,14 @@ export default function Footer() {
   return (
     <footer id="contato" className="w-full flex justify-center bg-[#0a0a0a] border-t border-[rgba(255,255,255,0.04)] py-16 sm:py-20">
       <div className="container-section">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
             <img src="/images/logo.png" alt="La Sabore" className="h-12 w-auto object-contain mb-3 mx-auto sm:mx-0" />
             <p className="text-sm text-[rgba(255,255,255,0.45)] leading-relaxed max-w-xs mx-auto sm:mx-0">
               Sua pizza artesanal em Miguelópolis.
             </p>
           </div>
-          <div>
-            <h4 className="text-xs font-semibold text-[rgba(255,255,255,0.6)] uppercase tracking-wider mb-4">Navegação</h4>
-            <div className="flex flex-col gap-3">
-              {links.map(l => (
-                <a key={l.label} href={l.href} className="text-sm text-[rgba(255,255,255,0.45)] hover:text-[#dc2626] transition-colors">{l.label}</a>
-              ))}
-            </div>
-          </div>
+
           <div>
             <h4 className="text-xs font-semibold text-[rgba(255,255,255,0.6)] uppercase tracking-wider mb-4">Horários</h4>
             <div className="flex flex-col gap-3">
