@@ -24,9 +24,9 @@ export default function Footer() {
     <footer id="contato" className="w-full flex justify-center bg-[#0a0a0a] border-t border-[rgba(255,255,255,0.04)] py-16 sm:py-20">
       <div className="container-section">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
-          <div className="text-center sm:text-left">
-            <img src="/images/logo.png" alt="La Sabore" className="h-14 w-auto object-contain mb-3 mx-auto sm:mx-0" />
-            <p className="text-sm text-[rgba(255,255,255,0.45)] leading-relaxed max-w-xs mx-auto sm:mx-0">
+          <div className="text-center">
+            <img src="/images/logo.png" alt="La Sabore" className="h-14 w-auto object-contain mb-3 mx-auto" />
+            <p className="text-sm text-[rgba(255,255,255,0.45)] leading-relaxed max-w-xs mx-auto">
               Sua pizza artesanal em Miguelópolis.
             </p>
           </div>
