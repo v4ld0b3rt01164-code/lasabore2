@@ -102,12 +102,34 @@
 - **Hero:** fade + slide com stagger de 0.2s
 
 ## Images
-- Hero bg: `https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=80`
-- Cardápio: `/images/cardapio/<nome>.jpg` (Unsplash + fornecidas)
-- Sobre: `/images/sobre.jpg` (local, fornecida pelo usuário)
-- Localização: `/images/localizacao.jpg` (local)
-- Logo: `/images/logo.png` (local, usada no Hero `h-24` e Footer `h-14`)
+- Hero bg: `https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1080&q=60` (com gradiente overlay, qualidade 60 é suficiente)
+- Cardápio: `/images/cardapio/<nome>.jpg` (Unsplash + fornecidas, redimensionadas p/ 400px q:v5)
+- Sobre: `/images/sobre.jpg` (local, 1200px q:v5)
+- Localização: `/images/localizacao.jpg` (local, 1200px q:v5)
+- Logo: `/images/logo.png` (local, 600px, usada no Hero `h-24` e Footer `h-14`)
 - `preconnect` para `images.unsplash.com` no HTML
+
+## Image Optimization (Jun 2026)
+Todas as imagens foram otimizadas via ffmpeg com resize + compressão. Estado atual:
+
+| Arquivo | Antes | Depois | Redução |
+|---------|-------|--------|---------|
+| Hero bg (Unsplash) | ~500 KB (1920w q80) | ~150 KB (1080w q60) | ~70% |
+| `pexels-matreding-9685263.jpg` | 4.848 KB | deletado (não usado) | 100% |
+| `sobre-section.png` | 2.014 KB | deletado (não usado) | 100% |
+| `logo.png` | 2.164 KB | 250 KB (600px, comp_level 9) | 88% |
+| `sobre.jpg` | 2.920 KB | 141 KB (1200px, q:v5) | 95% |
+| 26 cardápio JPGs | 3.705 KB | 756 KB (400px, q:v5) | 80% |
+| 4 PNGs cardápio | 1.767 KB | 456 KB (400px, comp_level 9) | 74% |
+| `localizacao.jpg` | 115 KB | 85 KB (1200px, q:v5) | 26% |
+| **Total imagens** | **~15,5 MB** | **~1,8 MB** | **~88%** |
+
+### Regras de compressão
+- **JPGs (`-q:v 5`)**: escala mjpeg 2-31 (2=melhor, 31=pior). q:v5 = excelente qualidade, usado em cardápio, sobre, localização.
+- **PNGs (`-compression_level 9 -pred mixed`)**: compressão máxima sem perda, usado em logo e PNGs com alpha.
+- **Unsplash params**: `w=1080&q=60` para hero (gradiente overlay mascara artefatos).
+- **Resize máximo**: cardápio 400px, demais 1200px (exibidos em ~190px e ~600px respectivamente).
+- Manter `loading="lazy"` removido de `<img>` com motion (ver gotchas).
 
 ## Cardápio Data
 - `src/data/cardapio-limpo.json`: 66 itens, 4 categorias (Pizzas 33, Porções 9, Bebidas 22)
@@ -131,3 +153,4 @@ npm run preview   # Preview build localhost:4173
 - Overlay mobile (`position:fixed`) NÃO pode ser filho do `<nav>` com `backdrop-blur-xl` — o backdrop-filter cria containing block pro fixed child em alguns navegadores. Usar Fragment (`<>`) com overlay irmão do nav.
 - `transition-all` no nav causa glitches no posicionamento do hamburger. Usar `transition-colors` em vez disso.
 - Webp do MenuDino convertidas pra JPEG (show_frame=0 no VP8)
+- `git add -A` pode capturar arquivos grandes acidentais na raiz (screenshots, mockups). Verificar com `git status --short` antes de commitar. Manter `.gitignore` atualizado.
