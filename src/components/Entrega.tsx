@@ -44,9 +44,7 @@ export default function Entrega() {
             </motion.div>
           ))}
         </div>
-        <div className="text-center">
-          <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#dc2626] text-white text-sm font-semibold px-6 py-3 rounded-lg hover:bg-[#b91c1c] transition-colors">Fazer Pedido</a>
-        </div>
+      
       </div>
     </section>
   )

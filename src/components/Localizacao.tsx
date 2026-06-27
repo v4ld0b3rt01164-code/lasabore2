@@ -15,8 +15,8 @@ export default function Localizacao() {
             </div>
             <div>
               <p className="text-sm font-semibold text-white">Endereço</p>
-              <p className="text-sm text-[rgba(255,255,255,0.55)]">Av. Leopoldo C. de Oliveira, 668 — Centro</p>
-              <p className="text-sm text-[rgba(255,255,255,0.55)]">Miguelópolis — SP</p>
+              <p className="text-sm text-[rgba(255,255,255,0.55)]">Av. Leopoldo Carlos de Oliveira, 668</p>
+              <p className="text-sm text-[rgba(255,255,255,0.55)]">Centro - Miguelópolis - SP</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
