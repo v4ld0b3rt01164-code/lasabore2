@@ -354,25 +354,25 @@
           "image": "/images/cardapio/crystal-gas.jpeg"
         },
         {
-          "name": "Coca Cola 1,5 Litro (desc)",
-          "description": "Coca Cola",
+          "name": "Coca-Cola 1,5 Litro (desc)",
+          "description": "Coca-Cola",
           "price": "R$ 13,00",
           "image": "/images/cardapio/coca-15-desc.jpg"
         },
         {
-          "name": "Coca Cola 1,5 Litro-  zero (desc)",
-          "description": "Coca Cola",
+          "name": "Coca-Cola 1,5 Litro-  zero (desc)",
+          "description": "Coca-Cola",
           "price": "R$ 13,00",
           "image": "/images/cardapio/coca-zero-15-desc.jpg"
         },
         {
-          "name": "Coca Cola lata 350ml",
-          "description": "Coca Cola lata",
+          "name": "Coca-Cola lata 350ml",
+          "description": "Coca-Cola lata",
           "price": "R$ 6,00",
           "image": "/images/cardapio/coca-lata.webp"
         },
         {
-          "name": "Coca Cola ZERO lata 350ml",
+          "name": "Coca-Cola ZERO lata 350ml",
           "description": "",
           "price": "R$ 6,00",
           "image": "/images/cardapio/coca-zero-lata.jpg"
@@ -418,15 +418,13 @@
           "name": "Guaraná Antarctica Zero Lata 350 ml",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/6079e2ad-7316-403e-b925-1350b5f07dfe_20260502212324.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/6079e2ad-7316-403e-b925-1350b5f07dfe_20260502212324.webp"
+          "image": "/images/cardapio/guara-zero.jpg"
         },
         {
           "name": "H2OH 500 ml",
           "description": "refrigerante H2OH 500ML limão e limoneto",
           "price": "R$ 7,00",
-          "image": "/images/cardapio/6e52f2d3-bf6d-4ff6-83a9-fe39d8549b1e_20260425020452.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/6e52f2d3-bf6d-4ff6-83a9-fe39d8549b1e_20260425020452.webp"
+          "image": "/images/cardapio/h2o.png"
         }
       ]
     }
