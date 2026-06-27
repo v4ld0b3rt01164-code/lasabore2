@@ -31,17 +31,19 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container-section flex items-center justify-between">
-        <a href="#" className="text-xl font-bold text-white tracking-tight hover:text-[#dc2626] transition-colors">La Sabore</a>
+      <div className="container-section flex items-center">
+        <div className="flex-1" />
         <div className="hidden md:flex items-center gap-8">
           {links.map(l => (
             <a key={l.label} href={l.href} className="text-sm font-medium text-[rgba(255,255,255,0.7)] hover:text-white transition-colors">{l.label}</a>
           ))}
         </div>
-        <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="hidden md:block bg-[#dc2626] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#b91c1c] transition-colors">Peça Agora</a>
-        <button className="md:hidden text-white" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex-1 flex justify-end">
+          <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="hidden md:block bg-[#dc2626] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#b91c1c] transition-colors">Peça Agora</a>
+          <button className="md:hidden text-white" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
       {mobileOpen && (
         <div className="fixed inset-0 top-16 bg-[rgba(10,10,10,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-8 z-40">

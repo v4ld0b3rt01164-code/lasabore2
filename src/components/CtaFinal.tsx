@@ -15,7 +15,7 @@ export default function CtaFinal() {
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Bateu a fome?</h2>
         <p className="text-base sm:text-lg text-[rgba(255,255,255,0.85)] max-w-xl mx-auto mb-10 leading-relaxed">
-          Faça seu pedido agora e receba em até 30 minutos na sua casa
+          Faça seu pedido agora e receba no conforto da sua casa
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white text-[#dc2626] text-base font-bold px-10 py-4 rounded-lg hover:bg-[#f5f5f5] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] text-center transition-all duration-300">Fazer Pedido</a>

@@ -3,7 +3,7 @@ import { Flame, Clock, Leaf } from 'lucide-react'
 
 const items = [
   { icon: Flame, title: 'Massa Artesanal', desc: 'Massa fermentada por 72 horas, crocante por fora, macia por dentro' },
-  { icon: Clock, title: 'Entrega Rápida', desc: 'Em até 30 minutos na sua casa, sempre quentinha' },
+  { icon: Clock, title: 'Entrega Rápida', desc: 'Do forno direto pra sua mesa, sempre quentinha' },
   { icon: Leaf, title: 'Ingredientes Frescos', desc: 'Selecionados diariamente, sem conservantes artificiais' },
 ]
 
