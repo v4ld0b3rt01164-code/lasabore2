@@ -2,7 +2,6 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Destaques from './components/Destaques'
 import Cardapio from './components/Cardapio'
-import CtaCardapio from './components/CtaCardapio'
 import Entrega from './components/Entrega'
 import Sobre from './components/Sobre'
 import CtaFinal from './components/CtaFinal'
@@ -16,10 +15,9 @@ export default function App() {
         <Hero />
         <Destaques />
         <Cardapio />
-        <CtaCardapio />
+        <CtaFinal />
         <Entrega />
         <Sobre />
-        <CtaFinal />
       </main>
       <Footer />
     </div>
