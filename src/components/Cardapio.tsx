@@ -120,7 +120,7 @@ export default function Cardapio() {
           </>
         ) : (
           <div className="text-center py-16">
-            <p className="text-[rgba(255,255,255,0.35)] text-sm">Selecione uma categoria acima para ver o cardápio</p>
+            <p className="text-white font-semibold text-base">Selecione uma categoria acima para ver o cardápio</p>
           </div>
         )}
       </div>
