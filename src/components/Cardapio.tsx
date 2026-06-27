@@ -96,7 +96,7 @@ export default function Cardapio() {
                   >
                     {item.image ? (
                       <div className="w-full h-44 sm:h-48 bg-white">
-                        <img src={item.image} alt={item.name} loading="lazy" className="w-full h-full object-cover" />
+                        <img src={item.image} alt={item.name} className="block w-full h-full object-cover" />
                       </div>
                     ) : (
                       <div className="w-full h-44 sm:h-48 bg-[rgba(255,255,255,0.03)] flex items-center justify-center">

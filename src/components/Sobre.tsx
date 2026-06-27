@@ -13,16 +13,51 @@ export default function Sobre() {
       <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div {...fadeIn('left')}>
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-[#dc2626] mb-3">Sobre Nós</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">Uma paixão que nasceu do forno</h2>
-          <p className="text-base text-[rgba(255,255,255,0.55)] leading-relaxed mb-4">
-            Há mais de 15 anos, a La Sabore nasceu do sonho de trazer a verdadeira pizza italiana para Miguelópolis. Cada massa é preparada artesanalmente com ingredientes selecionados.
-          </p>
-          <p className="text-base text-[rgba(255,255,255,0.55)] leading-relaxed">
-            Do forno à sua casa, entregamos sabor e qualidade em cada fatia. Venha nos conhecer no Centro de Miguelópolis ou peça pelo nosso cardápio online.
-          </p>
-          <div className="flex gap-12 mt-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">Uma paixão que virou tradição</h2>
+
+          <div className="space-y-5 text-justify text-[rgba(255,255,255,0.55)] leading-relaxed">
+            <p>
+              Acreditamos que uma pizza de verdade é feita com{' '}
+              <span className="text-[#dc2626] font-semibold">paixão</span>. Foi desse sentimento que nasceu a La Sabore
+              Pizzaria. Antes de ser um negócio, ela era um{' '}
+              <span className="text-[#dc2626] font-semibold">sonho</span>: levar para Miguelópolis uma experiência
+              diferente, com sabores{' '}
+              <span className="text-[#dc2626] font-semibold">exclusivos</span>, ingredientes de qualidade e um cuidado
+              em cada detalhe que a cidade ainda não conhecia.
+            </p>
+
+            <p>
+              Desde o primeiro dia, nosso compromisso sempre foi oferecer pizzas de massa fina, preparadas com
+              ingredientes selecionados e um sabor que faz cada momento à mesa ser especial. E, para tornar essa
+              experiência ainda mais completa, nossas{' '}
+              <span className="text-[#dc2626] font-semibold">bordas recheadas</span> se tornaram um dos grandes
+              <span className="text-[#dc2626] font-semibold"> diferenciais</span> da La Sabore, conquistando clientes e
+              transformando cada fatia em uma surpresa.
+            </p>
+
+            <p>
+              Mais do que preparar pizzas, buscamos criar{' '}
+              <span className="text-[#dc2626] font-semibold">momentos</span>. Queremos que cada pedido reúna famílias,
+              amigos e boas histórias ao redor da mesa.
+            </p>
+
+            <p>
+              É essa dedicação que nos inspira todos os dias a inovar, manter a qualidade e oferecer uma experiência
+              que vai muito além da pizza.
+            </p>
+          </div>
+
+          <div className="mt-8 p-5 rounded-xl bg-[rgba(220,38,38,0.08)] border border-[rgba(220,38,38,0.15)] text-center">
+            <p className="text-lg font-bold text-white">La Sabore Pizzaria</p>
+            <p className="text-sm text-[rgba(255,255,255,0.6)] italic">
+              Feita com <span className="text-[#dc2626] font-semibold">paixão</span>. Servida com{' '}
+              <span className="text-[#dc2626] font-semibold">sabor</span>.
+            </p>
+          </div>
+
+          <div className="flex gap-12 mt-8">
             {[
-              { v: '15+', l: 'Anos' },
+              { v: '5+', l: 'Anos' },
               { v: '50k+', l: 'Pizzas' },
               { v: '4.9', l: 'Avaliação' },
             ].map(s => (

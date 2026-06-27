@@ -17,19 +17,29 @@ lasabore-site/
 ├── tsconfig.json
 ├── package.json
 ├── AGENTS.md
+├── opencode.json           ← Config do Opencode (agente vision)
+├── captura.png             ← Screenshot do site
+├── scripts/
+│   └── download-large.mjs  ← Script pra baixar imagens large do MenuDino
+├── .opencode/
+│   └── agents/
+│       └── vision.md       ← Agente com google/gemini-2.5-flash (visão)
 ├── public/
+│   ├── _redirects          ← SPA fallback: /* /index.html 200
+│   └── images/cardapio/    ← 45 imagens JPEG 400×400 (large do MenuDino)
 └── src/
     ├── main.tsx
     ├── index.css           ← Tailwind + custom utilities + scroll-padding
     ├── App.tsx             ← Root layout (Nav > main > Footer)
+    ├── data/
+    │   └── cardapio-limpo.json  ← 66 itens, 4 categorias, paths locais
     └── components/
         ├── Navbar.tsx      ← h-16, sticky glass, mobile scroll-lock
         ├── Hero.tsx        ← 100vh, Unsplash bg, gradient overlay
         ├── Destaques.tsx   ← 3 glass cards grid
-        ├── Cardapio.tsx    ← Tabs animados, grid responsivo
+        ├── Cardapio.tsx    ← Tabs topo+fim, grid 1/2/3, emoji fallback
         ├── Entrega.tsx     ← Cards + horários CTA box
         ├── Sobre.tsx       ← Split 50/50, stats row
-        ├── Depoimentos.tsx ← 3 avaliações com estrelas
         ├── CtaFinal.tsx    ← Gradiente vermelho, botões duais
         └── Footer.tsx      ← 4 colunas, social icons SVG
 ```
@@ -101,9 +111,14 @@ Every section follows this exact pattern:
 - Scroll indicator com bounce animation
 
 ### Cardápio
-- State `active` (categoria) controla animação via `AnimatePresence`
+- Categorias hardcoded em `cats`: Pizzas → Porções → Bebidas (CERVEJA + Refrigerantes mergeados)
+- State `active` começa `null` (tudo oculto até clicar numa aba)
+- Abas duplicadas no topo E no fim da lista de itens
 - Grid: `grid-cols-1 sm:2 lg:3 gap-6`
-- Imagens com `loading="lazy"` e fade-in via CSS
+- Imagens SEM `loading="lazy"` (lazy quebra com AnimatePresence)
+- `bg-white` no wrapper da imagem + `object-cover`
+- Fallback: emoji por categoria (🍕🥩🥤) quando `item.image` é null
+- Itens sem imagem no JSON exibem o emoji no lugar
 
 ### Sobre
 - Grid split: `grid-cols-1 lg:grid-cols-2 gap-16 items-center`
@@ -117,10 +132,16 @@ Every section follows this exact pattern:
 
 ## Images
 - Hero: `https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=80`
-- Cardápio: Unsplash (várias pizzas, bebidas, sobremesas)
+- Cardápio: 45 JPEGs large do MenuDino (400×400) em `public/images/cardapio/`
 - Sobre: `https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80`
-- All images use `loading="lazy"` exceto Hero
+- `loading="lazy"` removido das imagens do cardápio (quebra com AnimatePresence)
 - `preconnect` para `images.unsplash.com` no HTML
+
+## Cardápio Data
+- `src/data/cardapio-limpo.json`: scraped do MenuDino, 66 itens em 4 categorias
+- Categorias expostas no front: Pizzas (33), Porções (9), Bebidas (22 = 8 cervejas + 14 refrigerantes)
+- `image`: path local `/images/cardapio/<uuid>.jpg`
+- Para re-scraping: `scripts/download-large.mjs` baixa versões large e converte pra JPEG
 
 ## Commands
 ```bash
@@ -129,17 +150,30 @@ npm run build     # Build production → dist/
 npm run preview   # Preview production build (localhost:4173)
 ```
 
+## GitHub
+- Repo: `github.com/v4ld0b3rt01164-code/lasabore`
+- Branch: `master`
+- Deploy automático via Cloudflare Pages (conectado ao GitHub)
+
 ## Cloudflare Pages
 - Build command: `npm run build`
 - Output directory: `dist/`
-- No extra config needed (SPA)
-- Add `_redirects` if SPA fallback needed: `/* /index.html 200`
+- SPA: `_redirects` configurado (`/* /index.html 200`)
+- Deploy manual: `npx wrangler pages deploy dist/ --project-name lasabore --branch master`
+
+## Opencode Config
+- `opencode.json` na raiz do projeto
+- Agente `vision`: `google/gemini-2.5-flash` (modelo com suporte a imagem)
+  - Arquivo: `.opencode/agents/vision.md`
+  - Uso: `@vision <comando>` no TUI
+  - Permissões: leitura permitida, escrita negada
+
+## Known Issues
+- `loading="lazy"` NÃO usar em `<img>` dentro de `AnimatePresence` — o lazy loading combinado com a animação de entrada (opacity/y) faz o navegador nunca disparar o carregamento da imagem
+- Imagens webp do MenuDino vieram com `show_frame=0` no cabeçalho VP8 — convertidas pra JPEG via ffmpeg
+- Versões "small" do MenuDino são 126×126 thumbnails; usar "large" (400×400)
 
 ## Pending / To Polish
-- [ ] Verificar centralização em todos os viewports após mudança para `flex justify-center`
-- [ ] Substituir textos placeholder por conteúdo real do cliente
-- [ ] Adicionar `_redirects` para SPA fallback no Cloudflare
-- [ ] Testar performance Lighthouse
 
 ## Design Rationale
 - **Dark theme:** Dramático, destacar comida, contrastar com vermelho
