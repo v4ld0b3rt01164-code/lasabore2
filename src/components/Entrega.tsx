@@ -44,18 +44,9 @@ export default function Entrega() {
             </motion.div>
           ))}
         </div>
-        <motion.div
-          className="max-w-lg mx-auto bg-[rgba(26,26,26,0.5)] backdrop-blur-xl border border-[rgba(255,255,255,0.07)] rounded-xl p-8 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[rgba(255,255,255,0.4)] block mb-2">Horário de entrega</span>
-          <p className="text-lg font-semibold text-white">Seg - Sáb: 18h às 23h</p>
-          <p className="text-lg font-semibold text-white mb-5">Dom: 12h às 22h</p>
+        <div className="text-center">
           <a href="https://lasaborepizzaria.menudino.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#dc2626] text-white text-sm font-semibold px-6 py-3 rounded-lg hover:bg-[#b91c1c] transition-colors">Fazer Pedido</a>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

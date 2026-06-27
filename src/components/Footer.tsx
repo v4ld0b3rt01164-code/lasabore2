@@ -54,9 +54,8 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-semibold text-[rgba(255,255,255,0.6)] uppercase tracking-wider mb-4">Horários</h4>
             <div className="flex flex-col gap-3">
-              <span className="text-sm text-[rgba(255,255,255,0.45)]">Seg - Sex: 18h - 23h</span>
-              <span className="text-sm text-[rgba(255,255,255,0.45)]">Sábado: 18h - 00h</span>
-              <span className="text-sm text-[rgba(255,255,255,0.45)]">Domingo: 12h - 22h</span>
+              <span className="text-sm text-[rgba(255,255,255,0.45)]">Seg - Sáb: 18h às 23h</span>
+              <span className="text-sm text-[rgba(255,255,255,0.45)]">Dom: 12h às 22h</span>
             </div>
           </div>
         </div>
