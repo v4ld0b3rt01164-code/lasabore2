@@ -4,6 +4,7 @@ import Destaques from './components/Destaques'
 import Cardapio from './components/Cardapio'
 import Entrega from './components/Entrega'
 import Sobre from './components/Sobre'
+import Localizacao from './components/Localizacao'
 import CtaFinal from './components/CtaFinal'
 import Footer from './components/Footer'
 
@@ -18,6 +19,7 @@ export default function App() {
         <CtaFinal />
         <Entrega />
         <Sobre />
+        <Localizacao />
       </main>
       <Footer />
     </div>

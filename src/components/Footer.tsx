@@ -1,15 +1,9 @@
-import { MessageCircle, MapPin, Phone } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 
 const links = [
   { label: 'Cardápio', href: '#cardapio' },
   { label: 'Entrega', href: '#entrega' },
   { label: 'Sobre', href: '#sobre' },
-
-]
-
-const contact = [
-  { icon: MapPin, text: 'Av. Leopoldo C. de Oliveira, 668 — Centro, Miguelópolis — SP' },
-  { icon: Phone, text: '(16) 99231-5122' },
 ]
 
 const socials = [
@@ -63,17 +57,6 @@ export default function Footer() {
               <span className="text-sm text-[rgba(255,255,255,0.45)]">Seg - Sex: 18h - 23h</span>
               <span className="text-sm text-[rgba(255,255,255,0.45)]">Sábado: 18h - 00h</span>
               <span className="text-sm text-[rgba(255,255,255,0.45)]">Domingo: 12h - 22h</span>
-            </div>
-          </div>
-          <div>
-            <h4 className="text-xs font-semibold text-[rgba(255,255,255,0.6)] uppercase tracking-wider mb-4">Contato</h4>
-            <div className="flex flex-col gap-3">
-              {contact.map(c => (
-                <div key={c.text} className="flex items-center gap-2 text-sm text-[rgba(255,255,255,0.45)]">
-                  <c.icon size={14} className="shrink-0 text-[rgba(255,255,255,0.25)]" />
-                  <span>{c.text}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
