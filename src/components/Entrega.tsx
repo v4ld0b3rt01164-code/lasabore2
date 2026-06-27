@@ -21,7 +21,7 @@ export default function Entrega() {
     <section id="entrega" className="w-full flex justify-center bg-[#0a0a0a] py-24 sm:py-28">
       <div className="container-section">
         <div className="text-center mb-16">
-          <span className="inline-block text-xs highlight text-[#dc2626] mb-3">entrega</span>
+          <span className="inline-block text-lg highlight text-[#dc2626] mb-3">entrega</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white">Receba em casa</h2>
           <p className="text-sm sm:text-base text-[rgba(255,255,255,0.55)] mt-4 max-w-2xl mx-auto">Peça pelo site ou WhatsApp e acompanhe seu pedido em tempo real</p>
         </div>
