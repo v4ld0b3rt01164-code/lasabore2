@@ -14,7 +14,7 @@
 - Hero: logo `h-24` (`top-2`, `sm:left-16`), título "Sua pizza artesanal em Miguelópolis", sem subtítulo
 - Destaques: Entrega Rápida → "Do forno direto pra sua mesa, sempre quentinha" (sem "30 min")
 - CTA Final: "Faça seu pedido agora e receba no conforto da sua casa" (sem "30 min")
-- Sobre: highlights em vermelho `text-[#dc2626]` com classe `highlight` (Playfair Display italic `text-2xl`)
+- Sobre: highlights em vermelho `text-[#dc2626]` com classe `highlight` (Playfair Display italic `text-lg`)
 - Localização: inclui horários (Seg-Sáb 18h-23h, Dom 12h-22h)
 - Footer: 2 colunas (logo centralizada + Redes Sociais), sem navegação, sem horários
 
@@ -61,9 +61,10 @@
 
 ### Navbar
 - `h-16`, sem texto "La Sabore"
-- Estrutura: `<div class="flex-1" />` (spacer) + links centrados + CTA
-- Mobile: hamburger com `overflow:hidden` no body, overlay fullscreen
-- Scroll: backdrop-blur após 20px
+- Layout: `container-section flex justify-between` com empty div à esquerda + links centrados + CTA à direita
+- Mobile: hamburger com `overflow:hidden` no body
+- Overlay mobile: `<div>` irmão do `<nav>` (usar `<>...</>` Fragment), NÃO dentro do nav — `backdrop-blur-xl` no nav quebra `position:fixed` do overlay filho
+- Scroll: `transition-colors` (não `transition-all`), backdrop + bg após 20px
 
 ### Hero
 - `h-screen min-h-[600px]`, fundo Unsplash + gradiente overlay
@@ -76,12 +77,17 @@
 - Grid: `grid-cols-1 sm:2 lg:3 gap-6`
 - Imagens SEM `loading="lazy"` (lazy + AnimatePresence quebra o carregamento)
 - Fallback: emoji por categoria (🍕🥩🥤) quando `item.image` é null
+- Labels das seções (`sobre nós`, `cardápio`, `diferenciais`, `entrega`, `onde estamos`): `text-lg highlight text-[#dc2626]` (Playfair Display italic, lowercase)
 
 ### Sobre
 - Grid split: `grid-cols-1 lg:grid-cols-2 gap-16 items-center`
 - Imagem: `aspect-[3/5] object-contain`, SEM `loading="lazy"`
-- Highlights: `<span className="text-[#dc2626] highlight text-2xl">`
+- Highlights: `<span className="text-[#dc2626] highlight text-lg">`
 - `loading="lazy"` NÃO usar — CSS global `img[loading="lazy"] { opacity: 0 }` esconde permanentemente se combinado com animação de entrada (motion opacity:0)
+
+### Destaques
+- 3 glass cards: Massa Artesanal, Entrega Rápida, Ingredientes Frescos
+- Texto "30 minutos" removido — usar "Do forno direto pra sua mesa, sempre quentinha"
 
 ### Entrega
 - 3 cards info (sem horários, sem botão "Fazer Pedido")
@@ -122,4 +128,6 @@ npm run preview   # Preview build localhost:4173
 
 ## Known Gotchas
 - `loading="lazy"` + motion `opacity:0` inicial = imagem nunca carrega (CSS global esconde lazy images e o navegador não dispara o fetch). Remover `loading="lazy"` de qualquer `<img>` dentro de motion com opacity animado.
+- Overlay mobile (`position:fixed`) NÃO pode ser filho do `<nav>` com `backdrop-blur-xl` — o backdrop-filter cria containing block pro fixed child em alguns navegadores. Usar Fragment (`<>`) com overlay irmão do nav.
+- `transition-all` no nav causa glitches no posicionamento do hamburger. Usar `transition-colors` em vez disso.
 - Webp do MenuDino convertidas pra JPEG (show_frame=0 no VP8)
