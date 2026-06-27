@@ -48,14 +48,13 @@
           "name": "CERVEJA SKOL LATA 350ML",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/28a53c47-c608-4997-a636-b616d6958895_20260205233607.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/28a53c47-c608-4997-a636-b616d6958895_20260205233607.webp"
+          "image": "/images/cardapio/skol.jpg"
         },
         {
           "name": "CERVEJA STELLA ARTOIS GOLD  LATA 350ML",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/unsplash-stella-001.jpg"
+          "image": "/images/cardapio/stella-gold.png"
         }
       ]
     },
@@ -346,64 +345,55 @@
           "name": "AGUA 510ML",
           "description": "",
           "price": "R$ 3,00",
-          "image": "/images/cardapio/d24d2104-841f-4520-a068-71d7ba9260ab_20260425020451.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/d24d2104-841f-4520-a068-71d7ba9260ab_20260425020451.webp"
+          "image": "/images/cardapio/agua-crystal.jpg"
         },
         {
           "name": "AGUA COM GÁS 510ML",
           "description": "",
           "price": "R$ 3,00",
-          "image": "/images/cardapio/058d4f38-3f7b-4b17-ac96-f60ec2dadc66_20260425020451.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/058d4f38-3f7b-4b17-ac96-f60ec2dadc66_20260425020451.webp"
+          "image": "/images/cardapio/crystal-gas.jpeg"
         },
         {
           "name": "Coca Cola 1,5 Litro (desc)",
           "description": "Coca Cola",
           "price": "R$ 13,00",
-          "image": "/images/cardapio/ac9d1e43-cf29-4980-95d0-f69f92d302da_20260411223819.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/ac9d1e43-cf29-4980-95d0-f69f92d302da_20260411223819.webp"
+          "image": "/images/cardapio/coca-15-desc.jpg"
         },
         {
           "name": "Coca Cola 1,5 Litro-  zero (desc)",
           "description": "Coca Cola",
           "price": "R$ 13,00",
-          "image": "/images/cardapio/b28c88e4-d4e4-471e-b786-6fa7143f4f33_20260411223819.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/b28c88e4-d4e4-471e-b786-6fa7143f4f33_20260411223819.webp"
+          "image": "/images/cardapio/coca-zero-15-desc.jpg"
         },
         {
           "name": "Coca Cola lata 350ml",
           "description": "Coca Cola lata",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/166e3954-7093-44cb-847e-e7348fd22ed8_20260205233608.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/166e3954-7093-44cb-847e-e7348fd22ed8_20260205233608.webp"
+          "image": "/images/cardapio/coca-lata.webp"
         },
         {
           "name": "Coca Cola ZERO lata 350ml",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/bd841986-fa1d-4fdf-ae9a-5668c7ae5aa3_20260205233608.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/bd841986-fa1d-4fdf-ae9a-5668c7ae5aa3_20260205233608.webp"
+          "image": "/images/cardapio/coca-zero-lata.jpg"
         },
         {
           "name": "Fanta 1,5 litros",
           "description": "Fanta",
           "price": "R$ 13,00",
-          "image": "/images/cardapio/90b677e0-6f91-4785-8707-2d2cfb4f23ef_20260502212324.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/90b677e0-6f91-4785-8707-2d2cfb4f23ef_20260502212324.webp"
+          "image": "/images/cardapio/fanta-15.jpg"
         },
         {
           "name": "Fanta lata 350ml",
           "description": "",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/4bce01a6-9f37-4138-a15c-255bbe90c905_20260502212324.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/4bce01a6-9f37-4138-a15c-255bbe90c905_20260502212324.webp"
+          "image": "/images/cardapio/fanta-lata.png"
         },
         {
           "name": "Guaraná Antarctica 1,5L",
           "description": "Guaraná Antarctica",
           "price": "R$ 13,00",
-          "image": "/images/cardapio/8eac9885-7fed-490d-a1b0-b33bc7774273_20260502212324.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/8eac9885-7fed-490d-a1b0-b33bc7774273_20260502212324.webp"
+          "image": "/images/cardapio/guara-15.jpg"
         },
         {
           "name": "Guaraná Antarctica Lata 350 ml",
@@ -416,14 +406,13 @@
           "name": "Guaraná Antarctica zero 1,5L",
           "description": "Guaraná Antarctica",
           "price": "R$ 13,00",
-          "image": "/images/cardapio/0445d3b0-1b7f-4f63-935a-ac2941b5247e_20260502212324.jpg",
-          "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/0445d3b0-1b7f-4f63-935a-ac2941b5247e_20260502212324.webp"
+          "image": "/images/cardapio/guara-zero-15.jpg"
         },
         {
           "name": "Guaraná Antarctica ZERO 2 Litros",
           "description": "Guaraná Antarctica",
           "price": "R$ 15,00",
-          "image": "/images/cardapio/unsplash-soda-001.jpg"
+          "image": "/images/cardapio/guara-zero-20.avif"
         },
         {
           "name": "Guaraná Antarctica Zero Lata 350 ml",
