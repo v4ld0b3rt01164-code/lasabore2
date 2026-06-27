@@ -46,7 +46,7 @@ export default function Navbar() {
         </div>
       </div>
       {mobileOpen && (
-        <div className="fixed inset-0 top-16 bg-[rgba(10,10,10,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-8 z-40">
+        <div className="fixed top-16 left-0 right-0 bottom-0 bg-[rgba(10,10,10,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-8 z-40">
           {links.map(l => (
             <a key={l.label} href={l.href} className="text-xl font-medium text-white hover:text-[#dc2626] transition-colors" onClick={() => setMobileOpen(false)}>{l.label}</a>
           ))}
