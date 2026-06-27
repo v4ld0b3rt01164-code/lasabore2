@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Bike, MapPin, ShieldCheck } from 'lucide-react'
 
 const items = [
-  { icon: Bike, title: 'Delivery Rápido', desc: 'Sua pizza chega quentinha em até 30 minutos, do forno à sua porta.' },
+  { icon: Bike, title: 'Delivery Rápido', desc: 'Sua pizza chega quentinha, do forno à sua porta.' },
   { icon: MapPin, title: 'Área de Cobertura', desc: 'Entregamos em todos os bairros e nos ranchos.' },
   { icon: ShieldCheck, title: 'Pagamento Seguro', desc: 'Aceitamos cartão, dinheiro, PIX e vale-refeição. Tudo online.' },
 ]
