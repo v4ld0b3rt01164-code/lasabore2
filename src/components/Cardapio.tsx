@@ -80,13 +80,12 @@ export default function Cardapio() {
         <div className="text-center mb-16">
           <span className="inline-block text-lg highlight text-white bg-[#dc2626] px-2 py-0.5 rounded mb-3">cardápio</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-black">Nosso Cardápio</h2>
-          <p className="text-sm sm:text-base text-[rgba(0,0,0,0.6)] mt-4">Clique em uma categoria para ver os itens</p>
-        </div>
-        <div className="mb-8">
-          <Tabs active={active} onSelect={setActive} />
         </div>
         {active ? (
           <>
+            <div className="mb-8">
+              <Tabs active={active} onSelect={setActive} />
+            </div>
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -116,7 +115,6 @@ export default function Cardapio() {
                       {item.description && (
                         <p className="text-[10px] sm:text-xs text-[rgba(0,0,0,0.5)] leading-relaxed mb-1">{item.description}</p>
                       )}
-                      <span className="text-xs sm:text-sm font-bold text-[#dc2626]">{item.price}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -128,7 +126,7 @@ export default function Cardapio() {
           </>
         ) : (
           <div className="text-center py-16">
-            <p className="text-black font-semibold text-base">Selecione uma categoria acima para ver o cardápio</p>
+            <button onClick={() => setActive('Pizzas')} className="bg-[#dc2626] text-white text-base font-semibold px-8 py-3 rounded-lg hover:bg-[#b91c1c] transition-all duration-300 shadow-[0_0_20px_rgba(220,38,38,0.3)]">Ver Cardápio</button>
           </div>
         )}
       </div>

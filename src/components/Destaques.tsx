@@ -33,12 +33,12 @@ export default function Destaques() {
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
               variants={card}
-              className="bg-[rgba(255,255,255,0.12)] backdrop-blur-xl border border-[rgba(255,255,255,0.2)] rounded-xl p-8 transition-all duration-300 hover:border-[rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(220,38,38,0.08)] hover:-translate-y-1"
+              className="bg-white border border-black rounded-xl p-4 sm:p-5 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
             >
-              <div className="w-12 h-12 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center mb-5 mx-auto sm:mx-0">
-                <item.icon size={24} className="text-[#dc2626]" />
+              <div className="w-10 h-10 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center mb-3 mx-auto sm:mx-0">
+                <item.icon size={20} className="text-[#dc2626]" />
               </div>
-              <h3 className="text-lg font-semibold text-black mb-2 text-center sm:text-left">{item.title}</h3>
+              <h3 className="text-base font-semibold text-black mb-1 text-center sm:text-left">{item.title}</h3>
               <p className="text-sm text-[rgba(0,0,0,0.6)] leading-relaxed text-center sm:text-left">{item.desc}</p>
             </motion.div>
           ))}
