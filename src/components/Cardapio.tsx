@@ -42,15 +42,15 @@ const cardAnim = {
 
 function Tabs({ active, onSelect }: { active: string | null; onSelect: (id: string) => void }) {
   return (
-    <div className="flex flex-wrap justify-center gap-3">
+    <div className="flex justify-center border-b border-[rgba(0,0,0,0.1)]">
       {cats.map(c => (
         <button
           key={c.id}
           onClick={() => onSelect(c.id)}
-          className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+          className={`px-4 sm:px-6 py-2.5 text-sm font-medium transition-all duration-200 border-b-2 ${
             active === c.id
-              ? 'bg-[#dc2626] text-white border border-[#dc2626] shadow-[0_0_15px_rgba(220,38,38,0.3)]'
-              : 'bg-transparent text-[rgba(0,0,0,0.5)] border border-[rgba(0,0,0,0.1)] hover:text-black hover:border-[rgba(0,0,0,0.2)]'
+              ? 'text-[#dc2626] border-[#dc2626]'
+              : 'text-[rgba(0,0,0,0.5)] border-transparent hover:text-black'
           }`}
         >
           {c.label}
@@ -74,7 +74,7 @@ export default function Cardapio() {
           <h2 className="text-3xl sm:text-4xl font-bold text-black">Nosso Cardápio</h2>
           <p className="text-sm sm:text-base text-[rgba(0,0,0,0.6)] mt-4">Clique em uma categoria para ver os itens</p>
         </div>
-        <div className="mb-12">
+        <div className="mb-8">
           <Tabs active={active} onSelect={setActive} />
         </div>
         {active ? (
@@ -86,35 +86,35 @@ export default function Cardapio() {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
               >
                 {items.map(item => (
                   <motion.div
                     key={item.name}
                     variants={cardAnim}
-                    className="bg-[rgba(255,255,255,0.12)] backdrop-blur-xl border border-[rgba(255,255,255,0.2)] rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(220,38,38,0.3)] hover:-translate-y-1"
+                    className="bg-[rgba(255,255,255,0.12)] backdrop-blur-xl border border-[rgba(255,255,255,0.2)] rounded-lg overflow-hidden transition-all duration-300 hover:border-[rgba(220,38,38,0.3)] hover:-translate-y-1"
                   >
                     {item.image ? (
-                      <div className="w-full h-44 sm:h-48 bg-white">
+                      <div className="w-full h-20 sm:h-24 bg-white">
                         <img src={item.image} alt={item.name} className="block w-full h-full object-cover" />
                       </div>
                     ) : (
-                      <div className="w-full h-44 sm:h-48 bg-[rgba(255,255,255,0.03)] flex items-center justify-center">
-                        <span className="text-5xl">{catEmoji[active!]}</span>
+                      <div className="w-full h-20 sm:h-24 bg-[rgba(255,255,255,0.03)] flex items-center justify-center">
+                        <span className="text-2xl">{catEmoji[active!]}</span>
                       </div>
                     )}
-                    <div className="p-5">
-                      <h3 className="text-lg font-semibold text-black mb-1">{item.name}</h3>
+                    <div className="p-2 sm:p-3">
+                      <h3 className="text-[11px] sm:text-sm font-semibold text-black leading-tight mb-0.5">{item.name}</h3>
                       {item.description && (
-                        <p className="text-sm text-[rgba(0,0,0,0.5)] leading-relaxed mb-3 line-clamp-2">{item.description}</p>
+                        <p className="text-[10px] sm:text-xs text-[rgba(0,0,0,0.5)] leading-relaxed mb-1 line-clamp-1">{item.description}</p>
                       )}
-                      <span className="text-xl font-bold text-[#dc2626]">{item.price}</span>
+                      <span className="text-xs sm:text-sm font-bold text-[#dc2626]">{item.price}</span>
                     </div>
                   </motion.div>
                 ))}
               </motion.div>
             </AnimatePresence>
-            <div className="mt-12">
+            <div className="mt-8">
               <Tabs active={active} onSelect={setActive} />
             </div>
           </>

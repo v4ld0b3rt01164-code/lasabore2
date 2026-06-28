@@ -9,50 +9,50 @@
       "title": "CERVEJA",
       "items": [
         {
-          "name": "CERVEJA AMSTEL ULTRA  LATA 350ML",
-          "description": "",
+          "name": "CERVEJA AMSTEL ULTRA",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/amstel-ultra.jpg"
         },
         {
-          "name": "CERVEJA AMSTEL LATA 350ML",
-          "description": "",
+          "name": "CERVEJA AMSTEL",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/amstel.jpg"
         },
         {
-          "name": "CERVEJA ANTARCTICA BOA LATA 350ML",
-          "description": "",
+          "name": "CERVEJA ANTARCTICA BOA",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/boa.jpg"
         },
         {
-          "name": "CERVEJA BRAHMA LATA 350ML",
-          "description": "",
+          "name": "CERVEJA BRAHMA",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/brahma.jpg"
         },
         {
-          "name": "CERVEJA HEINEKEN  LATA 350ML",
-          "description": "",
+          "name": "CERVEJA HEINEKEN",
+          "description": "Lata 350ml",
           "price": "R$ 9,00",
           "image": "/images/cardapio/heineken.jpg"
         },
         {
-          "name": "CERVEJA HEINEKEN LATA  ZERO 350ML",
-          "description": "",
+          "name": "CERVEJA HEINEKEN ZERO ÁLCOOL",
+          "description": "Lata 350ml",
           "price": "R$ 9,00",
           "image": "/images/cardapio/heineken-zero.jpg"
         },
         {
-          "name": "CERVEJA SKOL LATA 350ML",
-          "description": "",
+          "name": "CERVEJA SKOL",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/skol.jpg"
         },
         {
-          "name": "CERVEJA STELLA ARTOIS GOLD  LATA 350ML",
-          "description": "",
+          "name": "CERVEJA STELLA ARTOIS GOLD",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/stella-gold.png"
         }
@@ -74,7 +74,7 @@
           "image": "/images/cardapio/unsplash-porcao-001.jpg"
         },
         {
-          "name": "FRITAS COM CHEDDAR E BACON- MEIA",
+          "name": "FRITAS COM CHEDDAR E BACON - MEIA PORÇÃO",
           "description": "",
           "price": "R$ 35,00",
           "image": "/images/cardapio/unsplash-porcao-001.jpg"
@@ -86,7 +86,7 @@
           "image": "/images/cardapio/fritas.jpg"
         },
         {
-          "name": "FRITAS MEIA",
+          "name": "FRITAS - MEIA PORÇÃO",
           "description": "",
           "price": "R$ 25,00",
           "image": "/images/cardapio/fritas.jpg"
@@ -251,7 +251,7 @@
           "image": "/images/cardapio/unsplash-pizza-005.jpg"
         },
         {
-          "name": "Pizza kitkat",
+          "name": "Pizza KitKat",
           "description": "Creme de leite, muçarela, chocolate preto e kitkat.",
           "price": "A partir de R$ 40,00",
           "image": "/images/cardapio/pizza-kitkat.jpg"
@@ -264,7 +264,7 @@
           "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/848a53eb-fd0a-4265-828f-2398c8d91c0f_20260205233628.webp"
         },
         {
-          "name": "Pizza M&M",
+          "name": "Pizza M&M's",
           "description": "Creme de leite, muçarela, chocolate preto e M&M.",
           "price": "A partir de R$ 40,00",
           "image": "/images/cardapio/pizza-mm.png"
@@ -342,87 +342,87 @@
       "title": "Refrigerantes",
       "items": [
         {
-          "name": "AGUA 510ML",
-          "description": "",
+          "name": "AGUA MINERAL",
+          "description": "Garrafa 500ml",
           "price": "R$ 3,00",
           "image": "/images/cardapio/agua-crystal.jpg"
         },
         {
-          "name": "AGUA COM GÁS 510ML",
-          "description": "",
+          "name": "ÁGUA MINERAL COM GÁS",
+          "description": "Garrafa 500ml",
           "price": "R$ 3,00",
           "image": "/images/cardapio/crystal-gas.jpeg"
         },
         {
-          "name": "Coca-Cola 1,5 Litro (desc)",
-          "description": "Coca-Cola",
+          "name": "Coca-Cola 1,5L",
+          "description": "Descartável",
           "price": "R$ 13,00",
           "image": "/images/cardapio/coca-15-desc.jpg"
         },
         {
-          "name": "Coca-Cola 1,5 Litro-  zero (desc)",
-          "description": "Coca-Cola",
+          "name": "Coca-Cola Zero 1,5L",
+          "description": "Descartável",
           "price": "R$ 13,00",
           "image": "/images/cardapio/coca-zero-15-desc.jpg"
         },
         {
-          "name": "Coca-Cola lata 350ml",
-          "description": "Coca-Cola lata",
+          "name": "Coca-Cola",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/coca-lata.webp"
         },
         {
-          "name": "Coca-Cola ZERO lata 350ml",
-          "description": "",
+          "name": "Coca-Cola ZERO",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/coca-zero-lata.jpg"
         },
         {
-          "name": "Fanta 1,5 litros",
-          "description": "Fanta",
+          "name": "Fanta 1,5L",
+          "description": "Descartável",
           "price": "R$ 13,00",
           "image": "/images/cardapio/fanta-15.jpg"
         },
         {
-          "name": "Fanta lata 350ml",
-          "description": "",
+          "name": "Fanta Laranja",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/fanta-lata.png"
         },
         {
           "name": "Guaraná Antarctica 1,5L",
-          "description": "Guaraná Antarctica",
+          "description": "Descartável",
           "price": "R$ 13,00",
           "image": "/images/cardapio/guara-15.jpg"
         },
         {
-          "name": "Guaraná Antarctica Lata 350 ml",
-          "description": "",
+          "name": "Guaraná Antarctica",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/5c590638-734e-4d6f-9703-98f2e0d07437_20260210205426.jpg",
           "imageOriginal": "https://files.menudino.com/merchants/addc0e85-6fc7-42bc-ba89-5c57dd03a565/items/images/large/5c590638-734e-4d6f-9703-98f2e0d07437_20260210205426.webp"
         },
         {
-          "name": "Guaraná Antarctica zero 1,5L",
-          "description": "Guaraná Antarctica",
+          "name": "Guaraná Antarctica Zero 1,5L",
+          "description": "Descartável",
           "price": "R$ 13,00",
           "image": "/images/cardapio/guara-zero-15.jpg"
         },
         {
-          "name": "Guaraná Antarctica ZERO 2 Litros",
-          "description": "Guaraná Antarctica",
+          "name": "Guaraná Antarctica ZERO 2L",
+          "description": "Descartável",
           "price": "R$ 15,00",
           "image": "/images/cardapio/guara-zero-20.avif"
         },
         {
-          "name": "Guaraná Antarctica Zero Lata 350 ml",
-          "description": "",
+          "name": "Guaraná Antarctica Zero",
+          "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/guara-zero.jpg"
         },
         {
-          "name": "H2OH 500 ml",
-          "description": "refrigerante H2OH 500ML limão e limoneto",
+          "name": "H2 OH! Limoneto",
+          "description": "Garrafa 500ml",
           "price": "R$ 7,00",
           "image": "/images/cardapio/h2o.png"
         }
