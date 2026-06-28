@@ -5,7 +5,7 @@ export default function Localizacao() {
     <section id="localizacao" className="w-full flex justify-center border-t border-[rgba(255,255,255,0.03)] py-24 sm:py-28">
       <div className="container-section">
         <div className="text-center mb-12">
-          <span className="inline-block text-lg highlight text-[#dc2626] mb-3">onde estamos</span>
+          <span className="inline-block text-lg highlight text-white bg-[#dc2626] px-2 py-0.5 rounded mb-3">onde estamos</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-black">Localização</h2>
         </div>
         <div className="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden">

@@ -70,7 +70,7 @@ export default function Cardapio() {
     <section id="cardapio" className="w-full flex justify-center border-t border-[rgba(255,255,255,0.03)] py-24 sm:py-28">
       <div className="container-section">
         <div className="text-center mb-16">
-          <span className="inline-block text-lg highlight text-[#dc2626] mb-3">cardápio</span>
+          <span className="inline-block text-lg highlight text-white bg-[#dc2626] px-2 py-0.5 rounded mb-3">cardápio</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-black">Nosso Cardápio</h2>
           <p className="text-sm sm:text-base text-[rgba(0,0,0,0.6)] mt-4">Clique em uma categoria para ver os itens</p>
         </div>
