@@ -92,7 +92,7 @@ export default function Cardapio() {
                   <motion.div
                     key={item.name}
                     variants={cardAnim}
-                    className="bg-[rgba(26,26,26,0.5)] backdrop-blur-xl border border-[rgba(255,255,255,0.07)] rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(220,38,38,0.3)] hover:-translate-y-1"
+                    className="bg-[rgba(255,255,255,0.12)] backdrop-blur-xl border border-[rgba(255,255,255,0.2)] rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(220,38,38,0.3)] hover:-translate-y-1"
                   >
                     {item.image ? (
                       <div className="w-full h-44 sm:h-48 bg-white">

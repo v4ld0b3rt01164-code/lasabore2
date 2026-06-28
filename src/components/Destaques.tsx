@@ -33,7 +33,7 @@ export default function Destaques() {
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
               variants={card}
-              className="bg-[rgba(26,26,26,0.5)] backdrop-blur-xl border border-[rgba(255,255,255,0.07)] rounded-xl p-8 transition-all duration-300 hover:border-[rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(220,38,38,0.08)] hover:-translate-y-1"
+              className="bg-[rgba(255,255,255,0.12)] backdrop-blur-xl border border-[rgba(255,255,255,0.2)] rounded-xl p-8 transition-all duration-300 hover:border-[rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(220,38,38,0.08)] hover:-translate-y-1"
             >
               <div className="w-12 h-12 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center mb-5 mx-auto sm:mx-0">
                 <item.icon size={24} className="text-[#dc2626]" />
