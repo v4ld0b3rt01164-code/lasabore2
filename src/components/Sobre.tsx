@@ -58,7 +58,7 @@ export default function Sobre() {
         </div>
         </motion.div>
         <motion.div
-          className="relative rounded-xl overflow-hidden aspect-[3/5] border border-[rgba(255,255,255,0.07)] shadow-[0_8px_32px_rgba(0,0,0,0.35)] -translate-y-1"
+          className="relative rounded-xl overflow-hidden aspect-[3/5] shadow-[0_8px_32px_rgba(0,0,0,0.35)] -translate-y-1"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-60px' }}

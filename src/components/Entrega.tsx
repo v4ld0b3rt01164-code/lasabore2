@@ -25,7 +25,7 @@ export default function Entrega() {
           <h2 className="text-3xl sm:text-4xl font-bold text-black">Receba em casa</h2>
           <p className="text-sm sm:text-base text-[rgba(0,0,0,0.6)] mt-4 max-w-2xl mx-auto">Peça pelo site ou WhatsApp e acompanhe seu pedido em tempo real</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 mb-16">
           {items.map((item, i) => (
             <motion.div
               key={item.title}

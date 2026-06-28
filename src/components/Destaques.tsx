@@ -24,7 +24,7 @@ export default function Destaques() {
           <span className="inline-block text-lg highlight text-white bg-[#dc2626] px-2 py-0.5 rounded mb-3">diferenciais</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-black">Por que nos escolher?</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
           {items.map((item, i) => (
             <motion.div
               key={item.title}

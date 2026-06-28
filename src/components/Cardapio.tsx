@@ -57,8 +57,8 @@ function Tabs({ active, onSelect }: { active: string | null; onSelect: (id: stri
           onClick={() => onSelect(c.id)}
           className={`px-4 sm:px-6 py-2.5 text-sm font-medium transition-all duration-200 border-b-2 ${
             active === c.id
-              ? 'text-[#dc2626] border-[#dc2626]'
-              : 'text-[rgba(0,0,0,0.5)] border-transparent hover:text-black'
+              ? 'text-black border-[#eab308]'
+              : 'text-black border-transparent'
           }`}
         >
           {c.label}
