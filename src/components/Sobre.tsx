@@ -15,7 +15,8 @@ export default function Sobre() {
           <span className="inline-block text-lg highlight text-white bg-[#dc2626] px-2 py-0.5 rounded mb-3">sobre nós</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-black leading-tight mb-6">Uma paixão que virou tradição</h2>
 
-          <div className="space-y-5 text-justify font-semibold text-[rgba(0,0,0,0.6)] leading-relaxed">
+          <div className="p-5 sm:p-6 rounded-xl bg-[rgba(0,0,0,0.3)] border border-[rgba(255,255,255,0.1)]">
+            <div className="space-y-5 text-justify font-semibold text-[rgba(0,0,0,0.6)] leading-relaxed">
             <p>
               Acreditamos que uma pizza de verdade é feita com{' '}
               <span className="text-black highlight text-lg">paixão</span>. Foi desse sentimento que nasceu a La Sabore
@@ -47,13 +48,14 @@ export default function Sobre() {
             </p>
           </div>
 
-          <div className="mt-8 p-5 rounded-xl bg-[rgba(220,38,38,0.08)] border border-[rgba(220,38,38,0.15)] text-center">
+          <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-[rgba(255,255,255,0.1)] text-center">
             <p className="text-lg font-bold text-black">La Sabore Pizzaria</p>
             <p className="text-sm text-[rgba(0,0,0,0.6)] italic">
               Feita com <span className="text-black highlight text-lg">paixão</span>. Servida com{' '}
               <span className="text-black highlight text-lg">sabor</span>.
             </p>
           </div>
+        </div>
         </motion.div>
         <motion.div
           className="relative rounded-xl overflow-hidden aspect-[3/5] border border-[rgba(255,255,255,0.07)]"

@@ -2,8 +2,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import cardapio from '../data/cardapio-limpo.json'
 
+const allPizzas = cardapio.categories.find(c => c.title === 'Pizzas')?.items ?? []
+
 const catEmoji: Record<string, string> = {
   Pizzas: '🍕',
+  'Pizzas Doces': '🍫',
   Porções: '🥩',
   Bebidas: '🥤',
 }
@@ -12,7 +15,12 @@ const cats = [
   {
     id: 'Pizzas',
     label: 'Pizzas',
-    items: cardapio.categories.find(c => c.title === 'Pizzas')?.items ?? [],
+    items: allPizzas.filter(i => !i.description?.startsWith('Creme de leite')),
+  },
+  {
+    id: 'Pizzas Doces',
+    label: 'Pizzas Doces',
+    items: allPizzas.filter(i => i.description?.startsWith('Creme de leite')),
   },
   {
     id: 'Porções',
@@ -92,21 +100,21 @@ export default function Cardapio() {
                   <motion.div
                     key={item.name}
                     variants={cardAnim}
-                    className="bg-[rgba(255,255,255,0.12)] backdrop-blur-xl border border-[rgba(255,255,255,0.2)] rounded-lg overflow-hidden transition-all duration-300 hover:border-[rgba(220,38,38,0.3)] hover:-translate-y-1"
+                    className="bg-white border border-black rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1"
                   >
                     {item.image ? (
                       <div className="w-full h-20 sm:h-24 bg-white">
                         <img src={item.image} alt={item.name} className="block w-full h-full object-cover" />
                       </div>
                     ) : (
-                      <div className="w-full h-20 sm:h-24 bg-[rgba(255,255,255,0.03)] flex items-center justify-center">
+                      <div className="w-full h-20 sm:h-24 bg-[rgba(0,0,0,0.03)] flex items-center justify-center">
                         <span className="text-2xl">{catEmoji[active!]}</span>
                       </div>
                     )}
                     <div className="p-2 sm:p-3">
                       <h3 className="text-[11px] sm:text-sm font-semibold text-black leading-tight mb-0.5">{item.name}</h3>
                       {item.description && (
-                        <p className="text-[10px] sm:text-xs text-[rgba(0,0,0,0.5)] leading-relaxed mb-1 line-clamp-1">{item.description}</p>
+                        <p className="text-[10px] sm:text-xs text-[rgba(0,0,0,0.5)] leading-relaxed mb-1">{item.description}</p>
                       )}
                       <span className="text-xs sm:text-sm font-bold text-[#dc2626]">{item.price}</span>
                     </div>
