@@ -2,7 +2,7 @@ import { MapPin, Phone, Clock } from 'lucide-react'
 
 export default function Localizacao() {
   return (
-    <section id="localizacao" className="w-full flex justify-center bg-[#0d0d0d] border-t border-[rgba(255,255,255,0.03)] py-24 sm:py-28">
+    <section id="localizacao" className="w-full flex justify-center bg-[rgba(13,13,13,0.85)] border-t border-[rgba(255,255,255,0.03)] py-24 sm:py-28">
       <div className="container-section">
         <div className="text-center mb-12">
           <span className="inline-block text-lg highlight text-[#dc2626] mb-3">onde estamos</span>
