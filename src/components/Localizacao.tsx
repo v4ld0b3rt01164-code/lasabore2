@@ -14,7 +14,7 @@ export default function Localizacao() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-8 sm:gap-16">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center shrink-0">
-              <MapPin size={20} className="text-[#dc2626]" />
+              <MapPin size={20} className="text-black" />
             </div>
             <div>
               <p className="text-sm font-semibold text-black">Endereço</p>
@@ -24,7 +24,7 @@ export default function Localizacao() {
           </div>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center shrink-0">
-              <Phone size={20} className="text-[#dc2626]" />
+              <Phone size={20} className="text-black" />
             </div>
             <div>
               <p className="text-sm font-semibold text-black">Telefone</p>
@@ -33,7 +33,7 @@ export default function Localizacao() {
           </div>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center shrink-0">
-              <Clock size={20} className="text-[#dc2626]" />
+              <Clock size={20} className="text-black" />
             </div>
             <div>
               <p className="text-sm font-semibold text-black">Horários</p>

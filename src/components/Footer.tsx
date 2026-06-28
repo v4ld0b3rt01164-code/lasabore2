@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer id="contato" className="w-full flex justify-center border-t border-[rgba(255,255,255,0.04)] py-16 sm:py-20">
+    <footer id="contato" className="w-full flex justify-center bg-[rgba(10,10,10,0.5)] border-t border-[rgba(255,255,255,0.04)] py-16 sm:py-20">
       <div className="container-section">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
           <div className="text-center">
