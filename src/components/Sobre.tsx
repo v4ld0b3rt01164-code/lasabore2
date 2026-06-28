@@ -13,9 +13,9 @@ export default function Sobre() {
       <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div {...fadeIn('left')}>
           <span className="inline-block text-lg highlight text-[#dc2626] mb-3">sobre nós</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">Uma paixão que virou tradição</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-black leading-tight mb-6">Uma paixão que virou tradição</h2>
 
-          <div className="space-y-5 text-justify text-[rgba(255,255,255,0.55)] leading-relaxed">
+          <div className="space-y-5 text-justify text-[rgba(0,0,0,0.6)] leading-relaxed">
             <p>
               Acreditamos que uma pizza de verdade é feita com{' '}
               <span className="text-[#dc2626] highlight text-lg">paixão</span>. Foi desse sentimento que nasceu a La Sabore
@@ -48,8 +48,8 @@ export default function Sobre() {
           </div>
 
           <div className="mt-8 p-5 rounded-xl bg-[rgba(220,38,38,0.08)] border border-[rgba(220,38,38,0.15)] text-center">
-            <p className="text-lg font-bold text-white">La Sabore Pizzaria</p>
-            <p className="text-sm text-[rgba(255,255,255,0.6)] italic">
+            <p className="text-lg font-bold text-black">La Sabore Pizzaria</p>
+            <p className="text-sm text-[rgba(0,0,0,0.6)] italic">
               Feita com <span className="text-[#dc2626] highlight text-lg">paixão</span>. Servida com{' '}
               <span className="text-[#dc2626] highlight text-lg">sabor</span>.
             </p>

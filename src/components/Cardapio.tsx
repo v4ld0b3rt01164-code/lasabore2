@@ -50,7 +50,7 @@ function Tabs({ active, onSelect }: { active: string | null; onSelect: (id: stri
           className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
             active === c.id
               ? 'bg-[#dc2626] text-white border border-[#dc2626] shadow-[0_0_15px_rgba(220,38,38,0.3)]'
-              : 'bg-transparent text-[rgba(255,255,255,0.45)] border border-[rgba(255,255,255,0.1)] hover:text-white hover:border-[rgba(255,255,255,0.2)]'
+              : 'bg-transparent text-[rgba(0,0,0,0.5)] border border-[rgba(0,0,0,0.1)] hover:text-black hover:border-[rgba(0,0,0,0.2)]'
           }`}
         >
           {c.label}
@@ -71,8 +71,8 @@ export default function Cardapio() {
       <div className="container-section">
         <div className="text-center mb-16">
           <span className="inline-block text-lg highlight text-[#dc2626] mb-3">cardápio</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">Nosso Cardápio</h2>
-          <p className="text-sm sm:text-base text-[rgba(255,255,255,0.55)] mt-4">Clique em uma categoria para ver os itens</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-black">Nosso Cardápio</h2>
+          <p className="text-sm sm:text-base text-[rgba(0,0,0,0.6)] mt-4">Clique em uma categoria para ver os itens</p>
         </div>
         <div className="mb-12">
           <Tabs active={active} onSelect={setActive} />
@@ -104,9 +104,9 @@ export default function Cardapio() {
                       </div>
                     )}
                     <div className="p-5">
-                      <h3 className="text-lg font-semibold text-white mb-1">{item.name}</h3>
+                      <h3 className="text-lg font-semibold text-black mb-1">{item.name}</h3>
                       {item.description && (
-                        <p className="text-sm text-[rgba(255,255,255,0.45)] leading-relaxed mb-3 line-clamp-2">{item.description}</p>
+                        <p className="text-sm text-[rgba(0,0,0,0.5)] leading-relaxed mb-3 line-clamp-2">{item.description}</p>
                       )}
                       <span className="text-xl font-bold text-[#dc2626]">{item.price}</span>
                     </div>
@@ -120,7 +120,7 @@ export default function Cardapio() {
           </>
         ) : (
           <div className="text-center py-16">
-            <p className="text-white font-semibold text-base">Selecione uma categoria acima para ver o cardápio</p>
+            <p className="text-black font-semibold text-base">Selecione uma categoria acima para ver o cardápio</p>
           </div>
         )}
       </div>

@@ -6,7 +6,7 @@ export default function Localizacao() {
       <div className="container-section">
         <div className="text-center mb-12">
           <span className="inline-block text-lg highlight text-[#dc2626] mb-3">onde estamos</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">Localização</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-black">Localização</h2>
         </div>
         <div className="max-w-xl mx-auto mb-10 rounded-xl overflow-hidden">
           <img src="/images/localizacao.jpg" alt="Localização La Sabore" className="w-full h-auto object-cover" />
@@ -17,9 +17,9 @@ export default function Localizacao() {
               <MapPin size={20} className="text-[#dc2626]" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Endereço</p>
-              <p className="text-sm text-[rgba(255,255,255,0.55)]">Av. Leopoldo Carlos de Oliveira, 668</p>
-              <p className="text-sm text-[rgba(255,255,255,0.55)]">Centro - Miguelópolis - SP</p>
+              <p className="text-sm font-semibold text-black">Endereço</p>
+              <p className="text-sm text-[rgba(0,0,0,0.6)]">Av. Leopoldo Carlos de Oliveira, 668</p>
+              <p className="text-sm text-[rgba(0,0,0,0.6)]">Centro - Miguelópolis - SP</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -27,8 +27,8 @@ export default function Localizacao() {
               <Phone size={20} className="text-[#dc2626]" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Telefone</p>
-              <p className="text-sm text-[rgba(255,255,255,0.55)]">(16) 99231-5122</p>
+              <p className="text-sm font-semibold text-black">Telefone</p>
+              <p className="text-sm text-[rgba(0,0,0,0.6)]">(16) 99231-5122</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -36,9 +36,9 @@ export default function Localizacao() {
               <Clock size={20} className="text-[#dc2626]" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Horários</p>
-              <p className="text-sm text-[rgba(255,255,255,0.55)]">Seg - Sáb: 18h às 23h</p>
-              <p className="text-sm text-[rgba(255,255,255,0.55)]">Dom: 12h às 22h</p>
+              <p className="text-sm font-semibold text-black">Horários</p>
+              <p className="text-sm text-[rgba(0,0,0,0.6)]">Seg - Sáb: 18h às 23h</p>
+              <p className="text-sm text-[rgba(0,0,0,0.6)]">Dom: 12h às 22h</p>
             </div>
           </div>
         </div>

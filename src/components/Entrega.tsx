@@ -22,8 +22,8 @@ export default function Entrega() {
       <div className="container-section">
         <div className="text-center mb-16">
           <span className="inline-block text-lg highlight text-[#dc2626] mb-3">entrega</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">Receba em casa</h2>
-          <p className="text-sm sm:text-base text-[rgba(255,255,255,0.55)] mt-4 max-w-2xl mx-auto">Peça pelo site ou WhatsApp e acompanhe seu pedido em tempo real</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-black">Receba em casa</h2>
+          <p className="text-sm sm:text-base text-[rgba(0,0,0,0.6)] mt-4 max-w-2xl mx-auto">Peça pelo site ou WhatsApp e acompanhe seu pedido em tempo real</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {items.map((item, i) => (
@@ -39,8 +39,8 @@ export default function Entrega() {
               <div className="w-12 h-12 rounded-lg bg-[rgba(220,38,38,0.1)] flex items-center justify-center mb-5 mx-auto sm:mx-0">
                 <item.icon size={24} className="text-[#dc2626]" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2 text-center sm:text-left">{item.title}</h3>
-              <p className="text-sm text-[rgba(255,255,255,0.55)] leading-relaxed text-center sm:text-left">{item.desc}</p>
+              <h3 className="text-lg font-semibold text-black mb-2 text-center sm:text-left">{item.title}</h3>
+              <p className="text-sm text-[rgba(0,0,0,0.6)] leading-relaxed text-center sm:text-left">{item.desc}</p>
             </motion.div>
           ))}
         </div>
