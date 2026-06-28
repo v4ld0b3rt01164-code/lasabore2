@@ -9,7 +9,7 @@ const fadeIn = (dir: 'left' | 'right') => ({
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="w-full flex justify-center bg-[rgba(13,13,13,0.7)] border-t border-[rgba(255,255,255,0.03)] py-24 sm:py-28">
+    <section id="sobre" className="w-full flex justify-center border-t border-[rgba(255,255,255,0.03)] py-24 sm:py-28">
       <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div {...fadeIn('left')}>
           <span className="inline-block text-lg highlight text-[#dc2626] mb-3">sobre nós</span>

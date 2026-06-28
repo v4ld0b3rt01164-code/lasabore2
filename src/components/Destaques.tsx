@@ -18,7 +18,7 @@ const card = {
 
 export default function Destaques() {
   return (
-    <section className="w-full flex justify-center bg-[rgba(10,10,10,0.7)] py-24 sm:py-28">
+    <section className="w-full flex justify-center py-24 sm:py-28">
       <div className="container-section">
         <div className="text-center mb-16">
           <span className="inline-block text-lg highlight text-[#dc2626] mb-3">diferenciais</span>

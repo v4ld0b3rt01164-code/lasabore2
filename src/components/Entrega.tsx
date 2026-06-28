@@ -18,7 +18,7 @@ const card = {
 
 export default function Entrega() {
   return (
-    <section id="entrega" className="w-full flex justify-center bg-[rgba(10,10,10,0.7)] py-24 sm:py-28">
+    <section id="entrega" className="w-full flex justify-center py-24 sm:py-28">
       <div className="container-section">
         <div className="text-center mb-16">
           <span className="inline-block text-lg highlight text-[#dc2626] mb-3">entrega</span>
