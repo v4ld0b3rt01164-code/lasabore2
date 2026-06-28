@@ -9,49 +9,49 @@
       "title": "CERVEJA",
       "items": [
         {
-          "name": "CERVEJA AMSTEL ULTRA",
+          "name": "Cerveja Amstel Ultra",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/amstel-ultra.jpg"
         },
         {
-          "name": "CERVEJA AMSTEL",
+          "name": "Cerveja Amstel",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/amstel.jpg"
         },
         {
-          "name": "CERVEJA ANTARCTICA BOA",
+          "name": "Cerveja Antarctica Boa",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/boa.jpg"
         },
         {
-          "name": "CERVEJA BRAHMA",
+          "name": "Cerveja Brahma",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/brahma.jpg"
         },
         {
-          "name": "CERVEJA HEINEKEN",
+          "name": "Cerveja Heineken",
           "description": "Lata 350ml",
           "price": "R$ 9,00",
           "image": "/images/cardapio/heineken.jpg"
         },
         {
-          "name": "CERVEJA HEINEKEN ZERO ÁLCOOL",
+          "name": "Cerveja Heineken Zero Álcool",
           "description": "Lata 350ml",
           "price": "R$ 9,00",
           "image": "/images/cardapio/heineken-zero.jpg"
         },
         {
-          "name": "CERVEJA SKOL",
+          "name": "Cerveja Skol",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/skol.jpg"
         },
         {
-          "name": "CERVEJA STELLA ARTOIS GOLD",
+          "name": "Cerveja Stella Artois Gold",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
           "image": "/images/cardapio/stella-gold.png"
@@ -62,55 +62,43 @@
       "title": "Porções",
       "items": [
         {
-          "name": "CAMARÃO RECHEADO EMPANADO",
+          "name": "Camarão recheado empanado",
           "description": "",
           "price": "R$ 69,00",
           "image": "/images/cardapio/camarao.jpg"
         },
         {
-          "name": "FRITAS COM CHEDDAR E BACON - INTEIRA",
+          "name": "Fritas com cheddar e bacon",
           "description": "",
           "price": "R$ 40,00",
           "image": "/images/cardapio/unsplash-porcao-001.jpg"
         },
-        {
-          "name": "FRITAS COM CHEDDAR E BACON - MEIA PORÇÃO",
-          "description": "",
-          "price": "R$ 35,00",
-          "image": "/images/cardapio/unsplash-porcao-001.jpg"
-        },
-        {
-          "name": "FRITAS INTEIRA",
+                {
+          "name": "Fritas",
           "description": "",
           "price": "R$ 35,00",
           "image": "/images/cardapio/fritas.jpg"
         },
-        {
-          "name": "FRITAS - MEIA PORÇÃO",
-          "description": "",
-          "price": "R$ 25,00",
-          "image": "/images/cardapio/fritas.jpg"
-        },
-        {
-          "name": "MANDIOCA FRITA",
+                {
+          "name": "Mandioca frita",
           "description": "",
           "price": "R$ 20,00",
           "image": "/images/cardapio/unsplash-porcao-003.jpg"
         },
         {
-          "name": "PASTELZINHO DE CAMARÃO",
+          "name": "Pastelzinho de camarão",
           "description": "",
           "price": "R$ 32,00",
           "image": "/images/cardapio/unsplash-porcao-005.jpg"
         },
         {
-          "name": "PASTELZINHO DE CARNE",
+          "name": "Pastelzinho de carne",
           "description": "",
           "price": "R$ 30,00",
           "image": "/images/cardapio/unsplash-porcao-005.jpg"
         },
         {
-          "name": "PASTELZINHO DE QUEIJO",
+          "name": "Pastelzinho de queijo",
           "description": "",
           "price": "R$ 30,00",
           "image": "/images/cardapio/unsplash-porcao-005.jpg"
@@ -342,13 +330,13 @@
       "title": "Refrigerantes",
       "items": [
         {
-          "name": "AGUA MINERAL",
+          "name": "Água mineral",
           "description": "Garrafa 500ml",
           "price": "R$ 3,00",
           "image": "/images/cardapio/agua-crystal.jpg"
         },
         {
-          "name": "ÁGUA MINERAL COM GÁS",
+          "name": "Água mineral com gás",
           "description": "Garrafa 500ml",
           "price": "R$ 3,00",
           "image": "/images/cardapio/crystal-gas.jpeg"

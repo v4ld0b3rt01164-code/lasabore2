@@ -1,23 +1,83 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'SugarPeachy';
+  src: url('/fonts/SugarPeachy-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SugarPeachy';
+  src: url('/fonts/SugarPeachy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SugarPeachy';
+  src: url('/fonts/SugarPeachy-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-bg: #d4ed31;
+  --color-ink: #121212;
+  --color-ink-muted: rgba(18, 18, 18, 0.65);
+  --color-ink-dim: rgba(18, 18, 18, 0.45);
+  --color-card: #FFFFFF;
+  --color-card-elev: #1a1a1a;
+
+  --color-italia-green: #009246;
+  --color-italia-white: #FFFFFF;
+  --color-italia-red: #DC2626;
+
+  --color-amber: #F3A20F;
+  --color-amber-deep: #FFAE1C;
+  --color-yellow-pastel: #F0BB0D;
+  --color-orange-earth: #F97028;
+  --color-pink-pastel: #F489A3;
+  --color-wine: #811933;
+  --color-red-accent: #EA384C;
+
+  --font-display: 'SugarPeachy', 'Inter', sans-serif;
+  --font-body: 'Quicksand', 'Inter', sans-serif;
+}
+
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     scroll-padding-top: 5rem;
   }
 
   body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(90deg, #009246 33.33%, #ffffff 33.33%, #ffffff 66.66%, #dc2626 66.66%);
-    background-attachment: fixed;
-    color: #ffffff;
+    font-family: 'Quicksand', 'Inter', sans-serif;
+    background-color: #d4ed31;
+    color: #121212;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   ::selection {
-    background-color: #dc2626;
-    color: #ffffff;
+    background-color: #DC2626;
+    color: #FFFFFF;
   }
 
   img {
@@ -32,6 +92,21 @@
   img[loading="lazy"][complete] {
     opacity: 1;
   }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  html {
+    scrollbar-width: none;
+  }
+}
+
+@utility display {
+  font-family: 'SugarPeachy', 'Inter', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
 }
 
 @utility highlight {
@@ -42,20 +117,30 @@
 
 @utility container-section {
   width: 100%;
-  max-width: 72rem;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 
-  @media (width >= 40rem) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  @media (width >= 48rem) {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   @media (width >= 64rem) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@utility section-pad {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+
+  @media (width >= 48rem) {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
   }
 }
 
@@ -70,4 +155,12 @@
 
 .animate-bounce-down {
   animation: bounce-down 2s infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }

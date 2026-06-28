@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { X } from 'lucide-react'
 import cardapio from '../data/cardapio-limpo.json'
 
 const allPizzas = cardapio.categories.find(c => c.title === 'Pizzas')?.items ?? []
@@ -19,7 +20,7 @@ const cats = [
   },
   {
     id: 'Pizzas Doces',
-    label: 'Pizzas Doces',
+    label: 'Doces',
     items: allPizzas.filter(i => i.description?.startsWith('Creme de leite')),
   },
   {
@@ -39,26 +40,26 @@ const cats = [
 
 const gridAnim = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { staggerChildren: 0.08 } },
+  animate: { opacity: 1, transition: { staggerChildren: 0.05 } },
   exit: { opacity: 0, transition: { duration: 0.15 } },
 }
 
 const cardAnim = {
-  initial: { opacity: 0, y: 16 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' as const } },
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' as const } },
 }
 
-function Tabs({ active, onSelect }: { active: string | null; onSelect: (id: string) => void }) {
+function Tabs({ active, onSelect }: { active: string; onSelect: (id: string) => void }) {
   return (
-    <div className="flex justify-center border-b border-[rgba(0,0,0,0.1)]">
+    <div className="flex flex-wrap justify-center gap-2">
       {cats.map(c => (
         <button
           key={c.id}
           onClick={() => onSelect(c.id)}
-          className={`px-4 sm:px-6 py-2.5 text-sm font-medium transition-all duration-200 border-b-2 ${
+          className={`px-4 sm:px-6 py-2.5 text-sm font-bold rounded-full transition-all duration-200 border ${
             active === c.id
-              ? 'text-black border-[#eab308]'
-              : 'text-black border-transparent'
+              ? 'bg-[#121212] text-[#d4ed31] border-[#121212]'
+              : 'bg-transparent text-[#121212]/70 border-[#121212]/15 hover:border-[#121212]/40'
           }`}
         >
           {c.label}
@@ -69,67 +70,123 @@ function Tabs({ active, onSelect }: { active: string | null; onSelect: (id: stri
 }
 
 export default function Cardapio() {
-  const [active, setActive] = useState<string | null>(null)
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState<string>('Pizzas')
 
   const activeCat = cats.find(c => c.id === active)
   const items = activeCat?.items ?? []
 
   return (
-    <section id="cardapio" className="w-full flex justify-center border-t border-[rgba(255,255,255,0.03)] py-24 sm:py-28">
+    <section
+      id="sabores"
+      className="w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28"
+    >
       <div className="container-section">
-        <div className="text-center mb-16">
-          <span className="inline-block text-lg highlight text-white bg-[#dc2626] px-2 py-0.5 rounded mb-3">cardápio</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-black">Nosso Cardápio</h2>
+        <div className="mb-10 sm:mb-12 text-center">
+          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
+            // sabores
+          </span>
+          <h2 className="display text-[#121212] text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-8">
+            Escolha sua próxima <span className="text-[#DC2626]">fome</span>
+          </h2>
+          <button
+            onClick={() => setOpen(true)}
+            className="inline-flex items-center bg-[#DC2626] text-white text-sm sm:text-base font-bold px-8 py-3.5 rounded-full hover:bg-[#EA384C] transition-colors"
+          >
+            Ver Cardápio
+          </button>
         </div>
-        {active ? (
-          <>
-            <div className="mb-8">
-              <Tabs active={active} onSelect={setActive} />
-            </div>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                variants={gridAnim}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
-              >
-                {items.map(item => (
-                  <motion.div
-                    key={item.name}
-                    variants={cardAnim}
-                    className="bg-white border border-black rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1"
-                  >
-                    {item.image ? (
-                      <div className="w-full h-20 sm:h-24 bg-white">
-                        <img src={item.image} alt={item.name} className="block w-full h-full object-cover" />
-                      </div>
-                    ) : (
-                      <div className="w-full h-20 sm:h-24 bg-[rgba(0,0,0,0.03)] flex items-center justify-center">
-                        <span className="text-2xl">{catEmoji[active!]}</span>
-                      </div>
-                    )}
-                    <div className="p-2 sm:p-3">
-                      <h3 className="text-[11px] sm:text-sm font-semibold text-black leading-tight mb-0.5">{item.name}</h3>
-                      {item.description && (
-                        <p className="text-[10px] sm:text-xs text-[rgba(0,0,0,0.5)] leading-relaxed mb-1">{item.description}</p>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-            <div className="mt-8">
-              <Tabs active={active} onSelect={setActive} />
-            </div>
-          </>
-        ) : (
-          <div className="text-center py-16">
-            <button onClick={() => setActive('Pizzas')} className="bg-[#dc2626] text-white text-base font-semibold px-8 py-3 rounded-lg hover:bg-[#b91c1c] transition-all duration-300 shadow-[0_0_20px_rgba(220,38,38,0.3)]">Ver Cardápio</button>
-          </div>
-        )}
       </div>
+
+      <AnimatePresence>
+        {open && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setOpen(false)}
+              className="fixed inset-0 z-40 bg-[rgba(18,18,18,0.6)] backdrop-blur-sm"
+            />
+            {/* Drawer slides from right */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', ease: [0.625, 0.05, 0, 1], duration: 0.5 }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-2xl bg-[#d4ed31] overflow-y-auto"
+            >
+              <div className="sticky top-0 z-10 bg-[#d4ed31]/95 backdrop-blur-md border-b border-[#121212]/10 px-5 sm:px-8 py-4 flex items-center justify-between">
+                <span className="display text-2xl text-[#121212]">Cardápio</span>
+                <button
+                  onClick={() => setOpen(false)}
+                  aria-label="Fechar"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-[#121212]/5 hover:bg-[#121212]/10 transition-colors"
+                >
+                  <X size={20} className="text-[#121212]" />
+                </button>
+              </div>
+
+              <div className="px-5 sm:px-8 py-6">
+                <div className="mb-8">
+                  <Tabs active={active} onSelect={setActive} />
+                </div>
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={active}
+                    variants={gridAnim}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+                  >
+                    {items.map(item => (
+                      <motion.div
+                        key={item.name}
+                        variants={cardAnim}
+                        className="group bg-white border border-[#121212]/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-[#121212]/30 hover:-translate-y-1 flex flex-col"
+                      >
+                        {(item.image || catEmoji[active]) && (
+                          <div className="w-full h-32 bg-[#f5f5f5] overflow-hidden shrink-0">
+                            {item.image ? (
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                className="block w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                              />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center">
+                                <span className="text-4xl opacity-80">{catEmoji[active]}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                        <div className="p-4 flex-1">
+                          <h3 className="text-sm font-bold text-[#121212] leading-tight mb-1">
+                            {item.name}
+                          </h3>
+                          {item.description && (
+                            <p className="text-xs text-[#121212]/65 leading-relaxed">
+                              {item.description}
+                            </p>
+                          )}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
+
+                <div className="mt-8">
+                  <Tabs active={active} onSelect={setActive} />
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
