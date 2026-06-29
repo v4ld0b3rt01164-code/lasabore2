@@ -65,15 +65,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Imagem decorativa — centro-direita */}
-      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-end pr-4 sm:pr-8 lg:pr-16">
-        <img
-          src="/images/hero-img.png"
-          alt=""
-          className="w-1/2 max-w-xs sm:max-w-sm lg:max-w-md h-auto object-contain opacity-40"
-        />
-      </div>
-
       {/* Pizza hero — centro-esquerda */}
       <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-start pl-4 sm:pl-8 lg:pl-16">
         <img
