@@ -67,6 +67,7 @@ export default function Destaques() {
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
               variants={card}
+              style={{ opacity: 1 }}
               className="group bg-white/75 border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
             >
               <div

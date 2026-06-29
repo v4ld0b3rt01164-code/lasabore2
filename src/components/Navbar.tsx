@@ -20,7 +20,7 @@ export default function Navbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center bg-[#121212]">
         <div className="container-section flex items-center justify-between">
-          <a href="#" className="display text-[#F3ECD2] text-2xl">
+          <a href="#" className="display text-white text-2xl">
             La&nbsp;Sabore
           </a>
           <div className="hidden md:flex items-center gap-8">
@@ -28,7 +28,7 @@ export default function Navbar() {
               <a
                 key={l.label}
                 href={l.href}
-                className="text-sm font-bold text-[#F3ECD2]/80 hover:text-[#F3ECD2] transition-colors"
+                className="text-sm font-bold text-white/80 hover:text-white transition-colors"
               >
                 {l.label}
               </a>
@@ -44,7 +44,7 @@ export default function Navbar() {
               Peça Agora
             </a>
             <button
-              className="md:hidden text-[#F3ECD2]"
+              className="md:hidden text-white"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Menu"
             >
@@ -59,7 +59,7 @@ export default function Navbar() {
             <a
               key={l.label}
               href={l.href}
-              className="display text-2xl text-[#F3ECD2] hover:text-[#DC2626] transition-colors"
+              className="display text-2xl text-white hover:text-[#DC2626] transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {l.label}
