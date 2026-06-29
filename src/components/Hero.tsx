@@ -15,19 +15,10 @@ export default function Hero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-      tl.from('[data-hero-logo]', { opacity: 0, y: -20, duration: 0.8 })
-        .from('[data-hero-line]', {
-          opacity: 0,
-          y: 40,
-          duration: 0.9,
-        }, '-=0.2')
-        .from('[data-hero-pizza]', {
-          opacity: 0,
-          x: -100,
-          duration: 0.9,
-          ease: 'power3.out',
-        }, '-=0.3')
-        .from('[data-hero-scroll]', { opacity: 0, duration: 0.6 }, '-=0.2')
+      tl.fromTo('[data-hero-logo]', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.8 })
+        .fromTo('[data-hero-line]', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9 }, '-=0.2')
+        .fromTo('[data-hero-pizza]', { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' }, '-=0.3')
+        .fromTo('[data-hero-scroll]', { opacity: 0 }, { opacity: 1, duration: 0.6 }, '-=0.2')
     }, rootRef)
 
     return () => ctx.revert()
@@ -41,7 +32,7 @@ export default function Hero() {
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
         {/* right — topo direita — entra as cores (down) */}
-        <div className="absolute top-6 sm:top-2 md:top-0 right-[-1em] sm:right-[-2em] md:right-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
+        <div className="hero-rainbow absolute top-6 sm:top-2 md:top-0 right-[-1em] sm:right-[-2em] md:right-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
           <RainbowBars
             className="aspect-[321/626] w-full"
             variant="curve"
@@ -56,7 +47,7 @@ export default function Hero() {
           />
         </div>
         {/* left — espelho (scale -1), bottom esquerda — entra as cores (down) */}
-        <div className="absolute bottom-[-3em] sm:bottom-[-4em] md:bottom-[-6em] left-[-1em] sm:left-[-2em] md:left-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90 -scale-100">
+        <div className="hero-rainbow absolute bottom-[-3em] sm:bottom-[-4em] md:bottom-[-6em] left-[-1em] sm:left-[-2em] md:left-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90 -scale-100">
           <RainbowBars
             className="aspect-[321/626] w-full"
             variant="curve"
@@ -76,7 +67,7 @@ export default function Hero() {
         <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Logo + headline */}
           <div className="text-center flex flex-col items-center -mt-4 sm:mt-0">
-            <a href="#" data-hero-logo>
+            <a href="#" data-hero-logo className="opacity-0">
               <img
                 src="/images/logo-hero.png"
                 alt="La Sabore"
@@ -85,7 +76,7 @@ export default function Hero() {
             </a>
             <h1
               data-hero-line
-            className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-3 sm:mt-4"
+            className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-3 sm:mt-4 opacity-0"
           >
             <span className="whitespace-nowrap">Sua pizza artesanal em</span><br />
               <span className="text-[#DC2626]">Miguelópolis</span>
@@ -93,7 +84,7 @@ export default function Hero() {
           </div>
 
           {/* Pizza hero */}
-          <div data-hero-pizza className="w-full flex justify-center lg:justify-end">
+          <div data-hero-pizza className="w-full flex justify-center lg:justify-end opacity-0">
             <img
               src="/images/pizza-hero.png"
               alt="Pizza artesanal La Sabore"
@@ -107,12 +98,25 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div
         data-hero-scroll
-        className="relative z-10 pb-8 flex justify-center"
+        className="relative z-10 pb-8 flex justify-center opacity-0"
       >
         <div className="animate-bounce-down">
           <ChevronDown size={24} className="text-[#121212]/40" />
         </div>
       </div>
+
+      {/* Mobile: desenha rainbows na carga via CSS (sem tocar no RainbowBars) */}
+      <style>{`
+        @media (max-width: 639px) {
+          @keyframes heroRainbowDraw {
+            from { stroke-dashoffset: 10000px; }
+            to   { stroke-dashoffset: 0px; }
+          }
+          .hero-rainbow [data-bar-fill] {
+            animation: heroRainbowDraw 1.2s ease-out 0.3s both;
+          }
+        }
+      `}</style>
     </section>
   )
 }

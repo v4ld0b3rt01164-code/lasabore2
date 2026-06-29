@@ -130,3 +130,6 @@ npm run lint      # oxlint
 - Modificar o RainbowBars.tsx quebra o site inteiro (tela preta) — qualquer alteração no lifecycle do GSAP dentro dele é instável
 - `window.innerWidth` sem useState/useEffect tbm causou tela preta — possivelmente conflito com Lenis + ScrollTrigger
 - Solução alternativa: animar SVGs duplicados via CSS `@keyframes` no mobile, ou aceitar que rainbow só anima com scroll em todos os breakpoints
+- Animação mobile: CSS `@keyframes` no Hero.tsx via `<style>` tag — anima `stroke-dashoffset` de 10000px a 0 nas `.hero-rainbow [data-bar-fill]`. Não toca nos props do RainbowBars. Desktop continua com ScrollTrigger scrub.
+- `npx wrangler pages deploy` com `--commit-hash=$(git rev-parse HEAD)` força upload correto dos assets
+- Cloudflare Pages **git integration** deve ter output directory = `dist/` (config no dashboard), senão o auto-build serve o `index.html` da raiz (com `/src/main.tsx`) em vez do `dist/index.html`
