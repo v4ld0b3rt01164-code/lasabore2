@@ -17,7 +17,7 @@ const items = [
   {
     icon: Clock,
     title: 'Horários',
-    lines: ['Ter a Sex · 18h às 23h', 'Sáb · 18h às 23h59', 'Dom · 18h às 23h', 'Seg · Fechado'],
+    lines: ['Ter a Sex · 18h às 23h', 'Sáb · 18h às 23h59', 'Dom · 18h às 23h'],
     accent: '#F0BB0D',
   },
 ]
@@ -46,28 +46,28 @@ export default function Localizacao() {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center">
+        <div className="flex flex-col sm:flex-row items-start justify-center">
           {items.map((item, index) => (
-            <div key={item.title} className="flex items-start sm:items-center">
+            <div key={item.title} className="flex items-start">
               {index > 0 && (
-                <span className="hidden sm:block text-black/20 mx-6 select-none">|</span>
+                <span className="hidden sm:block text-black mx-6 select-none">|</span>
               )}
               <div className={index === 0 ? '' : ''}>
                 <div className="flex items-center gap-3 mb-1">
                   <item.icon size={18} className="text-black shrink-0" />
-                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-black/55">
+                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-black">
                     {item.title}
                   </p>
                 </div>
                 {item.href ? (
                   <a href={item.href} target="_blank" rel="noopener noreferrer" className="block">
                     {item.lines.map((line, i) => (
-                      <p key={i} className={`text-sm font-medium leading-relaxed ${i === 0 ? 'text-black' : 'text-black/65'}`}>{line}</p>
+                      <p key={i} className="text-sm font-medium leading-relaxed text-black">{line}</p>
                     ))}
                   </a>
                 ) : (
                   item.lines.map((line, i) => (
-                    <p key={i} className={`text-sm font-medium leading-relaxed ${i === 0 ? 'text-black' : 'text-black/65'}`}>{line}</p>
+                    <p key={i} className="text-sm font-medium leading-relaxed text-black">{line}</p>
                   ))
                 )}
               </div>
