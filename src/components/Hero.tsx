@@ -65,15 +65,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Pizza hero — centro-esquerda */}
-      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-start pl-4 sm:pl-8 lg:pl-16">
-        <img
-          src="/images/pizza-hero.png"
-          alt="Pizza artesanal La Sabore"
-          className="w-1/3 max-w-[200px] sm:max-w-xs lg:max-w-sm h-auto object-contain"
-        />
-      </div>
-
       {/* Conteúdo: logo + headline | pizza */}
       <div className="relative z-10 flex-1 flex items-center pt-4 sm:pt-16 lg:pt-24">
         <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
