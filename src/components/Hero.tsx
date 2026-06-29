@@ -21,6 +21,12 @@ export default function Hero() {
           y: 40,
           duration: 0.9,
         }, '-=0.2')
+        .from('[data-hero-pizza]', {
+          opacity: 0,
+          x: -100,
+          duration: 0.9,
+          ease: 'power3.out',
+        }, '-=0.3')
         .from('[data-hero-scroll]', { opacity: 0, duration: 0.6 }, '-=0.2')
     }, rootRef)
 
@@ -87,7 +93,7 @@ export default function Hero() {
           </div>
 
           {/* Pizza hero */}
-          <div className="w-full flex justify-center lg:justify-end">
+          <div data-hero-pizza className="w-full flex justify-center lg:justify-end">
             <img
               src="/images/pizza-hero.png"
               alt="Pizza artesanal La Sabore"
