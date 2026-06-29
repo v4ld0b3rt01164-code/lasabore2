@@ -126,3 +126,7 @@ npm run lint      # oxlint
 - Cards usam `bg-white` sólido (sem transparência) para evitar oscilação visual ao scrollar sobre rainbows animadas
 - GSAP `gsap.context()` + `ctx.revert()` no useEffect
 - DrawSVGPlugin pago — efeito recriado com `strokeDasharray`/`strokeDashoffset`
+- RainbowBars NÃO pode receber novos props nem re-renderizar — `gsap.context()` + `ctx.revert()` corrompe o SVG inline se o prop `scrub` mudar, causando tela preta
+- Modificar o RainbowBars.tsx quebra o site inteiro (tela preta) — qualquer alteração no lifecycle do GSAP dentro dele é instável
+- `window.innerWidth` sem useState/useEffect tbm causou tela preta — possivelmente conflito com Lenis + ScrollTrigger
+- Solução alternativa: animar SVGs duplicados via CSS `@keyframes` no mobile, ou aceitar que rainbow só anima com scroll em todos os breakpoints
