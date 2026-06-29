@@ -79,7 +79,7 @@ export default function Sobre() {
         </motion.div>
 
         <motion.div
-          className="overflow-hidden rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
+          className="overflow-hidden rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.25)] max-w-sm lg:max-w-md mx-auto"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-80px' }}

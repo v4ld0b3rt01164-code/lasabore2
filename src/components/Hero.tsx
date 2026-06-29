@@ -70,38 +70,34 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Top bar: logo */}
-      <div className="relative z-10 pt-12 sm:pt-16 flex justify-center">
-        <a href="#" data-hero-logo>
-          <img
-            src="/images/logo.png"
-            alt="La Sabore"
-            className="h-24 sm:h-32 lg:h-40 w-auto object-contain"
-          />
-        </a>
-      </div>
-
-      {/* Conteúdo: headline | foto pizza (desliza da direita) */}
+      {/* Conteúdo: logo + headline | foto pizza */}
       <div className="relative z-10 flex-1 flex items-center">
         <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Headline + logo acima */}
-          <div className="text-center lg:text-left">
+          {/* Logo + headline */}
+          <div className="text-center">
+            <a href="#" data-hero-logo>
+              <img
+                src="/images/logo.png"
+                alt="La Sabore"
+                className="h-32 sm:h-44 lg:h-60 w-auto object-contain mx-auto"
+              />
+            </a>
             <h1
               data-hero-line
-              className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95]"
+              className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-4 sm:mt-6"
             >
               Sua pizza artesanal em{' '}
               <span className="text-[#DC2626]">Miguelópolis</span>
             </h1>
           </div>
 
-          {/* Foto da pizza — desliza da direita, espelhada, com sombra difusa */}
+          {/* Foto da pizza — desliza da direita, espelhada, sombra quase sólida */}
           <div data-hero-photo className="w-full">
             <img
               src="/images/pizza-hero.png"
               alt="Pizza artesanal La Sabore"
-              className="w-full max-w-xl lg:max-w-2xl mx-auto lg:ml-auto h-auto object-contain -scale-x-100"
-              style={{ filter: 'drop-shadow(0 16px 32px rgba(18,18,18,0.45))' }}
+              className="w-full max-w-2xl lg:max-w-3xl mx-auto lg:ml-auto h-auto object-contain -scale-x-100"
+              style={{ filter: 'drop-shadow(4px 4px 1px rgba(18,18,18,0.85))' }}
             />
           </div>
         </div>
