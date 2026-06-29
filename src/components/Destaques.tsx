@@ -36,7 +36,7 @@ export default function Destaques() {
   return (
     <section className="relative w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28 overflow-hidden">
       {/* 9 bars on the right edge (italian flag, straight, scrub) */}
-      <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 pointer-events-none opacity-90 hidden md:block">
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 pointer-events-none opacity-90">
         <RainbowBars
           className="w-full h-full"
           variant="straight"
@@ -68,7 +68,7 @@ export default function Destaques() {
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
               variants={card}
-              className="group bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
+              className="group bg-white/75 border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"

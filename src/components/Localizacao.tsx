@@ -77,14 +77,14 @@ export default function Localizacao() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
+                className="block bg-white/80 border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
               >
                 {Inner}
               </a>
             ) : (
               <div
                 key={item.title}
-                className="bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#121212]/25"
+                className="bg-white/80 border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#121212]/25"
               >
                 {Inner}
               </div>

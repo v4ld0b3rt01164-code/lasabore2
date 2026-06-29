@@ -39,9 +39,9 @@ export default function Hero() {
       className="relative min-h-screen w-full overflow-hidden bg-[#d4ed31] flex flex-col"
     >
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
-      <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
+      <div className="pointer-events-none absolute inset-0 z-0">
         {/* right — topo direita — entra as cores (down) */}
-        <div className="absolute top-0 right-[-3em] w-[18em] h-auto opacity-90">
+        <div className="absolute top-0 right-[-1em] sm:right-[-2em] md:right-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
           <RainbowBars
             className="aspect-[321/626] w-full"
             variant="curve"
@@ -55,7 +55,7 @@ export default function Hero() {
           />
         </div>
         {/* left — espelho (scale -1), bottom esquerda — entra as cores (down) */}
-        <div className="absolute bottom-[-6em] left-[-3em] w-[18em] h-auto opacity-90 -scale-100">
+        <div className="absolute bottom-[-3em] sm:bottom-[-4em] md:bottom-[-6em] left-[-1em] sm:left-[-2em] md:left-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90 -scale-100">
           <RainbowBars
             className="aspect-[321/626] w-full"
             variant="curve"
@@ -71,13 +71,13 @@ export default function Hero() {
       </div>
 
       {/* Conteúdo: logo + headline | foto pizza */}
-      <div className="relative z-10 flex-1 flex items-center">
+      <div className="relative z-10 flex-1 flex items-center pt-20 sm:pt-24">
         <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Logo + headline */}
           <div className="text-center">
             <a href="#" data-hero-logo>
               <img
-                src="/images/logo.png"
+                src="/images/logo-hero.png"
                 alt="La Sabore"
                 className="h-32 sm:h-44 lg:h-60 w-auto object-contain mx-auto"
               />

@@ -15,7 +15,7 @@ export default function Sobre() {
       className="relative w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28 overflow-hidden"
     >
       {/* 9 bars on the left edge (italian flag, straight, scrub) */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 pointer-events-none opacity-90 hidden md:block">
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 pointer-events-none opacity-90 hidden sm:block">
         <RainbowBars
           className="w-full h-full"
           variant="straight"
@@ -79,7 +79,7 @@ export default function Sobre() {
         </motion.div>
 
         <motion.div
-          className="overflow-hidden rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.25)] max-w-sm lg:max-w-md mx-auto"
+          className="overflow-hidden rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.25)] max-w-xs lg:max-w-sm mx-auto"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-80px' }}

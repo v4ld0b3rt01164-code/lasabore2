@@ -2,14 +2,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
@@ -25,20 +18,9 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center transition-colors duration-300 ${
-          scrolled
-            ? 'backdrop-blur-xl bg-[rgba(212,237,49,0.88)] border-b border-[rgba(18,18,18,0.08)]'
-            : 'bg-transparent'
-        }`}
-      >
+      <nav className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center bg-[#121212]">
         <div className="container-section flex items-center justify-between">
-          <a
-            href="#"
-            className={`display text-[#121212] text-2xl transition-opacity duration-300 ${
-              scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            }`}
-          >
+          <a href="#" className="display text-[#F3ECD2] text-2xl">
             La&nbsp;Sabore
           </a>
           <div className="hidden md:flex items-center gap-8">
@@ -46,7 +28,7 @@ export default function Navbar() {
               <a
                 key={l.label}
                 href={l.href}
-                className="text-sm font-bold text-[#121212]/85 hover:text-[#121212] transition-colors"
+                className="text-sm font-bold text-[#F3ECD2]/80 hover:text-[#F3ECD2] transition-colors"
               >
                 {l.label}
               </a>
@@ -62,7 +44,7 @@ export default function Navbar() {
               Peça Agora
             </a>
             <button
-              className="md:hidden text-[#121212]"
+              className="md:hidden text-[#F3ECD2]"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Menu"
             >
@@ -72,12 +54,12 @@ export default function Navbar() {
         </div>
       </nav>
       {mobileOpen && (
-        <div className="fixed top-16 left-0 right-0 bottom-0 bg-[#d4ed31]/97 backdrop-blur-xl flex flex-col items-center justify-center gap-8 z-40 md:hidden">
+        <div className="fixed top-16 left-0 right-0 bottom-0 bg-[#121212] flex flex-col items-center justify-center gap-8 z-40 md:hidden">
           {links.map(l => (
             <a
               key={l.label}
               href={l.href}
-              className="display text-2xl text-[#121212] hover:text-[#DC2626] transition-colors"
+              className="display text-2xl text-[#F3ECD2] hover:text-[#DC2626] transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {l.label}

@@ -141,13 +141,13 @@ export default function Cardapio() {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+                    className="grid grid-cols-2 gap-3 sm:gap-4"
                   >
                     {items.map(item => (
                       <motion.div
                         key={item.name}
                         variants={cardAnim}
-                        className="group bg-white border border-[#121212]/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-[#121212]/30 hover:-translate-y-1 flex flex-col"
+                        className="group bg-white/80 border border-[#121212]/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-[#121212]/30 hover:-translate-y-1 flex flex-col"
                       >
                         {(item.image || catEmoji[active]) && (
                           <div className="w-full h-32 bg-[#f5f5f5] overflow-hidden shrink-0">
