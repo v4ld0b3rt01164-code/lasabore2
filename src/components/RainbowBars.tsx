@@ -18,6 +18,8 @@ type Props = {
   direction?: 'down' | 'up'
   /** viewport-based scrub; false = play once on enter */
   scrub?: boolean
+  /** mobile: anima na carga + scrub no scroll */
+  playOnLoad?: boolean
   /** override ScrollTrigger start (default: clamp(top bottom)) */
   scrollStart?: string
   /** override ScrollTrigger end (default: bottom top) */
@@ -38,6 +40,7 @@ export default function RainbowBars({
   scrollEnd,
   stagger = 0.0375,
   duration = 0.5,
+  playOnLoad = false,
 }: Props) {
   const rootRef = useRef<HTMLDivElement>(null)
 
@@ -54,35 +57,64 @@ export default function RainbowBars({
         path.style.strokeDashoffset = `${totalLen}`
       })
 
-      const tl = gsap.timeline({
-        scrollTrigger: scrub
-          ? {
-              trigger: root,
-              start: scrollStart ?? 'clamp(top bottom)',
-              end: scrollEnd ?? 'bottom top',
-              scrub: 0.4,
-            }
-          : {
-              trigger: root,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse',
-            },
-      })
-
-      tl.fromTo(
-        paths,
-        { strokeDashoffset: direction === 'down' ? (i: number) => paths[i].getTotalLength() : 0 },
-        {
-          strokeDashoffset: direction === 'down' ? 0 : (i: number) => paths[i].getTotalLength(),
+      if (playOnLoad) {
+        const initTl = gsap.timeline()
+        initTl.to(paths, {
+          strokeDashoffset: 0,
           duration,
           ease: 'power1.out',
           stagger,
-        },
-      )
+        })
+
+        initTl.eventCallback('onComplete', () => {
+          gsap.fromTo(
+            paths,
+            { strokeDashoffset: 0 },
+            {
+              strokeDashoffset: (i: number) => paths[i].getTotalLength(),
+              duration,
+              ease: 'power1.out',
+              stagger,
+              scrollTrigger: {
+                trigger: root,
+                start: scrollStart ?? 'clamp(top bottom)',
+                end: scrollEnd ?? 'bottom top',
+                scrub: 0.4,
+              },
+            },
+          )
+        })
+      } else {
+        const tl = gsap.timeline({
+          scrollTrigger: scrub
+            ? {
+                trigger: root,
+                start: scrollStart ?? 'clamp(top bottom)',
+                end: scrollEnd ?? 'bottom top',
+                scrub: 0.4,
+              }
+            : {
+                trigger: root,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse',
+              },
+        })
+
+        tl.fromTo(
+          paths,
+          { strokeDashoffset: direction === 'down' ? (i: number) => paths[i].getTotalLength() : 0 },
+          {
+            strokeDashoffset: direction === 'down' ? 0 : (i: number) => paths[i].getTotalLength(),
+            duration,
+            ease: 'power1.out',
+            stagger,
+          },
+        )
+      }
     }, rootRef)
 
     return () => ctx.revert()
-  }, [variant, colors, strokeWidth, outline, direction, scrub, stagger, duration])
+  }, [variant, colors, strokeWidth, outline, direction, scrub, stagger, duration, playOnLoad])
 
   // Build paths
   const count = colors.length
