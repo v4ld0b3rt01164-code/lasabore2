@@ -31,6 +31,7 @@ export default function Hero() {
     <section
       ref={rootRef}
       className="relative min-h-screen w-full overflow-hidden bg-[#5c3a2e] flex flex-col"
+      style={{ backgroundImage: 'url(/images/hero-img.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
