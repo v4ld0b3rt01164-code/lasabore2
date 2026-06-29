@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { Flame, Heart, Leaf } from 'lucide-react'
 import RainbowBars from './RainbowBars'
 
@@ -22,14 +21,6 @@ const items = [
     accent: '#F0BB0D',
   },
 ]
-
-const card = {
-  hidden: { y: 32 },
-  visible: (i: number) => ({
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.12, ease: 'easeOut' as const },
-  }),
-}
 
 export default function Destaques() {
   return (
@@ -59,15 +50,9 @@ export default function Destaques() {
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          {items.map((item, i) => (
-            <motion.div
+          {items.map((item) => (
+            <div
               key={item.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-80px' }}
-              variants={card}
-              style={{ opacity: 1 }}
               className="group bg-white/75 border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
             >
               <div
@@ -80,7 +65,7 @@ export default function Destaques() {
               <p className="text-sm text-[#121212]/65 leading-relaxed font-medium">
                 {item.desc}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -65,7 +65,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Imagem decorativa — centro-direita, metade do tamanho */}
+      {/* Imagem decorativa — centro-direita */}
       <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-end pr-4 sm:pr-8 lg:pr-16">
         <img
           src="/images/hero-img.png"
@@ -74,21 +74,30 @@ export default function Hero() {
         />
       </div>
 
+      {/* Pizza hero — centro-esquerda */}
+      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-start pl-4 sm:pl-8 lg:pl-16">
+        <img
+          src="/images/pizza-hero.png"
+          alt="Pizza artesanal La Sabore"
+          className="w-1/3 max-w-[200px] sm:max-w-xs lg:max-w-sm h-auto object-contain"
+        />
+      </div>
+
       {/* Conteúdo: logo + headline à esquerda */}
       <div className="relative z-10 flex-1 flex items-center pt-20 sm:pt-24">
-        <div className="container-section text-left">
+        <div className="container-section text-center">
           <a href="#" data-hero-logo>
             <img
               src="/images/logo.png"
               alt="La Sabore"
-              className="h-32 sm:h-44 lg:h-60 w-auto object-contain"
+              className="h-32 sm:h-44 lg:h-60 w-auto object-contain mx-auto"
             />
           </a>
           <h1
             data-hero-line
-            className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-4 sm:mt-6"
+            className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-4 sm:mt-6 text-center"
           >
-            Sua pizza artesanal em{' '}
+            Sua pizza artesanal em<br />
             <span className="text-[#DC2626]">Miguelópolis</span>
           </h1>
         </div>
