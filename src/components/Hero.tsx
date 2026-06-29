@@ -66,7 +66,7 @@ export default function Hero() {
       </div>
 
       {/* Conteúdo: logo + headline | pizza */}
-      <div className="relative z-10 flex-1 flex items-center pt-4 sm:pt-16 lg:pt-24">
+      <div className="relative z-10 flex-1 flex items-center pt-1 sm:pt-16 lg:pt-24">
         <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Logo + headline */}
           <div className="text-center lg:text-left">
@@ -74,14 +74,14 @@ export default function Hero() {
               <img
                 src="/images/logo-hero.png"
                 alt="La Sabore"
-                className="h-28 sm:h-36 lg:h-52 w-auto object-contain mx-auto lg:mx-0"
+                className="h-36 sm:h-40 lg:h-52 w-auto object-contain mx-auto lg:mx-0"
               />
             </a>
             <h1
               data-hero-line
-              className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-3 sm:mt-4"
-            >
-              Sua pizza artesanal em<br />
+            className="display text-[#121212] text-2xl sm:text-5xl lg:text-6xl leading-[0.95] mt-3 sm:mt-4"
+          >
+            <span className="whitespace-nowrap">Sua pizza artesanal em</span><br />
               <span className="text-[#DC2626]">Miguelópolis</span>
             </h1>
           </div>
@@ -91,7 +91,8 @@ export default function Hero() {
             <img
               src="/images/pizza-hero.png"
               alt="Pizza artesanal La Sabore"
-              className="w-full max-w-[220px] sm:max-w-xs lg:max-w-xl xl:max-w-2xl h-auto object-contain"
+              className="w-full max-w-[220px] sm:max-w-xs lg:max-w-xl xl:max-w-2xl h-auto object-contain lg:-scale-x-100"
+              style={{ filter: 'drop-shadow(4px 4px 2px rgba(18,18,18,0.6))' }}
             />
           </div>
         </div>
