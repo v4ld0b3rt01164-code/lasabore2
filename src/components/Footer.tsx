@@ -1,23 +1,22 @@
 export default function Footer() {
   return (
-    <footer className="w-full flex justify-center bg-[#0d0d0d] border-t border-[#121212]/10 py-16 sm:py-20">
-      <div className="container-section flex flex-col items-center text-center">
-        <a href="#" className="mb-4">
-          <img
-            src="/images/logo.png"
-            alt="La Sabore"
-            className="h-14 w-auto object-contain mx-auto"
-          />
-        </a>
-        <p className="text-sm text-white/65 leading-relaxed font-medium max-w-xs">
-          Sua pizza artesanal em Miguelópolis.
-        </p>
+    <footer className="w-full flex justify-center bg-[#0d0d0d] border-t border-[#121212]/10 py-10 sm:py-12">
+      <div className="container-section">
+        <div className="flex flex-col sm:flex-row justify-between items-start gap-8">
+          <div className="flex flex-col items-center sm:items-start">
+            <a href="#" className="mb-3">
+              <img
+                src="/images/logo.png"
+                alt="La Sabore"
+                className="h-14 w-auto object-contain"
+              />
+            </a>
+            <p className="text-sm text-white/65 leading-relaxed font-medium max-w-xs text-center sm:text-left">
+              Sua pizza artesanal em Miguelópolis.
+            </p>
+          </div>
 
-        <div className="mt-10 pt-8 border-t border-[#f0bb0d]/8 w-full">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase text-white/55 mb-4">
-            // acompanhe
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+          <div className="flex flex-col items-start sm:items-end gap-3">
             <a
               href="https://www.instagram.com/lasaboremiguelopolis/"
               target="_blank"
@@ -43,12 +42,9 @@ export default function Footer() {
               (16) 99231-5122
             </a>
           </div>
-          <p className="text-sm text-white/65 font-medium mt-4">
-            Av. Leopoldo Carlos de Oliveira, 668 — Miguelópolis, SP
-          </p>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#f0bb0d]/8 w-full">
+        <div className="mt-8 pt-6 border-t border-[#f0bb0d]/8 w-full text-center">
           <p className="text-xs text-white/45">
             © 2026 La Sabore · Todos os direitos reservados
           </p>
