@@ -74,23 +74,35 @@ export default function Hero() {
         />
       </div>
 
-      {/* Conteúdo: logo + headline à esquerda */}
-      <div className="relative z-10 flex-1 flex items-center pt-20 sm:pt-24">
-        <div className="container-section text-center">
-          <a href="#" data-hero-logo>
+      {/* Conteúdo: logo + headline | pizza */}
+      <div className="relative z-10 flex-1 flex items-center pt-4 sm:pt-16 lg:pt-24">
+        <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Logo + headline */}
+          <div className="text-center lg:text-left">
+            <a href="#" data-hero-logo>
+              <img
+                src="/images/logo-hero.png"
+                alt="La Sabore"
+                className="h-28 sm:h-36 lg:h-52 w-auto object-contain mx-auto lg:mx-0"
+              />
+            </a>
+            <h1
+              data-hero-line
+              className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-3 sm:mt-4"
+            >
+              Sua pizza artesanal em<br />
+              <span className="text-[#DC2626]">Miguelópolis</span>
+            </h1>
+          </div>
+
+          {/* Pizza hero */}
+          <div className="w-full flex justify-center lg:justify-end">
             <img
-              src="/images/logo-hero.png"
-              alt="La Sabore"
-              className="h-32 sm:h-44 lg:h-60 w-auto object-contain mx-auto"
+              src="/images/pizza-hero.png"
+              alt="Pizza artesanal La Sabore"
+              className="w-full max-w-[220px] sm:max-w-xs lg:max-w-xl xl:max-w-2xl h-auto object-contain"
             />
-          </a>
-          <h1
-            data-hero-line
-            className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-4 sm:mt-6 text-center"
-          >
-            Sua pizza artesanal em<br />
-            <span className="text-[#DC2626]">Miguelópolis</span>
-          </h1>
+          </div>
         </div>
       </div>
 
