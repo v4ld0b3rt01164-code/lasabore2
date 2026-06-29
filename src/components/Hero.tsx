@@ -21,12 +21,6 @@ export default function Hero() {
           y: 40,
           duration: 0.9,
         }, '-=0.2')
-        .from('[data-hero-photo]', {
-          opacity: 0,
-          x: 200,
-          duration: 1.1,
-          ease: 'power2.out',
-        }, '-=0.5')
         .from('[data-hero-scroll]', { opacity: 0, duration: 0.6 }, '-=0.2')
     }, rootRef)
 
@@ -37,7 +31,7 @@ export default function Hero() {
     <section
       ref={rootRef}
       className="relative min-h-screen w-full overflow-hidden bg-[#c9a87c] flex flex-col"
-      style={{ backgroundImage: 'url(/images/bg-hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -72,36 +66,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Conteúdo: logo + headline | foto pizza */}
+      {/* Conteúdo: logo + headline centrados */}
       <div className="relative z-10 flex-1 flex items-center pt-20 sm:pt-24">
-        <div className="container-section grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Logo + headline */}
-          <div className="text-center">
-            <a href="#" data-hero-logo>
-              <img
-                src="/images/logo-hero.png"
-                alt="La Sabore"
-                className="h-32 sm:h-44 lg:h-60 w-auto object-contain mx-auto"
-              />
-            </a>
-            <h1
-              data-hero-line
-              className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-4 sm:mt-6"
-            >
-              Sua pizza artesanal em{' '}
-              <span className="text-[#DC2626]">Miguelópolis</span>
-            </h1>
-          </div>
-
-          {/* Foto da pizza — desliza da direita, espelhada, sombra quase sólida */}
-          <div data-hero-photo className="w-full">
+        <div className="container-section text-center">
+          <a href="#" data-hero-logo>
             <img
-              src="/images/pizza-hero.png"
-              alt="Pizza artesanal La Sabore"
-              className="w-full max-w-2xl lg:max-w-3xl mx-auto lg:ml-auto h-auto object-contain -scale-x-100"
-              style={{ filter: 'drop-shadow(4px 4px 1px rgba(18,18,18,0.85))' }}
+              src="/images/logo-hero.png"
+              alt="La Sabore"
+              className="h-32 sm:h-44 lg:h-60 w-auto object-contain mx-auto"
             />
-          </div>
+          </a>
+          <h1
+            data-hero-line
+            className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-4 sm:mt-6"
+          >
+            Sua pizza artesanal em{' '}
+            <span className="text-[#DC2626]">Miguelópolis</span>
+          </h1>
         </div>
       </div>
 
