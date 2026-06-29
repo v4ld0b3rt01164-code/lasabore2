@@ -79,7 +79,7 @@ export default function Hero() {
         <div className="container-section text-center">
           <a href="#" data-hero-logo>
             <img
-              src="/images/logo.png"
+              src="/images/logo-hero.png"
               alt="La Sabore"
               className="h-32 sm:h-44 lg:h-60 w-auto object-contain mx-auto"
             />
