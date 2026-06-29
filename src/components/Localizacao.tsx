@@ -46,7 +46,7 @@ export default function Localizacao() {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start justify-center">
+          <div className="flex flex-col sm:flex-row items-start justify-center gap-6 sm:gap-0">
           {items.map((item, index) => (
             <div key={item.title} className="flex items-start">
               {index > 0 && (
