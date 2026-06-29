@@ -50,6 +50,7 @@ export default function Hero() {
             outline={false}
             direction="down"
             scrub
+            scrollStart="top top"
             duration={1.2}
             stagger={0.075}
           />

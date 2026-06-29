@@ -31,9 +31,8 @@ const items = [
 ]
 
 const card = {
-  hidden: { opacity: 1, y: 32 },
+  hidden: { y: 32 },
   visible: (i: number) => ({
-    opacity: 1,
     y: 0,
     transition: { duration: 0.6, delay: i * 0.12, ease: 'easeOut' as const },
   }),
@@ -67,7 +66,7 @@ export default function Entrega() {
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
               variants={card}
-              className="group bg-white/75 border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
+              className="group bg-white/75 border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"

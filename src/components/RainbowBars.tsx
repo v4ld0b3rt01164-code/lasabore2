@@ -18,6 +18,10 @@ type Props = {
   direction?: 'down' | 'up'
   /** viewport-based scrub; false = play once on enter */
   scrub?: boolean
+  /** override ScrollTrigger start (default: clamp(top bottom)) */
+  scrollStart?: string
+  /** override ScrollTrigger end (default: bottom top) */
+  scrollEnd?: string
   stagger?: number
   duration?: number
 }
@@ -30,6 +34,8 @@ export default function RainbowBars({
   outline = false,
   direction = 'down',
   scrub = true,
+  scrollStart,
+  scrollEnd,
   stagger = 0.0375,
   duration = 0.5,
 }: Props) {
@@ -52,8 +58,8 @@ export default function RainbowBars({
         scrollTrigger: scrub
           ? {
               trigger: root,
-              start: 'clamp(top bottom)',
-              end: 'bottom top',
+              start: scrollStart ?? 'clamp(top bottom)',
+              end: scrollEnd ?? 'bottom top',
               scrub: 0.4,
             }
           : {
