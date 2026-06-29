@@ -53,7 +53,7 @@ export default function Destaques() {
           {items.map((item) => (
             <div
               key={item.title}
-              className="group bg-[#f0bb0d] border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
+              className="group bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
