@@ -41,7 +41,7 @@ export default function Hero() {
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
         {/* right — topo direita — entra as cores (down) */}
-        <div className="absolute top-0 right-[-1em] sm:right-[-2em] md:right-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
+        <div className="absolute top-6 sm:top-2 md:top-0 right-[-1em] sm:right-[-2em] md:right-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
           <RainbowBars
             className="aspect-[321/626] w-full"
             variant="curve"
