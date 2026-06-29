@@ -22,8 +22,8 @@ function MobileRainbowDraw() {
           const proxy = { p: anim.totalProgress() }
           gsap.to(proxy, {
             p: 1,
-            duration: 1.2,
-            ease: 'power2.out',
+            duration: 2.4,
+            ease: 'sine.inOut',
             onUpdate: () => anim.totalProgress(proxy.p),
           })
         }
