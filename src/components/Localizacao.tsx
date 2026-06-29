@@ -77,15 +77,12 @@ export default function Localizacao() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
+                className="block"
               >
                 {Inner}
               </a>
             ) : (
-              <div
-                key={item.title}
-                className="bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25"
-              >
+              <div key={item.title} className="block">
                 {Inner}
               </div>
             )
