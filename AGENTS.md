@@ -8,24 +8,26 @@
 - **Smooth scroll:** Lenis 1.3
 - **Icons:** lucide-react 21
 - **Fonts:** SugarPeachy (display, arredondada — copiada do clone FlowFest, local em `/public/fonts/*.woff2`) + Quicksand (body) + Playfair Display italic (highlights)
-- **Deploy:** Cloudflare Pages (`npm run build` → dist/, auto via GitHub)
+- **Repo:** `github.com/v4ld0b3rt01164-code/lasabore2`
+- **Deploy:** Cloudflare Pages (`npm run build` → dist/, `npx wrangler pages deploy dist/ --project-name lasabore --branch master`)
 
-## Design Direction (Jun 2026 — Radical Layout Refactor)
-Layout inspirado no clone do FlowFest (em `flowfest-clone/`). Peça central é a **RainbowBars** (animação das 9 barras verticais SVG em cores da bandeira italiana).
+## Design Direction (Jun 2026 — Lime + Bandeira Italiana)
+Layout inspirado no clone do FlowFest (em `flowfest-clone/`). Peça central é a **RainbowBars** (3 barras SVG em cores da bandeira italiana).
 
-### Paleta
+### Paleta (light / lime)
 | Token | Hex | Uso |
 |-------|-----|-----|
-| `bg` | `#121212` | Fundo escuro do site todo (FlowFest dark) |
-| `bg-elev` | `#1a1a1a` | Cards / superfícies elevadas |
-| `cream` | `#F3ECD2` | Texto principal (FlowFest light) |
-| `cream-muted` | `rgba(243,236,210,0.65)` | Texto secundário |
-| `cream-dim` | `rgba(243,236,210,0.45)` | Texto small |
-| `italia-green` | `#009246` | Verde bandeira (1/3 das barras) |
-| `italia-white` | `#FFFFFF` | Branco bandeira (1/3 das barras) |
-| `italia-red` / accent | `#DC2626` | Vermelho bandeira (1/3 das barras) + CTAs + acentos |
-| `red-accent` | `#EA384C` | Hover vermelho (FlowFest) |
-| `amber` | `#F3A20F` | Tons pastéis/terrosos (FlowFest) |
+| `bg` | `#d4ed31` | Fundo lime do site todo |
+| `ink` | `#121212` | Texto principal / títulos |
+| `ink-muted` | `rgba(18,18,18,0.65)` | Texto secundário |
+| `ink-dim` | `rgba(18,18,18,0.45)` | Texto small |
+| `card` | `#FFFFFF` | Superfícies elevadas (cards brancos) |
+| `card-elev` | `#1a1a1a` | Cards dark (não usado no light mode atual) |
+| `italia-green` | `#009246` | Verde bandeira (1/3 barras) |
+| `italia-white` | `#FFFFFF` | Branco bandeira (1/3 barras) |
+| `italia-red` / accent | `#DC2626` | Vermelho bandeira (1/3 barras) + CTAs |
+| `red-accent` | `#EA384C` | Hover vermelho |
+| `amber` | `#F3A20F` | Tons pastéis/terrosos |
 | `amber-deep` | `#FFAE1C` | Dourado |
 | `yellow-pastel` | `#F0BB0D` | Amarelo pastel |
 | `orange-earth` | `#F97028` | Laranja terroso |
@@ -37,74 +39,86 @@ Layout inspirado no clone do FlowFest (em `flowfest-clone/`). Peça central é a
 - **Body**: Quicksand (500/700)
 - **Highlight** (`@utility highlight`): Playfair Display italic, para destaques inline (`paixão`, `sonho`, etc.)
 
-## Layout Pattern (CRITICAL)
+## Layout Pattern
 ```tsx
-<section className="w-full flex justify-center border-t border-[#F3ECD2]/8 py-24 sm:py-28">
+<section className="w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28">
   <div className="container-section">
     <!-- content -->
   </div>
 </section>
 ```
 - `container-section`: `max-w-80rem` (5xl) + px responsivo (`px-5 sm:px-12 lg:px-20`)
-- `section-pad`: `py-28 sm:py-44` (opcional, mais espaçoso)
 
 ## RainbowBars (peça central)
 `src/components/RainbowBars.tsx`
-- SVG com 9 paths: outlines pretos (`strokeWidth=52`) + 9 fills coloridos por cima (`strokeWidth=48`)
-- Cores (esquerda → direita): 3× `#009246` + 3× `#FFFFFF` + 3× `#DC2626` (bandeira italiana)
-- Animação: `strokeDasharray`/`strokeDashoffset` animado via GSAP ScrollTrigger `scrub: 0.4`
-- NÃO usa DrawSVGPlugin (Club GreenSock pago) — efeito "draw" recriado manualmente porque as linhas são retas (comprimento fixo = 600)
-- Props: `direction` (`'down'|'up'`), `scrub` (bool), `stagger`, `duration`, `className`
+- SVG com paths: outlines transparentes + fills coloridos por cima
+- **Padrão (3 barras)**: bandeira italiana `[#009246, #FFFFFF, #DC2626]` — usado nas laterais de Destaques/Sobre e nas L-curvas do Hero
+- **Perspectiva 3D (9 barras)**: `3×#009246 3×#FFFFFF 3×#DC2626` — usado no rodapé da Entrega (`rotateX(45deg)`, `perspective: 25em`)
+- Animação: `strokeDasharray`/`strokeDashoffset` via GSAP ScrollTrigger `scrub: 0.4`
+- NÃO usa DrawSVGPlugin (Club GreenSock pago) — efeito "draw" recriado manualmente
+- Props: `variant` (`'straight'|'curve'`), `colors` (array), `strokeWidth`, `outline` (bool), `direction` (`'down'|'up'`), `scrub`, `stagger`, `duration`, `className`
+- Outlines são `stroke="transparent"` (não aparecem — evita retângulos pretos cobrindo a página)
+
+### Instâncias de RainbowBars no site
+| Seção | Variant | Barras | Cores | Posição |
+|-------|---------|--------|-------|---------|
+| Hero (topo) | `curve` ×2 (espelhadas) | 3 | Bandeira ITA | L-curvas decorativas no topo |
+| Destaques | `straight` | 3 | Bandeira ITA | Lateral direita (absolute) |
+| Sobre | `straight` | 3 | Bandeira ITA | Lateral esquerda (absolute) |
+| Entrega (rodapé) | `straight` | 9 | Bandeira ITA | Perspectiva 3D abaixo dos cards |
 
 ## Componentes
 
 ### Navbar
 - `h-16`, transparente no topo → `backdrop-blur-xl bg-[rgba(18,18,18,0.88)]` após 20px scroll
-- "La Sabore" em fonte SugarPeachy (display), aparece ao scroll (`opacity-0 → 100`)
+- "La Sabore" em fonte SugarPeachy (display), aparece ao scroll
 - Links: Sabores · Entrega · Sobre · Onde estamos
 - CTA "Peça Agora" vermelho, rounded-full
-- Mobile: overlay irmão do nav (Fragment `<>`), backdrop-blur, sem texto do logo
+- Mobile: overlay irmão do nav (Fragment `<>`)
 - `transition-colors` (não `transition-all` — evita glitches no hamburger)
 
 ### Hero
-- `min-h-screen`, fundo Unsplash com `opacity-25` + gradiente overlay para `#121212`
-- Top: logo `h-16 sm:h-20` + badge "Forno a lenha · desde 2018"
-- Headline SugarPeachy gigante: "Sua pizza / artesanal em / **Miguelópolis**" (3 linhas, "Miguelópolis" em vermelho)
-- Subtítulo + 2 CTAs ("Ver sabores" sólido vermelho + "Peça agora" outline cream)
-- **RainbowBars à direita** (desktop) / acima do título (mobile)
+- `min-h-screen`, fundo `bg-[#d4ed31]` (lime)
+- **Logo** grande (`h-24 sm:h-32 lg:h-40`) centralizado no topo
+- **Headline** "Sua pizza artesanal em **Miguelópolis**" (1 linha, Miguelópolis em vermelho, `text-3xl sm:text-5xl lg:text-6xl`)
+- **Imagem** `/images/pizza-hero.png`: espelhada (`-scale-x-100`), sombra difusa (`drop-shadow(0 16px 32px rgba(18,18,18,0.45))`), desliza da direita via GSAP (`x: 200 → 0`). `max-w-xl lg:max-w-2xl`
+- **Rainbow-sides**: par de L-curvas (`curve`) no topo — direita topo (direction down) + esquerda bottom espelhada (`-scale-100`, direction down)
 - Scroll indicator: ChevronDown com `animate-bounce-down`
-- Animação entrada: timeline GSAP com stagger nas linhas do título
+- Sem botões/CTAs (removidos)
+- Animação entrada: timeline GSAP com stagger no título
 
-### Destaques
+### Destaques (id="destaques" — implícito)
 - 3 cards: Massa Artesanal (🔥 `#F97028`), Ambiente Familiar (❤️ `#F489A3`), Ingredientes Frescos (🌿 `#F0BB0D`)
-- Cards: `bg-[#1a1a1a] border border-[#F3ECD2]/10 rounded-2xl` + hover `-translate-y-1`
-- Ícone em container com cor pastel + `22` opacity (ex: `#F9702822`)
-- Heading SugarPeachy `text-2xl`, descrição Quicksand `text-sm text-[#F3ECD2]/65`
+- Cards brancos: `bg-white border border-[#121212]/10 rounded-2xl` + hover `-translate-y-1`
+- Ícone em container com cor pastel + `22` opacity
+- Heading SugarPeachy `text-2xl`, descrição Quicksand `text-sm text-[#121212]/65`
 - Label `// diferenciais` em vermelho com `tracking-[0.2em] uppercase`
+- **RainbowBars lateral direita**: 3 barras italianas, absolute, hidden no mobile
 
 ### Cardápio (id="sabores")
-- `active` começa `'Pizzas'`
-- Abas duplicadas no topo E no fim (pills `rounded-full`, ativo = `bg-[#F3ECD2] text-[#121212]`)
-- Grid: `grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4`
-- Cards `bg-[#1a1a1a] border border-[#F3ECD2]/10 rounded-xl`
-- Imagens com `group-hover:scale-105` transition
-- Fallback: emoji por categoria
-- Preços ocultos nos cards (mantidos no JSON)
+- **Título**: "O forno está aceso"
+- Drawer que abre do botão "Ver Cardápio" (desliza da direita, `ease: [0.625, 0.05, 0, 1]`)
+- Abas: Pizzas · Doces · Porções · Bebidas (pills `rounded-full`, ativo = `bg-[#121212] text-[#d4ed31]`)
+- Grid: `grid-cols-1 sm:grid-cols-2` de cards com imagem/emoji
+- `AnimatePresence mode="wait"` na troca de tabs
+- Preços ocultos (mantidos no JSON)
 
 ### Entrega (id="entrega")
 - Label `// entrega` + título "Peça pelo site ou WhatsApp"
-- 3 cards: Delivery Rápido, Área de Cobertura, Pagamento Seguro (mesmo padrão de Destaques, cores pastéis diferentes)
+- 3 cards: Delivery Rápido, Área de Cobertura, Pagamento Seguro (framer-motion `whileInView`)
+- **RainbowBars perspectiva 3D**: 9 barras italianas no rodapé com `perspective: 25em` + `rotateX(45deg)` (efeito piso, hidden no mobile)
 
 ### Sobre (id="sobre")
 - Grid split: `grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20`
-- Texto cream com highlights Playfair italic
-- Imagem `rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]`
+- Texto ink com highlights Playfair italic + trechos em `text-[#DC2626]`
+- Imagem `rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.25)]`
+- **RainbowBars lateral esquerda**: 3 barras italianas, absolute, hidden no mobile, `direction="up"`
 - Sem `loading="lazy"` (CSS global esconde lazy + motion opacity:0 = nunca carrega)
 
 ### Localização (id="contato")
 - 3 cards (Endereço / Telefone / Horários) com ícones MapPin, Phone, Clock
 - Telefone é link para WhatsApp
-- Imagem no topo `rounded-2xl border border-[#F3ECD2]/10`
+- Imagem no topo `rounded-2xl border border-[#121212]/10`
 
 ### CtaFinal (id="pedido")
 - `bg-[#DC2626]`, círculos decorativos
@@ -113,7 +127,7 @@ Layout inspirado no clone do FlowFest (em `flowfest-clone/`). Peça central é a
 
 ### Footer
 - `bg-[#0d0d0d]` (mais escuro que o body)
-- 2 colunas: logo + descrição (esquerda) / "Acompanhe" + redes sociais (direita, alinhado à direita)
+- 2 colunas: logo + descrição (esquerda) / "Acompanhe" + redes sociais (direita)
 - Endereço também no footer
 
 ## Smooth Scroll
@@ -123,18 +137,17 @@ Layout inspirado no clone do FlowFest (em `flowfest-clone/`). Peça central é a
 - Scrollbar nativa oculta via CSS (`::-webkit-scrollbar { width: 0 }`)
 
 ## Animations
-- **GSAP ScrollTrigger scrub**: RainbowBars (draw das barras sincronizado com scroll)
-- **GSAP timeline**: entrada do Hero (logo → label → linhas título → sub → CTA → scroll indicator)
+- **GSAP ScrollTrigger scrub**: RainbowBars (draw sincronizado com scroll)
+- **GSAP timeline**: entrada do Hero (logo → linha título → foto desliza da direita → scroll indicator)
 - **framer-motion `whileInView`**: scroll reveal dos cards (Destaques, Entrega), stagger `i * 0.12`
 - **framer-motion `AnimatePresence mode="wait"`**: troca de tabs no Cardápio
 
 ## Images
-- Hero bg: `https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1080&q=60` (com `opacity-25` no novo design — fundo muito sutil)
+- Hero: `/images/pizza-hero.png` (~2.7MB, espelhada, sombra difusa)
 - Cardápio: `/images/cardapio/<nome>.jpg`
 - Sobre: `/images/sobre.jpg`
 - Localização: `/images/localizacao.jpg`
 - Logo: `/images/logo.png`
-- `preconnect` para `images.unsplash.com` e `fonts.gstatic.com` no HTML
 
 ## Cardápio Data
 - `src/data/cardapio-limpo.json`: 66 itens, 4 categorias (Pizzas 33, Porções 9, Bebidas 22)
@@ -151,25 +164,19 @@ npm run lint      # oxlint (ignora flowfest-clone, dist, node_modules via .oxlin
 ## Cloudflare Pages
 - Build: `npm run build`, output: `dist/`
 - SPA: `public/_redirects` → `/* /index.html 200`
-- Auto-deploy via GitHub (branch `master`)
-- Manual: `npx wrangler pages deploy dist/ --project-name lasabore --branch master`
+- Manual deploy: `npx wrangler pages deploy dist/ --project-name lasabore --branch master`
 
 ## flowfest-clone/
 - Clone local do site FlowFest (Webflow export) — referência visual / source das fontes
-- NÃO é buildado / deployado — ignorado pelo lint (`.oxlintrc.json`) e pelo vite (não está em `src/`)
+- NÃO é buildado / deployado — ignorado pelo lint e pelo vite
 - Fontes copiadas para `public/fonts/`: SugarPeachy (Black/Medium/Regular) + Quicksand (Bold/Medium)
+- 4 instâncias de rainbow replicadas no projeto
 
 ## Known Gotchas
-- `loading="lazy"` + motion `opacity:0` inicial = imagem nunca carrega (CSS global esconde lazy images). Remover `loading="lazy"` de `<img>` dentro de motion animado.
+- `loading="lazy"` + motion `opacity:0` inicial = imagem nunca carrega. Remover `loading="lazy"` de `<img>` dentro de motion animado.
 - Overlay mobile (`position:fixed`) NÃO pode ser filho do `<nav>` com `backdrop-blur-xl` — usar Fragment (`<>`).
 - `transition-all` no nav causa glitches no hamburger. Usar `transition-colors`.
 - GSAP `gsap.context()` + cleanup `ctx.revert()` em `useEffect` para evitar leaks no StrictMode.
 - Lenis precisa ser integrado ao ticker do GSAP (`gsap.ticker.add`) senão ScrollTrigger fica dessincronizado.
-- DrawSVGPlugin é pago (Club GreenSock). Em vez de bundlar o `.min.js` do clone, recriamos o efeito "draw" manualmente com `strokeDasharray`/`strokeDashoffset` — funciona porque as barras são linhas retas (comprimento fixo 600px).
-- `git add -A` pode capturar arquivos grandes acidentais. Verificar `git status --short` antes de commitar.
-
-## TODO / Próximos refinamentos possíveis
-- RainbowBars horizontais (`rainbow-sides`) em outras seções, como no FlowFest
-- Marquee infinito de logos/ingredientes (CSS `.animate-marquee` já pronto no index.css)
-- Cursores customizados (copiar SVGs do `flowfest-clone/assets/images/*cursor*`)
-- SplitText do título do Hero (atualmente stagger por `<span>` manual)
+- DrawSVGPlugin é pago (Club GreenSock). Efeito "draw" recriado com `strokeDasharray`/`strokeDashoffset`.
+- `git add -A` pode capturar arquivos grandes. Verificar `git status --short` antes de commitar.
