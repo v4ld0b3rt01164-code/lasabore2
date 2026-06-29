@@ -6,14 +6,21 @@ gsap.registerPlugin(ScrollTrigger)
 
 type Props = {
   className?: string
+  /** 'straight' = vertical bars | 'curve' = L-shape (vertical then horizontal), like clone rainbow-sides */
   variant?: 'straight' | 'curve'
+  /** bar colors, left to right */
   colors?: string[]
+  /** stroke width of fills */
   strokeWidth?: number
+  /** show dark outline around each bar (default false — no rectangle frame) */
   outline?: boolean
+  /** draw direction */
   direction?: 'down' | 'up'
+  /** viewport-based scrub; false = play once on enter */
   scrub?: boolean
-  playOnLoad?: boolean
+  /** override ScrollTrigger start (default: clamp(top bottom)) */
   scrollStart?: string
+  /** override ScrollTrigger end (default: bottom top) */
   scrollEnd?: string
   stagger?: number
   duration?: number
@@ -31,78 +38,51 @@ export default function RainbowBars({
   scrollEnd,
   stagger = 0.0375,
   duration = 0.5,
-  playOnLoad = false,
 }: Props) {
   const rootRef = useRef<HTMLDivElement>(null)
-  const stRef = useRef<ScrollTrigger | null>(null)
 
   useEffect(() => {
     const root = rootRef.current
     if (!root) return
 
     const paths = root.querySelectorAll<SVGPathElement>('[data-bar-fill]')
-    const totalLens = Array.from(paths).map(p => p.getTotalLength())
-
-    paths.forEach((path, i) => {
-      path.style.strokeDasharray = `${totalLens[i]}`
-      path.style.strokeDashoffset = `${totalLens[i]}`
-    })
 
     const ctx = gsap.context(() => {
-      if (playOnLoad) {
-        gsap.to(paths, {
-          strokeDashoffset: 0,
-          duration,
-          ease: 'power1.out',
-          stagger,
-          onComplete: () => {
-            stRef.current = ScrollTrigger.create({
+      paths.forEach((path) => {
+        const totalLen = path.getTotalLength()
+        path.style.strokeDasharray = `${totalLen}`
+        path.style.strokeDashoffset = `${totalLen}`
+      })
+
+      const tl = gsap.timeline({
+        scrollTrigger: scrub
+          ? {
               trigger: root,
               start: scrollStart ?? 'clamp(top bottom)',
               end: scrollEnd ?? 'bottom top',
               scrub: 0.4,
-              onUpdate: self => {
-                paths.forEach((path, i) => {
-                  path.style.strokeDashoffset = `${totalLens[i] * self.progress}`
-                })
-              },
-            })
-          },
-        })
-      } else {
-        const tl = gsap.timeline({
-          scrollTrigger: scrub
-            ? {
-                trigger: root,
-                start: scrollStart ?? 'clamp(top bottom)',
-                end: scrollEnd ?? 'bottom top',
-                scrub: 0.4,
-              }
-            : {
-                trigger: root,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse',
-              },
-        })
+            }
+          : {
+              trigger: root,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse',
+            },
+      })
 
-        tl.fromTo(
-          paths,
-          { strokeDashoffset: direction === 'down' ? (i: number) => paths[i].getTotalLength() : 0 },
-          {
-            strokeDashoffset: direction === 'down' ? 0 : (i: number) => paths[i].getTotalLength(),
-            duration,
-            ease: 'power1.out',
-            stagger,
-          },
-        )
-      }
+      tl.fromTo(
+        paths,
+        { strokeDashoffset: direction === 'down' ? (i: number) => paths[i].getTotalLength() : 0 },
+        {
+          strokeDashoffset: direction === 'down' ? 0 : (i: number) => paths[i].getTotalLength(),
+          duration,
+          ease: 'power1.out',
+          stagger,
+        },
+      )
     }, rootRef)
 
-    return () => {
-      ctx.revert()
-      stRef.current?.kill()
-    }
-  }, [variant, colors, strokeWidth, outline, direction, scrub, stagger, duration, playOnLoad, scrollStart, scrollEnd])
+    return () => ctx.revert()
+  }, [variant, colors, strokeWidth, outline, direction, scrub, stagger, duration])
 
   // Build paths
   const count = colors.length
