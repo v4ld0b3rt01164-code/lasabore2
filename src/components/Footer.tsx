@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="w-full flex justify-center bg-[#0d0d0d] border-t border-[#121212]/10 py-10 sm:py-12">
       <div className="container-section">
         <div className="flex flex-col sm:flex-row justify-between items-start gap-8">
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-center">
             <a href="#" className="mb-3">
               <img
                 src="/images/logo.png"
@@ -11,7 +11,7 @@ export default function Footer() {
                 className="h-14 w-auto object-contain"
               />
             </a>
-            <p className="text-sm text-white/65 leading-relaxed font-medium max-w-xs text-center sm:text-left">
+            <p className="text-sm text-white/65 leading-relaxed font-medium max-w-xs text-center">
               Sua pizza artesanal em Miguelópolis.
             </p>
           </div>

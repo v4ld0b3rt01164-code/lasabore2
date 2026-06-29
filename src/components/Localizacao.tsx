@@ -46,47 +46,33 @@ export default function Localizacao() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-          {items.map(item => {
-            const Inner = (
-              <>
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                  style={{ backgroundColor: `${item.accent}22` }}
-                >
-                  <item.icon size={20} style={{ color: item.accent }} />
-                </div>
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#121212]/55 mb-2">
-                  {item.title}
-                </p>
-                {item.lines.map((line, i) => (
-                  <p
-                    key={i}
-                    className={`text-sm font-medium leading-relaxed ${
-                      i === 0 ? 'text-[#121212]' : 'text-[#121212]/65'
-                    }`}
-                  >
-                    {line}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center">
+          {items.map((item, index) => (
+            <div key={item.title} className="flex items-start sm:items-center">
+              {index > 0 && (
+                <span className="hidden sm:block text-black/20 mx-6 select-none">|</span>
+              )}
+              <div className={index === 0 ? '' : ''}>
+                <div className="flex items-center gap-3 mb-1">
+                  <item.icon size={18} className="text-black shrink-0" />
+                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-black/55">
+                    {item.title}
                   </p>
-                ))}
-              </>
-            )
-            return item.href ? (
-              <a
-                key={item.title}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                {Inner}
-              </a>
-            ) : (
-              <div key={item.title} className="block">
-                {Inner}
+                </div>
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="block">
+                    {item.lines.map((line, i) => (
+                      <p key={i} className={`text-sm font-medium leading-relaxed ${i === 0 ? 'text-black' : 'text-black/65'}`}>{line}</p>
+                    ))}
+                  </a>
+                ) : (
+                  item.lines.map((line, i) => (
+                    <p key={i} className={`text-sm font-medium leading-relaxed ${i === 0 ? 'text-black' : 'text-black/65'}`}>{line}</p>
+                  ))
+                )}
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
