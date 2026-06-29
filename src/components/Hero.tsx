@@ -11,6 +11,7 @@ const sideColors = ['#009246', '#FFFFFF', '#DC2626']
 
 export default function Hero() {
   const rootRef = useRef<HTMLDivElement>(null)
+  const isMobile = window.innerWidth < 640
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -49,7 +50,7 @@ export default function Hero() {
             strokeWidth={48}
             outline={false}
             direction="down"
-            scrub
+            scrub={!isMobile}
             scrollStart="top top"
             duration={1.2}
             stagger={0.075}
@@ -64,7 +65,7 @@ export default function Hero() {
             strokeWidth={48}
             outline={false}
             direction="down"
-            scrub
+            scrub={!isMobile}
             duration={1.2}
             stagger={0.075}
           />
