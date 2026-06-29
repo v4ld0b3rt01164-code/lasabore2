@@ -16,7 +16,7 @@ export default function CtaFinal() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#F3ECD2]/80 mb-4">
+        <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#f0bb0d]/80 mb-4">
           // pedido
         </span>
         <h2 className="display text-white text-5xl sm:text-7xl md:text-8xl leading-[0.92] mb-6">
@@ -30,7 +30,7 @@ export default function CtaFinal() {
             href="https://lasaborepizzaria.menudino.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#121212] text-[#F3ECD2] text-sm sm:text-base font-bold px-6 sm:px-10 py-3.5 sm:py-4 rounded-full hover:bg-[#1a1a1a] transition-colors"
+            className="bg-[#121212] text-[#f0bb0d] text-sm sm:text-base font-bold px-6 sm:px-10 py-3.5 sm:py-4 rounded-full hover:bg-[#1a1a1a] transition-colors"
           >
             Fazer Pedido
           </a>

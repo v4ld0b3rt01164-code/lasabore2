@@ -13,7 +13,7 @@ export default function Footer() {
           Sua pizza artesanal em Miguelópolis.
         </p>
 
-        <div className="mt-10 pt-8 border-t border-[#F3ECD2]/8 w-full">
+        <div className="mt-10 pt-8 border-t border-[#f0bb0d]/8 w-full">
           <p className="text-xs font-bold tracking-[0.2em] uppercase text-white/55 mb-4">
             // acompanhe
           </p>
@@ -48,7 +48,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#F3ECD2]/8 w-full">
+        <div className="mt-12 pt-8 border-t border-[#f0bb0d]/8 w-full">
           <p className="text-xs text-white/45">
             © 2026 La Sabore · Todos os direitos reservados
           </p>

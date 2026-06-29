@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section
       ref={rootRef}
-      className="relative min-h-screen w-full overflow-hidden bg-[#f3ecd2] flex flex-col"
+      className="relative min-h-screen w-full overflow-hidden bg-[#f0bb0d] flex flex-col"
     >
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
