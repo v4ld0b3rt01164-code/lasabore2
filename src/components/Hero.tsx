@@ -9,6 +9,33 @@ gsap.registerPlugin(ScrollTrigger)
 // Bandeira italiana para as L-curvas laterais (3 barras: verde/branco/vermelho)
 const sideColors = ['#009246', '#FFFFFF', '#DC2626']
 
+function MobileRainbowDraw() {
+  useEffect(() => {
+    if (window.innerWidth >= 640) return
+
+    const timer = setTimeout(() => {
+      const triggers = ScrollTrigger.getAll()
+      triggers.forEach(tr => {
+        const el = tr.vars.trigger as Element | undefined
+        const anim = tr.animation
+        if (el?.closest('.hero-rainbow') && anim) {
+          const proxy = { p: anim.totalProgress() }
+          gsap.to(proxy, {
+            p: 1,
+            duration: 1.2,
+            ease: 'power2.out',
+            onUpdate: () => anim.totalProgress(proxy.p),
+          })
+        }
+      })
+    }, 80)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  return null
+}
+
 export default function Hero() {
   const rootRef = useRef<HTMLDivElement>(null)
 
@@ -105,18 +132,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Mobile: desenha rainbows na carga via CSS (sem tocar no RainbowBars) */}
-      <style>{`
-        @media (max-width: 639px) {
-          @keyframes heroRainbowDraw {
-            from { stroke-dashoffset: 10000px; }
-            to   { stroke-dashoffset: 0px; }
-          }
-          .hero-rainbow [data-bar-fill] {
-            animation: heroRainbowDraw 1.2s ease-out 0.3s both;
-          }
-        }
-      `}</style>
+      {/* Mobile: anima progress dos ScrollTriggers dos rainbows via GSAP */}
+      <MobileRainbowDraw />
     </section>
   )
 }
