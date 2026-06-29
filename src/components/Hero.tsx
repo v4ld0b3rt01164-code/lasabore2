@@ -66,14 +66,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Conteúdo: logo + headline centrados */}
+      {/* Conteúdo: logo + headline à esquerda */}
       <div className="relative z-10 flex-1 flex items-center pt-20 sm:pt-24">
-        <div className="container-section text-center">
+        <div className="container-section text-left">
           <a href="#" data-hero-logo>
             <img
-              src="/images/logo-hero.png"
+              src="/images/logo.png"
               alt="La Sabore"
-              className="h-32 sm:h-44 lg:h-60 w-auto object-contain mx-auto"
+              className="h-32 sm:h-44 lg:h-60 w-auto object-contain"
             />
           </a>
           <h1
