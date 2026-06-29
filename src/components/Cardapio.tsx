@@ -87,7 +87,7 @@ export default function Cardapio() {
             // sabores
           </span>
           <h2 className="display text-[#121212] text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-8">
-            Escolha sua próxima <span className="text-[#DC2626]">fome</span>
+            O forno está aceso
           </h2>
           <button
             onClick={() => setOpen(true)}

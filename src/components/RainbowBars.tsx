@@ -111,7 +111,7 @@ export default function RainbowBars({
         className="block w-full h-full"
       >
         {outline && bars.map((b, i) => (
-          <path key={`o-${i}`} d={b.d} stroke="#121212" strokeWidth={strokeWidth + 4} />
+          <path key={`o-${i}`} d={b.d} stroke="transparent" strokeWidth={strokeWidth + 4} />
         ))}
         {bars.map((b, i) => (
           <path

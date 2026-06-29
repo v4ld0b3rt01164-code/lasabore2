@@ -19,11 +19,7 @@ export default function Sobre() {
         <RainbowBars
           className="w-full h-full"
           variant="straight"
-          colors={[
-            '#009246', '#009246', '#009246',
-            '#FFFFFF', '#FFFFFF', '#FFFFFF',
-            '#DC2626', '#DC2626', '#DC2626',
-          ]}
+          colors={['#009246', '#FFFFFF', '#DC2626']}
           strokeWidth={48}
           outline={false}
           direction="up"
