@@ -31,7 +31,7 @@ const items = [
 ]
 
 const card = {
-  hidden: { opacity: 0, y: 32 },
+  hidden: { opacity: 1, y: 32 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
