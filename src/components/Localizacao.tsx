@@ -26,19 +26,19 @@ export default function Localizacao() {
   return (
     <section
       id="contato"
-      className="w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28"
+      className="w-full flex justify-center bg-[#0d0d0d] border-t border-[#121212]/10 py-24 sm:py-28"
     >
       <div className="container-section">
         <div className="mb-10 sm:mb-12 text-center">
           <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
             // onde estamos
           </span>
-          <h2 className="display text-[#121212] text-4xl sm:text-5xl md:text-6xl leading-[0.95]">
+          <h2 className="display text-white text-4xl sm:text-5xl md:text-6xl leading-[0.95]">
             Venha nos <span className="text-[#DC2626]">visitar</span>
           </h2>
         </div>
 
-        <div className="max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-[#121212]/10">
+        <div className="max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4)] border border-white/10">
           <img
             src="/images/localizacao.jpg"
             alt="Fachada La Sabore Pizzaria"
@@ -48,7 +48,7 @@ export default function Localizacao() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {items.map(item => {
-            const Inner = (
+            const content = (
               <>
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
@@ -56,14 +56,14 @@ export default function Localizacao() {
                 >
                   <item.icon size={20} style={{ color: item.accent }} />
                 </div>
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#121212]/55 mb-2">
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-white/55 mb-2">
                   {item.title}
                 </p>
                 {item.lines.map((line, i) => (
                   <p
                     key={i}
                     className={`text-sm font-medium leading-relaxed ${
-                      i === 0 ? 'text-[#121212]' : 'text-[#121212]/65'
+                      i === 0 ? 'text-white' : 'text-white/65'
                     }`}
                   >
                     {line}
@@ -77,16 +77,13 @@ export default function Localizacao() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
+                className="block px-6 sm:px-8"
               >
-                {Inner}
+                {content}
               </a>
             ) : (
-              <div
-                key={item.title}
-                className="bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25"
-              >
-                {Inner}
+              <div key={item.title} className="px-6 sm:px-8">
+                {content}
               </div>
             )
           })}
