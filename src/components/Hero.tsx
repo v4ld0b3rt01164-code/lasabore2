@@ -74,7 +74,7 @@ export default function Hero() {
               <img
                 src="/images/logo-hero.png"
                 alt="La Sabore"
-                className="h-36 sm:h-40 lg:h-52 w-auto object-contain mx-auto lg:mx-0"
+                className="h-40 sm:h-44 lg:h-52 w-auto object-contain mx-auto lg:mx-0"
               />
             </a>
             <h1
@@ -91,7 +91,7 @@ export default function Hero() {
             <img
               src="/images/pizza-hero.png"
               alt="Pizza artesanal La Sabore"
-              className="w-full max-w-[220px] sm:max-w-xs lg:max-w-xl xl:max-w-2xl h-auto object-contain lg:-scale-x-100"
+              className="w-full max-w-[220px] sm:max-w-xs lg:max-w-xl xl:max-w-2xl h-auto object-contain -scale-x-100"
               style={{ filter: 'drop-shadow(4px 4px 2px rgba(18,18,18,0.6))' }}
             />
           </div>
