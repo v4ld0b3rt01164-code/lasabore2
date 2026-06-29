@@ -17,7 +17,7 @@ const items = [
   {
     icon: Clock,
     title: 'Horários',
-    lines: ['Seg a Sáb · 18h às 23h', 'Dom · 12h às 22h'],
+    lines: ['Ter a Sex · 18h às 23h', 'Sáb · 18h às 23h59', 'Dom · 18h às 23h', 'Seg · Fechado'],
     accent: '#F0BB0D',
   },
 ]
