@@ -26,6 +26,8 @@ Fundo amarelo pastel `#f0bb0d`. RainbowBars (3 barras bandeira italiana) como pe
 | `italia-red` | `#DC2626` | Vermelho bandeira + CTAs |
 | `red-accent` | `#EA384C` | Hover vermelho |
 | `wine` | `#811933` | Vinho |
+| `footer` | `#0d0d0d` | Fundo do footer |
+| `black` | `#000000` | Preto puro (texto Localização) |
 
 ### Tipografia
 - **Display**: SugarPeachy Black (900), títulos grandes
@@ -84,7 +86,8 @@ Fundo amarelo pastel `#f0bb0d`. RainbowBars (3 barras bandeira italiana) como pe
 - RainbowBars lateral esquerda (3 barras, `hidden sm:block`)
 
 ### Localização (id="contato")
-- 3 cards brancos (Endereço / Telefone / Horários)
+- Sem cards, texto e ícones em preto puro `#000000`
+- Layout flex com separador vertical `|` entre os itens
 - Foto da fachada no topo
 
 ### CtaFinal (id="pedido")
@@ -92,8 +95,9 @@ Fundo amarelo pastel `#f0bb0d`. RainbowBars (3 barras bandeira italiana) como pe
 - Botões Fazer Pedido + WhatsApp
 
 ### Footer
-- `bg-[#0d0d0d]`, texto branco
-- Logo + descrição / "Acompanhe" + redes sociais
+- `bg-[#0d0d0d]`, texto branco, altura reduzida
+- Esquerda: logo centralizado sobre "Sua pizza artesanal em Miguelópolis."
+- Direita: @lasaboremiguelopolis (Instagram) + (16) 99231-5122 (WhatsApp)
 
 ## Smooth Scroll
 - Lenis 1.3 integrado ao GSAP ticker
