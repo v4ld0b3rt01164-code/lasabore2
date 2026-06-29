@@ -30,8 +30,7 @@ export default function Hero() {
   return (
     <section
       ref={rootRef}
-      className="relative min-h-screen w-full overflow-hidden bg-[#5c3a2e] flex flex-col"
-      style={{ backgroundImage: 'url(/images/hero-img.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className="relative min-h-screen w-full overflow-hidden bg-[#f3ecd2] flex flex-col"
     >
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -66,6 +65,15 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Imagem decorativa — centro-direita, metade do tamanho */}
+      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-end pr-4 sm:pr-8 lg:pr-16">
+        <img
+          src="/images/hero-img.png"
+          alt=""
+          className="w-1/2 max-w-xs sm:max-w-sm lg:max-w-md h-auto object-contain opacity-40"
+        />
+      </div>
+
       {/* Conteúdo: logo + headline à esquerda */}
       <div className="relative z-10 flex-1 flex items-center pt-20 sm:pt-24">
         <div className="container-section text-left">
@@ -78,7 +86,7 @@ export default function Hero() {
           </a>
           <h1
             data-hero-line
-            className="display text-white text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-4 sm:mt-6"
+            className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-4 sm:mt-6"
           >
             Sua pizza artesanal em{' '}
             <span className="text-[#DC2626]">Miguelópolis</span>

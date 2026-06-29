@@ -58,7 +58,7 @@ function Tabs({ active, onSelect }: { active: string; onSelect: (id: string) => 
           onClick={() => onSelect(c.id)}
           className={`px-4 sm:px-6 py-2.5 text-sm font-bold rounded-full transition-all duration-200 border ${
             active === c.id
-              ? 'bg-[#121212] text-[#d4ed31] border-[#121212]'
+              ? 'bg-[#121212] text-[#f3ecd2] border-[#121212]'
               : 'bg-transparent text-[#121212]/70 border-[#121212]/15 hover:border-[#121212]/40'
           }`}
         >
@@ -116,9 +116,9 @@ export default function Cardapio() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', ease: [0.625, 0.05, 0, 1], duration: 0.5 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-2xl bg-[#d4ed31] overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-2xl bg-[#f3ecd2] overflow-y-auto"
             >
-              <div className="sticky top-0 z-10 bg-[#d4ed31]/95 backdrop-blur-md border-b border-[#121212]/10 px-5 sm:px-8 py-4 flex items-center justify-between">
+              <div className="sticky top-0 z-10 bg-[#f3ecd2]/95 backdrop-blur-md border-b border-[#121212]/10 px-5 sm:px-8 py-4 flex items-center justify-between">
                 <span className="display text-2xl text-[#121212]">Cardápio</span>
                 <button
                   onClick={() => setOpen(false)}

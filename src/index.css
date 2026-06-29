@@ -37,7 +37,7 @@
 }
 
 @theme {
-  --color-bg: #d4ed31;
+  --color-bg: #f3ecd2;
   --color-ink: #121212;
   --color-ink-muted: rgba(18, 18, 18, 0.65);
   --color-ink-dim: rgba(18, 18, 18, 0.45);
@@ -68,7 +68,7 @@
 
   body {
     font-family: 'Quicksand', 'Inter', sans-serif;
-    background-color: #d4ed31;
+    background-color: #f3ecd2;
     color: #121212;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
