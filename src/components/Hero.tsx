@@ -13,24 +13,66 @@ function MobileRainbowDraw() {
   useEffect(() => {
     if (window.innerWidth >= 640) return
 
-    const timer = setTimeout(() => {
-      const triggers = ScrollTrigger.getAll()
-      triggers.forEach(tr => {
-        const el = tr.vars.trigger as Element | undefined
-        const anim = tr.animation
-        if (el?.closest('.hero-rainbow') && anim) {
-          const proxy = { p: anim.totalProgress() }
-          gsap.to(proxy, {
-            p: 1,
-            duration: 2.4,
-            ease: 'sine.inOut',
-            onUpdate: () => anim.totalProgress(proxy.p),
-          })
-        }
-      })
-    }, 80)
+    let cancelled = false
+    const introTweens: gsap.core.Tween[] = []
+    const newTriggers: ScrollTrigger[] = []
 
-    return () => clearTimeout(timer)
+    const timer = setTimeout(() => {
+      if (cancelled) return
+
+      const targets = ScrollTrigger.getAll().filter(tr => {
+        const el = tr.vars.trigger as Element | undefined
+        return el?.closest('.hero-rainbow') && !!tr.animation
+      })
+
+      targets.forEach(tr => {
+        const anim = tr.animation!
+        const el = tr.vars.trigger as Element
+        const startVal = typeof tr.start === 'number' ? tr.start : 0
+        const endVal = typeof tr.end === 'number' ? tr.end : startVal + 500
+        const distance = Math.max(1, endVal - startVal)
+
+        // Pausa o ScrollTrigger para evitar conflito durante a animação de entrada.
+        tr.disable(false)
+
+        const proxy = { p: 0 }
+        const tween = gsap.to(proxy, {
+          p: 1,
+          duration: 2.64,
+          ease: 'sine.inOut',
+          onUpdate: () => {
+            if (!cancelled) anim.totalProgress(proxy.p)
+          },
+          onComplete: () => {
+            if (cancelled) return
+
+            // Remove o ScrollTrigger antigo e cria um novo alinhado à posição
+            // atual do scroll, mantendo o progresso em 1 aqui e permitindo
+            // que o movimento continue suave ao rolar para cima/baixo.
+            tr.kill()
+            const currentScroll = window.scrollY
+            const newTrigger = ScrollTrigger.create({
+              trigger: el,
+              start: currentScroll - distance,
+              end: currentScroll,
+              scrub: 0.4,
+              animation: anim,
+            })
+            newTriggers.push(newTrigger)
+            anim.totalProgress(1)
+          },
+        })
+
+        introTweens.push(tween)
+      })
+    }, 2000)
+
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+      introTweens.forEach(t => t.kill())
+      newTriggers.forEach(t => t.kill())
+    }
   }, [])
 
   return null

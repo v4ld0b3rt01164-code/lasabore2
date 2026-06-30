@@ -58,9 +58,9 @@ Fundo amarelo pastel `#f0bb0d`. RainbowBars (3 barras bandeira italiana) como pe
 - Fundo `#f0bb0d`, `min-h-screen`
 - Rainbow-sides: L-curvas espelhadas (topo direita + bottom esquerda)
 - Grid 2 colunas: logo+texto (centralizados) | pizza (direita)
-- Logo `logo-hero.png`, `h-40 lg:h-52`, centralizado sobre o texto
+- Logo `logo-hero.webp`, `h-40 lg:h-52`, centralizado sobre o texto
 - Headline 2 linhas: "Sua pizza artesanal em" + "Miguelópolis" (vermelho), `text-3xl lg:text-6xl`
-- Pizza `pizza-hero.png` invertida horizontalmente (`-scale-x-100`), sombra `drop-shadow(4px 4px 2px rgba(18,18,18,0.6))`
+- Pizza `pizza-hero.webp` invertida horizontalmente (`-scale-x-100`), sombra `drop-shadow(4px 4px 2px rgba(18,18,18,0.6))`
 - Scroll indicator: ChevronDown com `animate-bounce-down`
 - Animação GSAP: logo → headline → scroll indicator
 
@@ -96,17 +96,22 @@ Fundo amarelo pastel `#f0bb0d`. RainbowBars (3 barras bandeira italiana) como pe
 
 ### Footer
 - `bg-[#0d0d0d]`, texto branco, altura reduzida
-- Esquerda: logo centralizado sobre "Sua pizza artesanal em Miguelópolis."
+- Esquerda: `logo.webp` centralizado sobre "Sua pizza artesanal em Miguelópolis."
 - Direita: @lasaboremiguelopolis (Instagram) + (16) 99231-5122 (WhatsApp)
 
 ## Smooth Scroll
 - Lenis 1.3 integrado ao GSAP ticker
 
 ## Imagens
-- Hero: `logo-hero.png`, `pizza-hero.png` (~2.7MB, invertida)
-- Cardápio: `/images/cardapio/<nome>.jpg`
+- **Todas convertidas para WebP** (exceto sobre.jpg, localizacao.jpg e UUIDs <30KB que continuam JPG)
+- Hero: `logo-hero.webp` (10KB), `pizza-hero.webp` (111KB, invertida)
+- Footer: `logo.webp` (4KB)
+- Cardápio: `/images/cardapio/<nome>.webp|jpg|avif`
 - Sobre: `/images/sobre.jpg`
 - Localização: `/images/localizacao.jpg`
+- Favicon: `/favicon.png` (2KB, comprimido)
+- Nunca usar `loading="lazy"` em `<img>` — quebra carregamento de imagens abaixo da dobra
+- Nunca instalar `vite-plugin-image-optimizer` — re-otimização em build corrompe imagens
 
 ## Commands
 ```bash
@@ -121,7 +126,7 @@ npm run lint      # oxlint
 - URL: `lasabore2-alt.pages.dev`
 
 ## Known Gotchas
-- `loading="lazy"` + motion `opacity:0` = imagem não carrega
+- `loading="lazy"` + motion `opacity:0` = imagem não carrega (mesmo sem motion, `loading="lazy"` impede imagens abaixo da dobra de carregar em algumas seções)
 - `transition-all` conflita com animações — usar `transition-colors`
 - Cards usam `bg-white` sólido (sem transparência) para evitar oscilação visual ao scrollar sobre rainbows animadas
 - GSAP `gsap.context()` + `ctx.revert()` no useEffect
@@ -129,7 +134,7 @@ npm run lint      # oxlint
 - RainbowBars NÃO pode receber novos props nem re-renderizar — `gsap.context()` + `ctx.revert()` corrompe o SVG inline se o prop `scrub` mudar, causando tela preta
 - Modificar o RainbowBars.tsx quebra o site inteiro (tela preta) — qualquer alteração no lifecycle do GSAP dentro dele é instável
 - `window.innerWidth` sem useState/useEffect tbm causou tela preta — possivelmente conflito com Lenis + ScrollTrigger
-- Animação mobile load: componente `MobileRainbowDraw` em Hero.tsx — anima `anim.totalProgress()` dos ScrollTriggers de `.hero-rainbow` via GSAP. Suave e responde ao scroll depois.
+- Animação mobile load: componente `MobileRainbowDraw` em Hero.tsx — aguarda 2s, anima `anim.totalProgress()` dos ScrollTriggers de `.hero-rainbow` via GSAP (duração 2.64s, `sine.inOut`), desabilitando o ScrollTrigger durante o load e recriando-o sincronizado com a posição atual do scroll ao final. Suave e responde ao scroll depois.
 - Flash no load: elementos do Hero com `opacity-0` no CSS + `.fromTo()` em vez de `.from()` no GSAP. Elementos já nascem invisíveis.
 - `npx wrangler pages deploy` com `--commit-hash=$(git rev-parse HEAD)` força upload correto dos assets
 - Cloudflare Pages **git integration** deve ter output directory = `dist/` (config no dashboard), senão o auto-build serve o `index.html` da raiz (com `/src/main.tsx`) em vez do `dist/index.html`
