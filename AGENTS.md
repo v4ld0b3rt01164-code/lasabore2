@@ -75,7 +75,8 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 ## Regras de Mídia
 - **Nunca usar `loading="lazy"` em `<img>`** — impede imagens abaixo da dobra de carregar em algumas seções.
 - **Não usar `vite-plugin-image-optimizer`** — está no `package.json` como resquício, mas não está no `vite.config.ts` porque re-otimização em build corrompe imagens.
-- Manter animações `.webm` no tamanho original quando forem de baixa resolução. Upscaling deixa serrilhado.
+- Animações com transparência devem preferir **SVG animado** (SMIL/CSS) — compatível universalmente com iOS, Android e desktop, sem fundo preto.
+- Ao otimizar SVGs com SVGO, sempre verificar se animações SMIL não foram corrompidas antes de aplicar.
 - Elementos com fundo transparente (vídeos, animações) não devem ter `shadow` se o objetivo é integração visual com o fundo amarelo.
 
 ## Animação — Gotchas Críticos
