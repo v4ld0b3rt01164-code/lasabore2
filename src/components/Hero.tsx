@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ChevronDown } from 'lucide-react'
 import RainbowBars from './RainbowBars'
-import { isSafari } from '../lib/is-safari'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -83,11 +82,6 @@ function MobileRainbowDraw() {
 
 export default function Hero() {
   const rootRef = useRef<HTMLDivElement>(null)
-  const [safari, setSafari] = useState(false)
-
-  useEffect(() => {
-    setSafari(isSafari())
-  }, [])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -154,25 +148,11 @@ export default function Hero() {
                 />
               </a>
               <div data-hero-chef className="-translate-x-10 lg:-translate-x-16 w-[200px] h-[200px]">
-                {safari ? (
-                  <img
-                    src="/images/Chef.apng"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
-                ) : (
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    className="w-full h-full"
-                  >
-                    <source src="/images/Chef.apng" type="image/apng" />
-                    <source src="/images/Chef.webm" type="video/webm" />
-                  </video>
-                )}
+                <img
+                  src="/images/Chef.apng"
+                  alt=""
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
             <h1

@@ -1,21 +1,6 @@
 import { motion } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
-import { isSafari } from '../lib/is-safari'
 
 export default function CtaFinal() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [safari, setSafari] = useState(false)
-
-  useEffect(() => {
-    setSafari(isSafari())
-  }, [])
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-    video.play().catch(() => {})
-  }, [])
-
   return (
     <section
       id="pedido"
@@ -60,28 +45,11 @@ export default function CtaFinal() {
             </svg>
             WhatsApp
           </a>
-          {safari ? (
-            <img
-              src="/images/pedido.apng"
-              alt=""
-              className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 -translate-y-2.5 pointer-events-none block"
-            />
-          ) : (
-            <video
-              ref={videoRef}
-              width={150}
-              height={150}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 -translate-y-2.5 pointer-events-none block"
-            >
-              <source src="/images/pedido.apng" type="image/apng" />
-              <source src="/images/pedido.webm" type="video/webm" />
-            </video>
-          )}
+          <img
+            src="/images/pedido.apng"
+            alt=""
+            className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 -translate-y-2.5 pointer-events-none block"
+          />
         </div>
       </motion.div>
     </section>
