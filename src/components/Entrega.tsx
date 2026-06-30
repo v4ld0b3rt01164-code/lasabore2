@@ -62,7 +62,7 @@ export default function Entrega() {
           {/* Animação delivery integrada ao fundo */}
           <div className="relative w-[150px] h-[150px] shrink-0 ml-[-40px] sm:ml-[-50px] lg:ml-[-60px]">
             <img
-              src="/images/delivery.apng"
+              src="/images/delivery.svg"
               alt=""
               className="w-full h-full object-cover"
             />

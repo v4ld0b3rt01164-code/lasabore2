@@ -46,7 +46,7 @@ export default function CtaFinal() {
             WhatsApp
           </a>
           <img
-            src="/images/pedido.apng"
+            src="/images/pedido.svg"
             alt=""
             className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 -translate-y-2.5 pointer-events-none block"
           />

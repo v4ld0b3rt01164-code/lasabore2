@@ -149,7 +149,7 @@ export default function Hero() {
               </a>
               <div data-hero-chef className="-translate-x-10 lg:-translate-x-16 w-[200px] h-[200px]">
                 <img
-                  src="/images/Chef.apng"
+                  src="/images/Chef.svg"
                   alt=""
                   className="w-full h-full object-contain"
                 />
