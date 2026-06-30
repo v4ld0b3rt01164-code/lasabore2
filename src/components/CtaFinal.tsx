@@ -45,6 +45,16 @@ export default function CtaFinal() {
             </svg>
             WhatsApp
           </a>
+          <video
+            src="/images/pedido.webm"
+            width={150}
+            height={150}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 pointer-events-none"
+          />
         </div>
       </motion.div>
     </section>
