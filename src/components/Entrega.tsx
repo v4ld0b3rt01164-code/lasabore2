@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion'
 import { Bike, MapPin, ShieldCheck } from 'lucide-react'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import RainbowBars from './RainbowBars'
+
+gsap.registerPlugin(ScrollTrigger)
 
 // Bandeira italiana — 9 barras para a perspectiva 3D (exceção: mantém 9)
 const verticalColors = [
@@ -39,8 +44,33 @@ const card = {
 }
 
 export default function Entrega() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '[data-delivery]',
+        { opacity: 0, x: '-100vw' },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.9,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '[data-delivery]',
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        }
+      )
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
     <section
+      ref={sectionRef}
       id="entrega"
       className="relative w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28 overflow-hidden"
     >
@@ -60,7 +90,10 @@ export default function Entrega() {
           </div>
 
           {/* Animação delivery integrada ao fundo */}
-          <div className="relative w-[200px] h-[200px] shrink-0 ml-[-50px] sm:ml-[-60px] lg:ml-[-70px]">
+          <div
+            data-delivery
+            className="relative w-[200px] h-[200px] shrink-0 ml-[-50px] sm:ml-[-60px] lg:ml-[-70px] opacity-0"
+          >
             <img
               src="/images/delivery.svg"
               alt=""

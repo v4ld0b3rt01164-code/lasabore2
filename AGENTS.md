@@ -47,6 +47,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Logo `logo-hero.webp` + animação `Chef.svg` (200×200 px) agrupados e centralizados.
 - Logo reduzido (~20%): `h-32 sm:h-36 lg:h-40`.
 - Chef: 225×225 px, overlap visual com o logo via `translate-x` negativo (`-translate-x-12 lg:-translate-x-20`). Mantém o agrupamento centralizado no fluxo do layout.
+- Animação de entrada teatral do Chef: logo/headline aparecem primeiro, depois o Chef cruza a tela vindo da direita (`x: 100vw` → `x: 0`, duração 1.3s, `power3.out`).
 - Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
 - RainbowBars `curve` nas laterais (`.hero-rainbow`).
 
@@ -57,6 +58,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 
 ### Entrega
 - Header: texto centralizado + animação `delivery.svg` (200×200 px) ao lado, sem sombra.
+- Animação de entrada do delivery: dispara via ScrollTrigger quando a seção entra na tela (`start: 'top 80%'`), vindo da esquerda (`x: -100vw` → `x: 0`, duração 0.9s, `power3.out`). Dispara uma única vez (`toggleActions: 'play none none none'`).
 - Cards estilo "ticket vintage": fundo `#FFF8E1`, formato horizontal, recortes nos cantos, linha tracejada grossa separando ícone e texto.
 - RainbowBars `straight` × 9 em perspectiva 3D no rodapé.
 
