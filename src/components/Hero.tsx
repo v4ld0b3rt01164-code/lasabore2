@@ -46,17 +46,19 @@ function MobileRainbowDraw() {
           onComplete: () => {
             if (cancelled) return
 
-            // Remove o ScrollTrigger antigo e cria um novo alinhado à posição
-            // atual do scroll, mantendo o progresso em 1 aqui e permitindo
-            // que o movimento continue suave ao rolar para cima/baixo.
+            // Remove o ScrollTrigger antigo e cria um novo que mantém o
+            // rainbow desenhado (progresso 1) na posição atual e o faz
+            // retroceder suavemente conforme o usuário rola para baixo.
             tr.kill()
             const currentScroll = window.scrollY
             const newTrigger = ScrollTrigger.create({
               trigger: el,
-              start: currentScroll - distance,
-              end: currentScroll,
+              start: currentScroll,
+              end: currentScroll + distance,
               scrub: 0.4,
-              animation: anim,
+              onUpdate: (self) => {
+                if (!cancelled) anim.totalProgress(1 - self.progress)
+              },
             })
             newTriggers.push(newTrigger)
             anim.totalProgress(1)
