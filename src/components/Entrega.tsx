@@ -14,27 +14,27 @@ const items = [
     icon: Bike,
     title: 'Delivery Rápido',
     desc: 'Sua pizza chega quentinha, do forno à sua porta.',
-    accent: '#F97028',
+    accent: '#811933',
   },
   {
     icon: MapPin,
     title: 'Área de Cobertura',
     desc: 'Entregamos em todos os bairros e nos ranchos.',
-    accent: '#F489A3',
+    accent: '#009246',
   },
   {
     icon: ShieldCheck,
     title: 'Pagamento Seguro',
     desc: 'Cartão, dinheiro, PIX e vale-refeição. Tudo online.',
-    accent: '#F0BB0D',
+    accent: '#DC2626',
   },
 ]
 
 const card = {
-  hidden: { y: 32 },
+  hidden: { y: 24 },
   visible: (i: number) => ({
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.12, ease: 'easeOut' as const },
+    transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const },
   }),
 }
 
@@ -57,7 +57,7 @@ export default function Entrega() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
@@ -67,18 +67,33 @@ export default function Entrega() {
               viewport={{ once: true, margin: '-80px' }}
               variants={card}
               style={{ opacity: 1 }}
-              className="group bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
+              className="group relative flex items-stretch bg-[#FFF8E1] text-[#121212] rounded-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1"
             >
+              {/* Recortes vintage nos cantos */}
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                style={{ backgroundColor: `${item.accent}22` }}
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  clipPath:
+                    'polygon(0 10px, 10px 10px, 10px 0, calc(100% - 10px) 0, calc(100% - 10px) 10px, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 10px calc(100% - 10px), 0 calc(100% - 10px))',
+                  boxShadow: 'inset 0 0 0 1px rgba(18,18,18,0.12)',
+                }}
+              />
+
+              {/* Lado do ícone */}
+              <div
+                className="relative z-10 flex w-20 sm:w-24 shrink-0 items-center justify-center border-r border-dashed border-[#121212]/20"
+                style={{ backgroundColor: `${item.accent}12` }}
               >
-                <item.icon size={22} style={{ color: item.accent }} />
+                <item.icon size={28} style={{ color: item.accent }} />
               </div>
-              <h3 className="display text-[#121212] text-2xl mb-3">{item.title}</h3>
-              <p className="text-sm text-[#121212]/65 leading-relaxed font-medium">
-                {item.desc}
-              </p>
+
+              {/* Lado do texto */}
+              <div className="relative z-10 flex-1 px-5 py-5">
+                <h3 className="display text-xl mb-1">{item.title}</h3>
+                <p className="text-sm text-[#121212]/65 leading-relaxed font-medium">
+                  {item.desc}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

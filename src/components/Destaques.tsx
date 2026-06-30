@@ -1,4 +1,4 @@
-import { Flame, Heart, Leaf } from 'lucide-react'
+import { Flame, Heart, Leaf, Star } from 'lucide-react'
 import RainbowBars from './RainbowBars'
 
 const items = [
@@ -18,7 +18,7 @@ const items = [
     icon: Leaf,
     title: 'Ingredientes Frescos',
     desc: 'Selecionados diariamente, sem conservantes artificiais. O sabor que vem da horta.',
-    accent: '#F0BB0D',
+    accent: '#009246',
   },
 ]
 
@@ -49,20 +49,25 @@ export default function Destaques() {
             O que torna a La Sabore <span className="text-[#DC2626]">única</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
           {items.map((item) => (
             <div
               key={item.title}
-              className="group bg-white border border-[#121212]/10 rounded-2xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#121212]/25 hover:-translate-y-1"
+              className="group relative border-2 border-dashed border-[#811933]/70 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#811933] hover:-translate-y-1"
             >
+              {/* Selo artesanal */}
+              <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-[#DC2626] text-white flex items-center justify-center shadow-sm rotate-12 transition-transform duration-300 group-hover:rotate-0">
+                <Star size={16} fill="currentColor" />
+              </div>
+
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                style={{ backgroundColor: `${item.accent}22` }}
+                style={{ backgroundColor: `${item.accent}18` }}
               >
                 <item.icon size={22} style={{ color: item.accent }} />
               </div>
               <h3 className="display text-[#121212] text-2xl mb-3">{item.title}</h3>
-              <p className="text-sm text-[#121212]/65 leading-relaxed font-medium">
+              <p className="text-sm text-[#121212]/70 leading-relaxed font-medium">
                 {item.desc}
               </p>
             </div>
