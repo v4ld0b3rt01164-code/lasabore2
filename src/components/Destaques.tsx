@@ -6,19 +6,19 @@ const items = [
     icon: Flame,
     title: 'Massa Artesanal',
     desc: 'Preparada com fermentação lenta e cuidado em cada detalhe, para uma borda leve e crocante.',
-    accent: '#F97028',
+    accent: '#DC2626',
   },
   {
     icon: Heart,
     title: 'Ambiente Familiar',
     desc: 'Espaço kids preparado para receber toda a família com conforto e boas histórias.',
-    accent: '#F489A3',
+    accent: '#DC2626',
   },
   {
     icon: Leaf,
     title: 'Ingredientes Frescos',
     desc: 'Selecionados diariamente, sem conservantes artificiais. O sabor que vem da horta.',
-    accent: '#009246',
+    accent: '#DC2626',
   },
 ]
 
@@ -53,7 +53,7 @@ export default function Destaques() {
           {items.map((item) => (
             <div
               key={item.title}
-              className="group relative border-2 border-dashed border-[#811933]/70 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#811933] hover:-translate-y-1"
+              className="group relative border-[2.5px] border-dashed border-[#811933]/70 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#811933] hover:-translate-y-1"
             >
               {/* Selo artesanal */}
               <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-[#DC2626] text-white flex items-center justify-center shadow-sm rotate-12 transition-transform duration-300 group-hover:rotate-0">
@@ -62,12 +62,12 @@ export default function Destaques() {
 
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                style={{ backgroundColor: `${item.accent}18` }}
+                style={{ backgroundColor: `${item.accent}16` }}
               >
                 <item.icon size={22} style={{ color: item.accent }} />
               </div>
-              <h3 className="display text-[#121212] text-2xl mb-3">{item.title}</h3>
-              <p className="text-sm text-[#121212]/70 leading-relaxed font-medium">
+              <h3 className="display text-black text-2xl mb-3">{item.title}</h3>
+              <p className="text-sm text-black/70 leading-relaxed font-medium">
                 {item.desc}
               </p>
             </div>

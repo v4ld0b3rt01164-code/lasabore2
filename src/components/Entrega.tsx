@@ -14,13 +14,13 @@ const items = [
     icon: Bike,
     title: 'Delivery Rápido',
     desc: 'Sua pizza chega quentinha, do forno à sua porta.',
-    accent: '#811933',
+    accent: '#DC2626',
   },
   {
     icon: MapPin,
     title: 'Área de Cobertura',
     desc: 'Entregamos em todos os bairros e nos ranchos.',
-    accent: '#009246',
+    accent: '#DC2626',
   },
   {
     icon: ShieldCheck,
@@ -45,16 +45,32 @@ export default function Entrega() {
       className="relative w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28 overflow-hidden"
     >
       <div className="container-section relative z-10">
-        <div className="mb-12 sm:mb-16 max-w-2xl mx-auto text-center">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
-            // entrega
-          </span>
-          <h2 className="display text-[#121212] text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-5">
-            Peça pelo site ou WhatsApp
-          </h2>
-          <p className="text-base text-[#121212]/65 font-medium">
-            E acompanhe seu pedido em tempo real, do forno à sua casa.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-14 sm:mb-18">
+          {/* Texto levemente deslocado para a esquerda */}
+          <div className="max-w-2xl lg:-ml-4 text-center lg:text-left">
+            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
+              // entrega
+            </span>
+            <h2 className="display text-black text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-5">
+              Peça pelo site ou WhatsApp
+            </h2>
+            <p className="text-base text-black/65 font-medium">
+              E acompanhe seu pedido em tempo real, do forno à sua casa.
+            </p>
+          </div>
+
+          {/* Animação delivery.webm */}
+          <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto rounded-2xl overflow-hidden shadow-lg">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto object-cover"
+            >
+              <source src="/images/delivery.webm" type="video/webm" />
+            </video>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
@@ -67,7 +83,7 @@ export default function Entrega() {
               viewport={{ once: true, margin: '-80px' }}
               variants={card}
               style={{ opacity: 1 }}
-              className="group relative flex items-stretch bg-[#FFF8E1] text-[#121212] rounded-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+              className="group relative flex items-stretch bg-[#FFF8E1] text-black rounded-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1"
             >
               {/* Recortes vintage nos cantos */}
               <div
@@ -81,7 +97,7 @@ export default function Entrega() {
 
               {/* Lado do ícone */}
               <div
-                className="relative z-10 flex w-20 sm:w-24 shrink-0 items-center justify-center border-r border-dashed border-[#121212]/20"
+                className="relative z-10 flex w-20 sm:w-24 shrink-0 items-center justify-center border-r-[2.5px] border-dashed border-black/20"
                 style={{ backgroundColor: `${item.accent}12` }}
               >
                 <item.icon size={28} style={{ color: item.accent }} />
@@ -90,7 +106,7 @@ export default function Entrega() {
               {/* Lado do texto */}
               <div className="relative z-10 flex-1 px-5 py-5">
                 <h3 className="display text-xl mb-1">{item.title}</h3>
-                <p className="text-sm text-[#121212]/65 leading-relaxed font-medium">
+                <p className="text-sm text-black/65 leading-relaxed font-medium">
                   {item.desc}
                 </p>
               </div>
