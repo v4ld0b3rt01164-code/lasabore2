@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
 export default function CtaFinal() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    video.play().catch(() => {})
+  }, [])
+
   return (
     <section
       id="pedido"
@@ -46,14 +55,15 @@ export default function CtaFinal() {
             WhatsApp
           </a>
           <video
-            width={150}
-            height={150}
+            ref={videoRef}
+            width={200}
+            height={200}
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
-            className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 pointer-events-none block"
+            className="w-[200px] h-[200px] -mt-4 sm:mt-0 sm:-ml-8 -translate-y-2.5 pointer-events-none block"
           >
             <source src="/images/pedido.webm" type="video/webm" />
           </video>
