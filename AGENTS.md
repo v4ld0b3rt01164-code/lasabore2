@@ -47,7 +47,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Logo `logo-hero.webp` + animação `Chef.webm` agrupados e centralizados.
 - Logo reduzido (~20%): `h-32 sm:h-36 lg:h-40`.
 - Chef: 200×200 px, overlap visual com o logo via `translate-x` negativo (`-translate-x-10 lg:-translate-x-16`). Mantém o agrupamento centralizado no fluxo do layout.
-- Vídeo do Chef serve `<source src="/images/Chef.apng" type="image/apng">` primeiro (fallback com transparência para iOS/Safari), depois `Chef.webm`.
+- Safari/iOS usa **apenas** `Chef.apng` para evitar que o Safari escolha `Chef.webm` sem suporte a alpha (fundo preto). Demais navegadores usam `Chef.apng` → `Chef.webm`.
 - Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
 - RainbowBars `curve` nas laterais (`.hero-rainbow`).
 
@@ -58,7 +58,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 
 ### Entrega
 - Header: texto centralizado + animação `delivery.webm` (150×150 px) ao lado, sem sombra.
-- Vídeo da entrega serve `<source src="/images/delivery.apng" type="image/apng">` primeiro (fallback com transparência para iOS/Safari), depois `delivery.webm`.
+- Safari/iOS usa **apenas** `delivery.apng` para evitar que o Safari escolha `delivery.webm` sem suporte a alpha (fundo preto). Demais navegadores usam `delivery.apng` → `delivery.webm`.
 - Cards estilo "ticket vintage": fundo `#FFF8E1`, formato horizontal, recortes nos cantos, linha tracejada grossa separando ícone e texto.
 - RainbowBars `straight` × 9 em perspectiva 3D no rodapé.
 

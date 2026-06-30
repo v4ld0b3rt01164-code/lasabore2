@@ -67,19 +67,27 @@ export default function Entrega() {
             </p>
           </div>
 
-          {/* Animação delivery.webm integrada ao fundo */}
+          {/* Animação delivery integrada ao fundo */}
           <div className="relative w-[150px] h-[150px] shrink-0 ml-[-40px] sm:ml-[-50px] lg:ml-[-60px]">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              className="w-full h-full object-cover"
-            >
-              <source src="/images/delivery.apng" type="image/apng" />
-              {!safari && <source src="/images/delivery.webm" type="video/webm" />}
-            </video>
+            {safari ? (
+              <img
+                src="/images/delivery.apng"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+              >
+                <source src="/images/delivery.apng" type="image/apng" />
+                <source src="/images/delivery.webm" type="video/webm" />
+              </video>
+            )}
           </div>
         </div>
 

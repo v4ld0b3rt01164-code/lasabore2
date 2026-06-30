@@ -60,20 +60,28 @@ export default function CtaFinal() {
             </svg>
             WhatsApp
           </a>
-          <video
-            ref={videoRef}
-            width={150}
-            height={150}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 -translate-y-2.5 pointer-events-none block"
-          >
-            <source src="/images/pedido.apng" type="image/apng" />
-            {!safari && <source src="/images/pedido.webm" type="video/webm" />}
-          </video>
+          {safari ? (
+            <img
+              src="/images/pedido.apng"
+              alt=""
+              className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 -translate-y-2.5 pointer-events-none block"
+            />
+          ) : (
+            <video
+              ref={videoRef}
+              width={150}
+              height={150}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 -translate-y-2.5 pointer-events-none block"
+            >
+              <source src="/images/pedido.apng" type="image/apng" />
+              <source src="/images/pedido.webm" type="video/webm" />
+            </video>
+          )}
         </div>
       </motion.div>
     </section>

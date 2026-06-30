@@ -153,18 +153,26 @@ export default function Hero() {
                   className="h-36 sm:h-40 lg:h-44 w-auto object-contain"
                 />
               </a>
-              <div data-hero-chef className="-translate-x-10 lg:-translate-x-16">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  className="w-[200px] h-[200px]"
-                >
-                  <source src="/images/Chef.apng" type="image/apng" />
-                  {!safari && <source src="/images/Chef.webm" type="video/webm" />}
-                </video>
+              <div data-hero-chef className="-translate-x-10 lg:-translate-x-16 w-[200px] h-[200px]">
+                {safari ? (
+                  <img
+                    src="/images/Chef.apng"
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full"
+                  >
+                    <source src="/images/Chef.apng" type="image/apng" />
+                    <source src="/images/Chef.webm" type="video/webm" />
+                  </video>
+                )}
               </div>
             </div>
             <h1
