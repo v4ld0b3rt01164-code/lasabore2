@@ -139,12 +139,12 @@ export default function Hero() {
           {/* Logo + headline */}
           <div className="text-center flex flex-col items-center -mt-4 sm:mt-0">
             {/* Logo + Chef agrupados e centralizados */}
-            <div data-hero-logo className="flex items-center justify-center gap-1 sm:gap-2 opacity-0">
+            <div data-hero-logo className="flex items-center justify-center gap-0 opacity-0">
               <a href="#">
                 <img
                   src="/images/logo-hero.webp"
                   alt="La Sabore"
-                  className="h-40 sm:h-44 lg:h-52 w-auto object-contain"
+                  className="h-32 sm:h-36 lg:h-40 w-auto object-contain"
                 />
               </a>
               <div data-hero-chef>
@@ -153,7 +153,7 @@ export default function Hero() {
                   muted
                   loop
                   playsInline
-                  className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] lg:w-[150px] lg:h-[150px]"
+                  className="w-[200px] h-[200px]"
                 >
                   <source src="/images/Chef.webm" type="video/webm" />
                 </video>
