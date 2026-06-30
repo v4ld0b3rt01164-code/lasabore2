@@ -1,140 +1,91 @@
 # La Sabore — Pizzaria Site (v2 alternativo)
 
 ## Stack
-- **Framework:** React 19 + Vite 8
-- **Language:** TypeScript 6 (strict)
-- **Styling:** Tailwind CSS v4 (via @tailwindcss/vite plugin)
-- **Animation:** GSAP 3 + ScrollTrigger + framer-motion 12 (híbrido)
-- **Smooth scroll:** Lenis 1.3
-- **Icons:** lucide-react 21
-- **Fonts:** SugarPeachy (display) + Quicksand (body) + Playfair Display italic (highlights)
-- **Repo:** `github.com/v4ld0b3rt01164-code/lasabore2`
-- **Deploy:** Cloudflare Pages (`npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master`)
-
-## Design Direction (Jun 2026)
-Fundo amarelo pastel `#f0bb0d`. RainbowBars (3 barras bandeira italiana) como peça decorativa em todas as seções.
-
-### Paleta
-| Token | Hex | Uso |
-|-------|-----|-----|
-| `bg` | `#f0bb0d` | Fundo do site todo |
-| `ink` | `#121212` | Texto principal |
-| `ink-muted` | `rgba(18,18,18,0.65)` | Texto secundário |
-| `card` | `#FFFFFF` | Cards (fundo branco sólido) |
-| `italia-green` | `#009246` | Verde bandeira |
-| `italia-white` | `#FFFFFF` | Branco bandeira |
-| `italia-red` | `#DC2626` | Vermelho bandeira + CTAs |
-| `red-accent` | `#EA384C` | Hover vermelho |
-| `wine` | `#811933` | Vinho |
-| `footer` | `#0d0d0d` | Fundo do footer |
-| `black` | `#000000` | Preto puro (texto Localização) |
-
-### Tipografia
-- **Display**: SugarPeachy Black (900), títulos grandes
-- **Body**: Quicksand (500/700)
-- **Highlight**: Playfair Display italic
-
-## RainbowBars
-`src/components/RainbowBars.tsx` — SVG 3 barras bandeira italiana `[#009246, #FFFFFF, #DC2626]`. Animação `strokeDasharray`/`strokeDashoffset` via GSAP ScrollTrigger scrub. Outlines transparentes. Props: `variant` (`straight|curve`), `colors`, `strokeWidth`, `outline`, `direction`, `scrub`, `scrollStart`, `scrollEnd`, `stagger`, `duration`.
-
-### Instâncias
-| Seção | Variant | Barras | Posição |
-|-------|---------|--------|---------|
-| Hero | `curve` ×2 (espelhadas) | 3 | L-curvas decorativas no topo |
-| Destaques | `straight` | 3 | Lateral direita (absolute) |
-| Sobre | `straight` | 3 | Lateral esquerda (absolute, hidden mobile) |
-| Entrega | `straight` | 9 | Perspectiva 3D abaixo dos cards |
-
-## Componentes
-
-### Navbar
-- `h-16`, `bg-[#121212]` preto sólido desde o início
-- "La Sabore" em SugarPeachy branco, visível sempre
-- Links: Sabores · Entrega · Sobre · Onde estamos
-- CTA "Peça Agora" vermelho
-- Mobile: overlay preto
-
-### Hero
-- Fundo `#f0bb0d`, `min-h-screen`
-- Rainbow-sides: L-curvas espelhadas (topo direita + bottom esquerda)
-- Grid 2 colunas: logo+texto (centralizados) | pizza (direita)
-- Logo `logo-hero.webp`, `h-40 lg:h-52`, centralizado sobre o texto
-- Headline 2 linhas: "Sua pizza artesanal em" + "Miguelópolis" (vermelho), `text-3xl lg:text-6xl`
-- Pizza `pizza-hero.webp` invertida horizontalmente (`-scale-x-100`), sombra `drop-shadow(4px 4px 2px rgba(18,18,18,0.6))`
-- Scroll indicator: ChevronDown com `animate-bounce-down`
-- Animação GSAP: logo → headline → scroll indicator
-
-### Destaques
-- 3 cards brancos: Massa Artesanal / Ambiente Familiar / Ingredientes Frescos
-- Cards: `bg-white border rounded-2xl`, hover `-translate-y-1`
-- RainbowBars lateral direita (3 barras)
-- Sem framer-motion (cards estáticos para evitar conflito de opacidade)
-
-### Cardápio (id="sabores")
-- Título "O forno está aceso"
-- Drawer desliza da direita, abas Pizzas · Doces · Porções · Bebidas
-- Grid `grid-cols-2` de cards com imagem/emoji
-- `AnimatePresence mode="wait"` na troca de tabs
-
-### Entrega (id="entrega")
-- 3 cards brancos: Delivery Rápido / Área de Cobertura / Pagamento Seguro
-- RainbowBars perspectiva 3D no rodapé (9 barras, `rotateX(45deg)`)
-- Sem framer-motion nos cards
-
-### Sobre (id="sobre")
-- Grid split texto + imagem, foto reduzida `max-w-xs lg:max-w-sm`
-- RainbowBars lateral esquerda (3 barras, `hidden sm:block`)
-
-### Localização (id="contato")
-- Sem cards, texto e ícones em preto puro `#000000`
-- Layout flex com separador vertical `|` entre os itens
-- Foto da fachada no topo
-
-### CtaFinal (id="pedido")
-- `bg-[#DC2626]`, "Bateu a fome?"
-- Botões Fazer Pedido + WhatsApp
-
-### Footer
-- `bg-[#0d0d0d]`, texto branco, altura reduzida
-- Esquerda: `logo.webp` centralizado sobre "Sua pizza artesanal em Miguelópolis."
-- Direita: @lasaboremiguelopolis (Instagram) + (16) 99231-5122 (WhatsApp)
-
-## Smooth Scroll
-- Lenis 1.3 integrado ao GSAP ticker
-
-## Imagens
-- **Todas convertidas para WebP** (exceto sobre.jpg, localizacao.jpg e UUIDs <30KB que continuam JPG)
-- Hero: `logo-hero.webp` (10KB), `pizza-hero.webp` (111KB, invertida)
-- Footer: `logo.webp` (4KB)
-- Cardápio: `/images/cardapio/<nome>.webp|jpg|avif`
-- Sobre: `/images/sobre.jpg`
-- Localização: `/images/localizacao.jpg`
-- Favicon: `/favicon.png` (2KB, comprimido)
-- Nunca usar `loading="lazy"` em `<img>` — quebra carregamento de imagens abaixo da dobra
-- Nunca instalar `vite-plugin-image-optimizer` — re-otimização em build corrompe imagens
+- React 19 + Vite 8 + TypeScript 6 (strict)
+- Tailwind CSS v4 via `@tailwindcss/vite`
+- GSAP 3 + ScrollTrigger + framer-motion 12
+- Lenis 1.3 (smooth scroll)
+- lucide-react + fonts locais (SugarPeachy, Quicksand)
 
 ## Commands
 ```bash
-npm run dev       # localhost:5173
-npm run build     # Build → dist/
-npm run lint      # oxlint
+npm run dev      # localhost:5173
+npm run build    # tsc -b && vite build → dist/
+npm run lint     # oxlint
+npm run preview  # vite preview
 ```
 
-## Cloudflare Pages
-- Build: `npm run build`, output: `dist/`
-- Deploy: `npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master`
-- URL: `lasabore2-alt.pages.dev`
+## Deploy
+Cloudflare Pages:
+```bash
+npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
+```
+- Output directory no dashboard do Cloudflare Pages deve ser `dist/`. Se estiver errado, o auto-build serve o `index.html` da raiz em vez do `dist/index.html`.
 
-## Known Gotchas
-- `loading="lazy"` + motion `opacity:0` = imagem não carrega (mesmo sem motion, `loading="lazy"` impede imagens abaixo da dobra de carregar em algumas seções)
-- `transition-all` conflita com animações — usar `transition-colors`
-- Cards usam `bg-white` sólido (sem transparência) para evitar oscilação visual ao scrollar sobre rainbows animadas
-- GSAP `gsap.context()` + `ctx.revert()` no useEffect
-- DrawSVGPlugin pago — efeito recriado com `strokeDasharray`/`strokeDashoffset`
-- RainbowBars NÃO pode receber novos props nem re-renderizar — `gsap.context()` + `ctx.revert()` corrompe o SVG inline se o prop `scrub` mudar, causando tela preta
-- Modificar o RainbowBars.tsx quebra o site inteiro (tela preta) — qualquer alteração no lifecycle do GSAP dentro dele é instável
-- `window.innerWidth` sem useState/useEffect tbm causou tela preta — possivelmente conflito com Lenis + ScrollTrigger
-- Animação mobile load: componente `MobileRainbowDraw` em Hero.tsx — aguarda 2s, anima `anim.totalProgress()` dos ScrollTriggers de `.hero-rainbow` via GSAP (duração 2.64s, `sine.inOut`), desabilitando o ScrollTrigger durante o load e recriando-o sincronizado com a posição atual do scroll ao final. Suave e responde ao scroll depois.
-- Flash no load: elementos do Hero com `opacity-0` no CSS + `.fromTo()` em vez de `.from()` no GSAP. Elementos já nascem invisíveis.
-- `npx wrangler pages deploy` com `--commit-hash=$(git rev-parse HEAD)` força upload correto dos assets
-- Cloudflare Pages **git integration** deve ter output directory = `dist/` (config no dashboard), senão o auto-build serve o `index.html` da raiz (com `/src/main.tsx`) em vez do `dist/index.html`
+## Design Tokens
+| Token | Hex | Uso |
+|-------|-----|-----|
+| `bg` | `#f0bb0d` | Fundo do site |
+| `ink` | `#121212` | Texto principal |
+| `ink-muted` | `rgba(18,18,18,0.65)` | Texto secundário |
+| `card` | `#FFFFFF` | Cards (quando aplicável) |
+| `italia-green` | `#009246` | Verde bandeira |
+| `italia-red` | `#DC2626` | Vermelho bandeira + CTAs |
+| `wine` | `#811933` | Vinho (bordas, detalhes) |
+| `footer` | `#0d0d0d` | Footer |
+| `black` | `#000000` | Texto puro em cards/Localização |
+
+## Arquitetura de Componentes
+- `src/App.tsx` empilha as seções na ordem: Navbar → Hero → Destaques → Cardápio → Entrega → Sobre → Localização → CtaFinal → Footer.
+- `src/components/RainbowBars.tsx` é o componente decorativo mais sensível. Não altere seu lifecycle GSAP nem adicione props que forcem re-render. Qualquer mudança pode causar tela preta.
+- `src/lib/smooth-scroll.ts` integra Lenis ao GSAP ticker.
+
+## Seções — estado atual
+
+### Hero
+- Fundo `#f0bb0d`, `min-h-screen`.
+- Logo `logo-hero.webp` + animação `Chef.webm` agrupados e centralizados.
+- Logo reduzido (~20%): `h-32 sm:h-36 lg:h-40`.
+- Chef: 200×200 px, sem gap no desktop, overlap de 40 px no mobile (`ml-[-40px] sm:ml-0`).
+- Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
+- RainbowBars `curve` nas laterais (`.hero-rainbow`).
+
+### Destaques
+- Cards estilo "cartão postal": fundo transparente, borda tracejada `2.5px` vinho, selo vermelho no canto.
+- Texto preto puro, ícones vermelhos.
+- RainbowBars `straight` na lateral direita.
+
+### Entrega
+- Header: texto centralizado + animação `delivery.webm` (150×150 px) ao lado, sem sombra.
+- Cards estilo "ticket vintage": fundo `#FFF8E1`, formato horizontal, recortes nos cantos, linha tracejada grossa separando ícone e texto.
+- RainbowBars `straight` × 9 em perspectiva 3D no rodapé.
+
+### Cardápio
+- Drawer deslizante da direita com abas: Pizzas · Doces · Porções · Bebidas.
+- Grid `grid-cols-2` de cards com imagem/emoji.
+
+### Sobre / Localização / CtaFinal / Footer
+- Veja os componentes; mantêm as diretrizes gerais de cores e tipografia.
+
+## Regras de Mídia
+- **Nunca usar `loading="lazy"` em `<img>`** — impede imagens abaixo da dobra de carregar em algumas seções.
+- **Não usar `vite-plugin-image-optimizer`** — está no `package.json` como resquício, mas não está no `vite.config.ts` porque re-otimização em build corrompe imagens.
+- Manter animações `.webm` no tamanho original quando forem de baixa resolução. Upscaling deixa serrilhado.
+- Elementos com fundo transparente (vídeos, animações) não devem ter `shadow` se o objetivo é integração visual com o fundo amarelo.
+
+## Animação — Gotchas Críticos
+- `transition-all` conflita com animações GSAP/framer-motion. Preferir `transition-colors` ou `transition-transform`.
+- Cards com fundo sólido evitam oscilação visual ao scrollar sobre RainbowBars animadas.
+- GSAP: usar `gsap.context()` + `ctx.revert()` no `useEffect`.
+- RainbowBars NÃO pode receber novos props nem re-renderizar — `gsap.context()` + `ctx.revert()` corrompe o SVG inline se props como `scrub` mudarem.
+- `window.innerWidth` só deve ser usado dentro de `useEffect` — uso direto causou tela preta no passado (conflito Lenis + ScrollTrigger).
+
+## Mobile Rainbow Load (Hero)
+`MobileRainbowDraw` em `Hero.tsx`:
+- Aguarda 2s após o load.
+- Anima `totalProgress()` dos ScrollTriggers de `.hero-rainbow` (duração 2.64s, `sine.inOut`).
+- Desabilita o ScrollTrigger durante a animação e recria-o sincronizado com a posição atual do scroll ao final.
+- Após o load, o rainbow fica desenhado; ao rolar, retrocede suavemente.
+
+## Flash no Load
+Elementos do Hero nascem com `opacity-0` no CSS e entram via `.fromTo()` (não `.from()`), garantindo que não haja flash branco antes do GSAP assumir.
