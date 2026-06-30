@@ -64,7 +64,13 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Drawer deslizante da direita com abas: Pizzas · Doces · Porções · Bebidas.
 - Grid `grid-cols-2` de cards com imagem/emoji.
 
-### Sobre / Localização / CtaFinal / Footer
+### CtaFinal
+- Fundo `#DC2626`, texto branco, botões "Fazer Pedido" (preto/amarelo) e "WhatsApp" (contorno branco).
+- Animação `pedido.webm` (150×150 px) ao lado direito do botão WhatsApp, com overlap via `sm:-ml-5` e elevada 10 px (`-translate-y-2.5`).
+- Autoplay forçado via `useRef` + `useEffect` (`video.play().catch(...)`), pois autoplay nativo falhou no deploy.
+- Sem sombra (fundo transparente) e `pointer-events-none`.
+
+### Sobre / Localização / Footer
 - Veja os componentes; mantêm as diretrizes gerais de cores e tipografia.
 
 ## Regras de Mídia
