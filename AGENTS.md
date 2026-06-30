@@ -46,7 +46,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Fundo `#f0bb0d`, `min-h-screen`.
 - Logo `logo-hero.webp` + animação `Chef.webm` agrupados e centralizados.
 - Logo reduzido (~20%): `h-32 sm:h-36 lg:h-40`.
-- Chef: 200×200 px, sem gap no desktop, overlap de 40 px no mobile (`ml-[-40px] sm:ml-0`).
+- Chef: 200×200 px, overlap visual com o logo via `translate-x` negativo (`-translate-x-10 lg:-translate-x-16`). Mantém o agrupamento centralizado no fluxo do layout.
 - Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
 - RainbowBars `curve` nas laterais (`.hero-rainbow`).
 
