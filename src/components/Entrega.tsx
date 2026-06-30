@@ -45,9 +45,9 @@ export default function Entrega() {
       className="relative w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28 overflow-hidden"
     >
       <div className="container-section relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-12 items-center mb-14 sm:mb-18">
-          {/* Texto centralizado, mas levemente deslocado para a esquerda */}
-          <div className="max-w-2xl mx-auto lg:mx-0 lg:pl-0 lg:pr-12 text-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 mb-14 sm:mb-18">
+          {/* Texto centralizado entre si */}
+          <div className="max-w-2xl text-center">
             <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
               // entrega
             </span>
@@ -59,8 +59,8 @@ export default function Entrega() {
             </p>
           </div>
 
-          {/* Animação delivery.webm no tamanho original 150x150 */}
-          <div className="relative w-[150px] h-[150px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-lg shrink-0">
+          {/* Animação delivery.webm integrada ao fundo */}
+          <div className="relative w-[150px] h-[150px] shrink-0">
             <video
               autoPlay
               muted
