@@ -165,7 +165,7 @@ export default function Hero() {
           {/* Logo + headline */}
           <div className="text-center flex flex-col items-center -mt-4 sm:mt-0">
             {/* Logo + Chef agrupados e centralizados */}
-            <div data-hero-logo className="flex items-center justify-center gap-0 opacity-0 pl-10 lg:pl-16">
+            <div data-hero-logo className="flex items-center justify-center gap-0 opacity-0 pl-16 lg:pl-28">
               <a href="#">
                 <img
                   src="/images/logo-hero.webp"
@@ -173,7 +173,7 @@ export default function Hero() {
                   className="h-36 sm:h-40 lg:h-44 w-auto object-contain"
                 />
               </a>
-              <div data-hero-chef className="-translate-x-16 lg:-translate-x-28 w-[250px] h-[250px] opacity-0">
+              <div data-hero-chef className="-translate-x-24 lg:-translate-x-44 w-[250px] h-[250px] opacity-0">
                 <img
                   src="/images/Chef.svg"
                   alt=""
