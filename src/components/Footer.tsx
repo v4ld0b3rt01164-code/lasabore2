@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <a href="#" className="mb-3">
               <img
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="La Sabore"
                 className="h-14 w-auto object-contain"
               />

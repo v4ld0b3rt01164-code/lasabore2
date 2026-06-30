@@ -96,7 +96,7 @@ export default function Hero() {
           <div className="text-center flex flex-col items-center -mt-4 sm:mt-0">
             <a href="#" data-hero-logo className="opacity-0">
               <img
-                src="/images/logo-hero.png"
+                src="/images/logo-hero.webp"
                 alt="La Sabore"
                 className="h-40 sm:h-44 lg:h-52 w-auto object-contain"
               />
@@ -113,7 +113,7 @@ export default function Hero() {
           {/* Pizza hero */}
           <div data-hero-pizza className="w-full flex justify-center lg:justify-end opacity-0">
             <img
-              src="/images/pizza-hero.png"
+              src="/images/pizza-hero.webp"
               alt="Pizza artesanal La Sabore"
               className="w-full max-w-[364px] sm:max-w-[416px] lg:max-w-[749px] xl:max-w-[874px] h-auto object-contain -scale-x-100"
               style={{ filter: 'drop-shadow(4px 4px 2px rgba(18,18,18,0.6))' }}

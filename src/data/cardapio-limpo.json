@@ -24,7 +24,7 @@
           "name": "Cerveja Antarctica Boa",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/boa.jpg"
+          "image": "/images/cardapio/boa.webp"
         },
         {
           "name": "Cerveja Brahma",
@@ -48,13 +48,13 @@
           "name": "Cerveja Skol",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/skol.jpg"
+          "image": "/images/cardapio/skol.webp"
         },
         {
           "name": "Cerveja Stella Artois Gold",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/stella-gold.png"
+          "image": "/images/cardapio/stella-gold.webp"
         }
       ]
     },
@@ -73,13 +73,13 @@
           "price": "R$ 40,00",
           "image": "/images/cardapio/unsplash-porcao-001.jpg"
         },
-                {
+        {
           "name": "Fritas",
           "description": "",
           "price": "R$ 35,00",
           "image": "/images/cardapio/fritas.jpg"
         },
-                {
+        {
           "name": "Mandioca frita",
           "description": "",
           "price": "R$ 20,00",
@@ -126,19 +126,19 @@
           "name": "Pizza Baiana",
           "description": "Molho de tomate, muçarela, calabresa, pimenta calabresa, cebola, orégano e azeitonas.",
           "price": "A partir de R$ 30,00",
-          "image": "/images/cardapio/unsplash-pizza-001.jpg"
+          "image": "/images/cardapio/unsplash-pizza-001.webp"
         },
         {
           "name": "Pizza Banana",
           "description": "Creme de leite, muçarela, banana, açúcar e canela.",
           "price": "A partir de R$ 35,00",
-          "image": "/images/cardapio/unsplash-pizza-002.jpg"
+          "image": "/images/cardapio/unsplash-pizza-002.webp"
         },
         {
           "name": "Pizza Banana Nevada",
           "description": "Creme de leite, muçarela, banana, chocolate branco e açucar.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-002.jpg"
+          "image": "/images/cardapio/unsplash-pizza-002.webp"
         },
         {
           "name": "Pizza Brigadeiro",
@@ -164,7 +164,7 @@
           "name": "Pizza Caipira",
           "description": "Molho de tomate, muçarela, frango, milho, catupiiry, tomate, orégano, e azeitonas.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-004.jpg"
+          "image": "/images/cardapio/unsplash-pizza-004.webp"
         },
         {
           "name": "Pizza Calabresa",
@@ -190,13 +190,13 @@
           "name": "Pizza Cinco Queijos",
           "description": "Molho de tomate, muçarela,  provolone, cheddar, catupiry, gorgonzola, orégano e azeitonas.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-005.jpg"
+          "image": "/images/cardapio/unsplash-pizza-005.webp"
         },
         {
           "name": "Pizza Clássica",
           "description": "Molho de tomate, muçarela, presunto,tomate, orégano e azeitonas.",
           "price": "A partir de R$ 35,00",
-          "image": "/images/cardapio/unsplash-pizza-006.jpg"
+          "image": "/images/cardapio/unsplash-pizza-006.webp"
         },
         {
           "name": "Pizza Costela Bovina",
@@ -223,7 +223,7 @@
           "name": "Pizza Especial",
           "description": "Molho de tomate, muçarela, catupiry, cheddar, presunto, palmito, ovo cozido, milho, ervilha, tomate, cebola, orégano e azeitonas.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-007.jpg"
+          "image": "/images/cardapio/unsplash-pizza-007.webp"
         },
         {
           "name": "Pizza Frango e Catupiry",
@@ -236,13 +236,13 @@
           "name": "Pizza Grand Brie",
           "description": "Molho de tomate, muçarela, queijo Brie, geléia de pimenta e orégano.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/unsplash-pizza-005.jpg"
+          "image": "/images/cardapio/unsplash-pizza-005.webp"
         },
         {
           "name": "Pizza KitKat",
           "description": "Creme de leite, muçarela, chocolate preto e kitkat.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/pizza-kitkat.jpg"
+          "image": "/images/cardapio/pizza-kitkat.webp"
         },
         {
           "name": "Pizza Lombinho Canadense",
@@ -255,7 +255,7 @@
           "name": "Pizza M&M's",
           "description": "Creme de leite, muçarela, chocolate preto e M&M.",
           "price": "A partir de R$ 40,00",
-          "image": "/images/cardapio/pizza-mm.png"
+          "image": "/images/cardapio/pizza-mm.webp"
         },
         {
           "name": "Pizza Marguerita",
@@ -316,13 +316,13 @@
           "name": "Pizza Toscana",
           "description": "Molho de tomate, mussarela, calabresa, bacon, catupiry, orégano e azeitonas.",
           "price": "A partir de R$ 35,00",
-          "image": "/images/cardapio/unsplash-pizza-009.jpg"
+          "image": "/images/cardapio/unsplash-pizza-009.webp"
         },
         {
           "name": "Pizza Vegetariana",
           "description": "Molho de tomate, muçarela, brócolis, champignon, palmito, milho, ervilha, tomate, orégano e azeitonas.",
           "price": "A partir de R$ 35,00",
-          "image": "/images/cardapio/unsplash-pizza-010.jpg"
+          "image": "/images/cardapio/unsplash-pizza-010.webp"
         }
       ]
     },
@@ -339,19 +339,19 @@
           "name": "Água mineral com gás",
           "description": "Garrafa 500ml",
           "price": "R$ 3,00",
-          "image": "/images/cardapio/crystal-gas.jpeg"
+          "image": "/images/cardapio/crystal-gas.webp"
         },
         {
           "name": "Coca-Cola 1,5L",
           "description": "Descartável",
           "price": "R$ 13,00",
-          "image": "/images/cardapio/coca-15-desc.jpg"
+          "image": "/images/cardapio/coca-15-desc.webp"
         },
         {
           "name": "Coca-Cola Zero 1,5L",
           "description": "Descartável",
           "price": "R$ 13,00",
-          "image": "/images/cardapio/coca-zero-15-desc.jpg"
+          "image": "/images/cardapio/coca-zero-15-desc.webp"
         },
         {
           "name": "Coca-Cola",
@@ -363,19 +363,19 @@
           "name": "Coca-Cola ZERO",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/coca-zero-lata.jpg"
+          "image": "/images/cardapio/coca-zero-lata.webp"
         },
         {
           "name": "Fanta 1,5L",
           "description": "Descartável",
           "price": "R$ 13,00",
-          "image": "/images/cardapio/fanta-15.jpg"
+          "image": "/images/cardapio/fanta-15.webp"
         },
         {
           "name": "Fanta Laranja",
           "description": "Lata 350ml",
           "price": "R$ 6,00",
-          "image": "/images/cardapio/fanta-lata.png"
+          "image": "/images/cardapio/fanta-lata.webp"
         },
         {
           "name": "Guaraná Antarctica 1,5L",
@@ -412,7 +412,7 @@
           "name": "H2 OH! Limoneto",
           "description": "Garrafa 500ml",
           "price": "R$ 7,00",
-          "image": "/images/cardapio/h2o.png"
+          "image": "/images/cardapio/h2o.webp"
         }
       ]
     }

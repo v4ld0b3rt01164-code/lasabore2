@@ -155,6 +155,7 @@ export default function Cardapio() {
                               <img
                                 src={item.image}
                                 alt={item.name}
+                                loading="lazy"
                                 className="block w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                               />
                             ) : (

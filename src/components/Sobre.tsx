@@ -85,8 +85,9 @@ export default function Sobre() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
         >
-          <img
-            src="/images/sobre.jpg"
+<img
+              src="/images/sobre.jpg"
+              loading="lazy"
             alt="Pizzaiolo preparando massa artesanal"
             className="w-full h-auto object-cover"
           />
