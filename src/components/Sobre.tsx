@@ -87,7 +87,6 @@ export default function Sobre() {
         >
           <img
               src="/images/sobre.jpg"
-              loading="lazy"
               alt="Pizzaiolo preparando massa artesanal"
               className="w-full h-auto object-cover"
             />

@@ -41,7 +41,6 @@ export default function Localizacao() {
         <div className="max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-[#121212]/10">
           <img
               src="/images/localizacao.jpg"
-              loading="lazy"
               alt="Fachada La Sabore Pizzaria"
               className="w-full h-auto object-cover"
             />
