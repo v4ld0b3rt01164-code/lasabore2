@@ -39,12 +39,12 @@ export default function Localizacao() {
         </div>
 
         <div className="max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-[#121212]/10">
-<img
+          <img
               src="/images/localizacao.jpg"
               loading="lazy"
-            alt="Fachada La Sabore Pizzaria"
-            className="w-full h-auto object-cover"
-          />
+              alt="Fachada La Sabore Pizzaria"
+              className="w-full h-auto object-cover"
+            />
         </div>
 
           <div className="flex flex-col sm:flex-row items-start justify-center gap-6 sm:gap-0">
