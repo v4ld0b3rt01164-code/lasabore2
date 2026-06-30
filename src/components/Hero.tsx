@@ -147,7 +147,7 @@ export default function Hero() {
                   className="h-36 sm:h-40 lg:h-44 w-auto object-contain"
                 />
               </a>
-              <div data-hero-chef className="ml-[-40px] lg:ml-[-60px]">
+              <div data-hero-chef className="-translate-x-10 lg:-translate-x-16">
                 <video
                   autoPlay
                   muted
