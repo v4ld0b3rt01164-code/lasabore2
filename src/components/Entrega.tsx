@@ -66,8 +66,10 @@ export default function Entrega() {
               muted
               loop
               playsInline
+              preload="auto"
               className="w-full h-full object-cover"
             >
+              <source src="/images/delivery.apng" type="image/apng" />
               <source src="/images/delivery.webm" type="video/webm" />
             </video>
           </div>

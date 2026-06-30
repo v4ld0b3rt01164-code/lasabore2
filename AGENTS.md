@@ -47,6 +47,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Logo `logo-hero.webp` + animação `Chef.webm` agrupados e centralizados.
 - Logo reduzido (~20%): `h-32 sm:h-36 lg:h-40`.
 - Chef: 200×200 px, overlap visual com o logo via `translate-x` negativo (`-translate-x-10 lg:-translate-x-16`). Mantém o agrupamento centralizado no fluxo do layout.
+- Vídeo do Chef serve `<source src="/images/Chef.apng" type="image/apng">` primeiro (fallback com transparência para iOS/Safari), depois `Chef.webm`.
 - Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
 - RainbowBars `curve` nas laterais (`.hero-rainbow`).
 
@@ -57,6 +58,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 
 ### Entrega
 - Header: texto centralizado + animação `delivery.webm` (150×150 px) ao lado, sem sombra.
+- Vídeo da entrega serve `<source src="/images/delivery.apng" type="image/apng">` primeiro (fallback com transparência para iOS/Safari), depois `delivery.webm`.
 - Cards estilo "ticket vintage": fundo `#FFF8E1`, formato horizontal, recortes nos cantos, linha tracejada grossa separando ícone e texto.
 - RainbowBars `straight` × 9 em perspectiva 3D no rodapé.
 
@@ -67,6 +69,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 ### CtaFinal
 - Fundo `#DC2626`, texto branco, botões "Fazer Pedido" (preto/amarelo) e "WhatsApp" (contorno branco).
 - Animação `pedido.webm` (150×150 px) ao lado direito do botão WhatsApp, com overlap via `sm:-ml-5` e elevada 10 px (`-translate-y-2.5`).
+- Vídeo do pedido serve `<source src="/images/pedido.apng" type="image/apng">` primeiro (fallback com transparência para iOS/Safari), depois `pedido.webm`.
 - Autoplay forçado via `useRef` + `useEffect` (`video.play().catch(...)`), pois autoplay nativo falhou no deploy.
 - Sem sombra (fundo transparente) e `pointer-events-none`.
 

@@ -153,8 +153,10 @@ export default function Hero() {
                   muted
                   loop
                   playsInline
+                  preload="auto"
                   className="w-[200px] h-[200px]"
                 >
+                  <source src="/images/Chef.apng" type="image/apng" />
                   <source src="/images/Chef.webm" type="video/webm" />
                 </video>
               </div>
