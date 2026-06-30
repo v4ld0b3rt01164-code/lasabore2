@@ -23,7 +23,7 @@ function MobileRainbowDraw() {
 
       const targets = ScrollTrigger.getAll().filter(tr => {
         const el = tr.vars.trigger as Element | undefined
-        return el?.closest('.hero-rainbow') && !!tr.animation
+        return el?.closest('.hero-rainbow')
       })
 
       if (targets.length === 0) return
@@ -31,7 +31,8 @@ function MobileRainbowDraw() {
       completed = true
 
       targets.forEach(tr => {
-        const anim = tr.animation!
+        const anim = tr.animation
+        if (!anim) return
         const el = tr.vars.trigger as Element
         const startVal = typeof tr.start === 'number' ? tr.start : 0
         const endVal = typeof tr.end === 'number' ? tr.end : startVal + 500
@@ -74,10 +75,10 @@ function MobileRainbowDraw() {
       })
     }
 
-    // Dispara 2s após o load, conforme documentado no AGENTS.md.
-    const timer = window.setTimeout(runIntro, 2000)
-    // Fallback: se os ScrollTriggers ainda não existirem, tenta novamente em 3s.
-    const fallbackTimer = window.setTimeout(runIntro, 3000)
+    // Dispara 3s após o load para garantir que os ScrollTriggers estejam criados.
+    const timer = window.setTimeout(runIntro, 3000)
+    // Fallback: se os ScrollTriggers ainda não existirem, tenta novamente em 5s.
+    const fallbackTimer = window.setTimeout(runIntro, 5000)
 
     return () => {
       cancelled = true
@@ -159,7 +160,7 @@ export default function Hero() {
                   className="h-36 sm:h-40 lg:h-44 w-auto object-contain"
                 />
               </a>
-              <div data-hero-chef className="ml-[-80px] lg:ml-[-140px] w-[250px] h-[250px] opacity-0">
+              <div data-hero-chef className="ml-[-80px] lg:ml-[-120px] w-[250px] h-[250px] opacity-0">
                 <img
                   src="/images/Chef.svg"
                   alt=""
