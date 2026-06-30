@@ -49,7 +49,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Chef: 250×250 px, overlap visual com o logo via margin negativa (`ml-[-80px] lg:ml-[-120px]`). Agrupamento compensado com `pl-10 lg:pl-16` para manter o centro visual.
 - Animação de entrada teatral do Chef: logo/headline aparecem primeiro, depois o Chef cruza a tela vindo da direita (`x: 100vw` → `x: 0`, duração 1.3s, `power3.out`).
 - Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
-- RainbowBars `curve` nas laterais (`.hero-rainbow`), direção `up` — nascem desenhados e retraem suavemente ao scrollar (`scrollStart: 'top top'`, `scrollEnd: 'bottom center'`).
+- RainbowBars `curve` nas laterais (`.hero-rainbow`), direção `down` — posicionado abaixo da navbar (`top-16 sm:top-14 md:top-12`) e começa a desenhar cedo (`scrollStart: 'top 95%'`) para aparecer imediatamente ao scrollar.
 
 ### Destaques
 - Cards estilo "cartão postal": fundo transparente, borda tracejada `2.5px` vinho, selo vermelho no canto.
