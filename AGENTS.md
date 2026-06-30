@@ -46,7 +46,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Fundo `#f0bb0d`, `min-h-screen`.
 - Logo `logo-hero.webp` + animação `Chef.svg` (200×200 px) agrupados e centralizados.
 - Logo reduzido (~20%): `h-32 sm:h-36 lg:h-40`.
-- Chef: 200×200 px, overlap visual com o logo via `translate-x` negativo (`-translate-x-10 lg:-translate-x-16`). Mantém o agrupamento centralizado no fluxo do layout.
+- Chef: 225×225 px, overlap visual com o logo via `translate-x` negativo (`-translate-x-12 lg:-translate-x-20`). Mantém o agrupamento centralizado no fluxo do layout.
 - Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
 - RainbowBars `curve` nas laterais (`.hero-rainbow`).
 
@@ -66,7 +66,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 
 ### CtaFinal
 - Fundo `#DC2626`, texto branco, botões "Fazer Pedido" (preto/amarelo) e "WhatsApp" (contorno branco).
-- Animação `pedido.svg` (150×150 px) ao lado direito do botão WhatsApp, com overlap via `sm:-ml-5` e elevada 10 px (`-translate-y-2.5`).
+- Animação `pedido.svg` (200×200 px) ao lado direito do botão WhatsApp, com overlap via `sm:-ml-8` e elevada 10 px (`-translate-y-2.5`).
 - Sem sombra (fundo transparente) e `pointer-events-none`.
 
 ### Sobre / Localização / Footer
