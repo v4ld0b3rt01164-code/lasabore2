@@ -144,10 +144,10 @@ export default function Hero() {
                 <img
                   src="/images/logo-hero.webp"
                   alt="La Sabore"
-                  className="h-32 sm:h-36 lg:h-40 w-auto object-contain"
+                  className="h-36 sm:h-40 lg:h-44 w-auto object-contain"
                 />
               </a>
-              <div data-hero-chef className="ml-[-40px] sm:ml-0">
+              <div data-hero-chef className="ml-[-40px] lg:ml-[-60px]">
                 <video
                   autoPlay
                   muted
