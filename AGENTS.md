@@ -46,7 +46,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Fundo `#f0bb0d`, `min-h-screen`.
 - Logo `logo-hero.webp` + animação `Chef.svg` (200×200 px) agrupados e centralizados.
 - Logo reduzido (~20%): `h-32 sm:h-36 lg:h-40`.
-- Chef: 250×250 px, overlap visual com o logo via `translate-x` negativo (`-translate-x-24 lg:-translate-x-44`). Agrupamento compensado com `pl-16 lg:pl-28` para manter o centro visual.
+- Chef: 250×250 px, overlap visual com o logo via margin negativa (`ml-[-80px] lg:ml-[-140px]`). Agrupamento compensado com `pl-10 lg:pl-16` para manter o centro visual.
 - Animação de entrada teatral do Chef: logo/headline aparecem primeiro, depois o Chef cruza a tela vindo da direita (`x: 100vw` → `x: 0`, duração 1.3s, `power3.out`).
 - Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
 - RainbowBars `curve` nas laterais (`.hero-rainbow`).

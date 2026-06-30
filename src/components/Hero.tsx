@@ -16,10 +16,10 @@ function MobileRainbowDraw() {
     let cancelled = false
     const introTweens: gsap.core.Tween[] = []
     const newTriggers: ScrollTrigger[] = []
-    let intervalId: number | undefined
+    let completed = false
 
     const runIntro = () => {
-      if (cancelled) return
+      if (cancelled || completed) return
 
       const targets = ScrollTrigger.getAll().filter(tr => {
         const el = tr.vars.trigger as Element | undefined
@@ -28,10 +28,7 @@ function MobileRainbowDraw() {
 
       if (targets.length === 0) return
 
-      if (intervalId !== undefined) {
-        clearInterval(intervalId)
-        intervalId = undefined
-      }
+      completed = true
 
       targets.forEach(tr => {
         const anim = tr.animation!
@@ -77,26 +74,15 @@ function MobileRainbowDraw() {
       })
     }
 
-    // Aguarda 500ms e então verifica a cada 100ms se os ScrollTriggers dos
-    // hero-rainbows já foram criados. Isso evita falhas de timing no load.
-    const startTimeout = window.setTimeout(() => {
-      runIntro()
-      intervalId = window.setInterval(runIntro, 100)
-    }, 500)
-
-    // Segurança: para de procurar após 5s.
-    const safetyTimeout = window.setTimeout(() => {
-      if (intervalId !== undefined) {
-        clearInterval(intervalId)
-        intervalId = undefined
-      }
-    }, 5000)
+    // Dispara 2s após o load, conforme documentado no AGENTS.md.
+    const timer = window.setTimeout(runIntro, 2000)
+    // Fallback: se os ScrollTriggers ainda não existirem, tenta novamente em 3s.
+    const fallbackTimer = window.setTimeout(runIntro, 3000)
 
     return () => {
       cancelled = true
-      clearTimeout(startTimeout)
-      clearTimeout(safetyTimeout)
-      if (intervalId !== undefined) clearInterval(intervalId)
+      clearTimeout(timer)
+      clearTimeout(fallbackTimer)
       introTweens.forEach(t => t.kill())
       newTriggers.forEach(t => t.kill())
     }
@@ -165,7 +151,7 @@ export default function Hero() {
           {/* Logo + headline */}
           <div className="text-center flex flex-col items-center -mt-4 sm:mt-0">
             {/* Logo + Chef agrupados e centralizados */}
-            <div data-hero-logo className="flex items-center justify-center gap-0 opacity-0 pl-16 lg:pl-28">
+            <div data-hero-logo className="flex items-center justify-center gap-0 opacity-0 pl-10 lg:pl-16">
               <a href="#">
                 <img
                   src="/images/logo-hero.webp"
@@ -173,7 +159,7 @@ export default function Hero() {
                   className="h-36 sm:h-40 lg:h-44 w-auto object-contain"
                 />
               </a>
-              <div data-hero-chef className="-translate-x-24 lg:-translate-x-44 w-[250px] h-[250px] opacity-0">
+              <div data-hero-chef className="ml-[-80px] lg:ml-[-140px] w-[250px] h-[250px] opacity-0">
                 <img
                   src="/images/Chef.svg"
                   alt=""
