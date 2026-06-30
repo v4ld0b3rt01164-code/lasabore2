@@ -9,6 +9,77 @@ gsap.registerPlugin(ScrollTrigger)
 // Bandeira italiana para as L-curvas laterais (3 barras: verde/branco/vermelho)
 const sideColors = ['#009246', '#FFFFFF', '#DC2626']
 
+function MobileRainbowDraw() {
+  useEffect(() => {
+    if (window.innerWidth >= 640) return
+
+    let cancelled = false
+    const introTweens: gsap.core.Tween[] = []
+    const newTriggers: ScrollTrigger[] = []
+
+    const timer = setTimeout(() => {
+      if (cancelled) return
+
+      const targets = ScrollTrigger.getAll().filter(tr => {
+        const el = tr.vars.trigger as Element | undefined
+        return el?.closest('.hero-rainbow') && !!tr.animation
+      })
+
+      targets.forEach(tr => {
+        const anim = tr.animation!
+        const el = tr.vars.trigger as Element
+        const startVal = typeof tr.start === 'number' ? tr.start : 0
+        const endVal = typeof tr.end === 'number' ? tr.end : startVal + 500
+        const distance = Math.max(1, endVal - startVal)
+
+        // Pausa o ScrollTrigger para evitar conflito durante a animação de entrada.
+        tr.disable(false)
+
+        const proxy = { p: 0 }
+        const tween = gsap.to(proxy, {
+          p: 1,
+          duration: 2.64,
+          ease: 'sine.inOut',
+          onUpdate: () => {
+            if (!cancelled) anim.totalProgress(proxy.p)
+          },
+          onComplete: () => {
+            if (cancelled) return
+
+            // Remove o ScrollTrigger antigo e cria um novo que mantém o
+            // rainbow desenhado (progresso 1) na posição atual e o faz
+            // retroceder suavemente conforme o usuário rola para baixo.
+            tr.kill()
+            const currentScroll = window.scrollY
+            const newTrigger = ScrollTrigger.create({
+              trigger: el,
+              start: currentScroll,
+              end: currentScroll + distance,
+              scrub: 0.4,
+              onUpdate: (self) => {
+                if (!cancelled) anim.totalProgress(1 - self.progress)
+              },
+            })
+            newTriggers.push(newTrigger)
+            anim.totalProgress(1)
+          },
+        })
+
+        introTweens.push(tween)
+      })
+    }, 2000)
+
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+      introTweens.forEach(t => t.kill())
+      newTriggers.forEach(t => t.kill())
+    }
+  }, [])
+
+  return null
+}
+
 export default function Hero() {
   const rootRef = useRef<HTMLDivElement>(null)
 
@@ -33,7 +104,7 @@ export default function Hero() {
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
         {/* right — topo direita — entra as cores (down) */}
-        <div className="hero-rainbow absolute top-16 sm:top-14 md:top-12 right-[-1em] sm:right-[-2em] md:right-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
+        <div className="hero-rainbow absolute top-6 sm:top-2 md:top-0 right-[-1em] sm:right-[-2em] md:right-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
           <RainbowBars
             className="aspect-[321/626] w-full"
             variant="curve"
@@ -42,7 +113,7 @@ export default function Hero() {
             outline={false}
             direction="down"
             scrub
-            scrollStart="top 95%"
+            scrollStart="top top"
             duration={1.2}
             stagger={0.075}
           />
@@ -57,7 +128,6 @@ export default function Hero() {
             outline={false}
             direction="down"
             scrub
-            scrollStart="top 95%"
             duration={1.2}
             stagger={0.075}
           />
@@ -117,6 +187,8 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Mobile: anima progress dos ScrollTriggers dos rainbows via GSAP */}
+      <MobileRainbowDraw />
     </section>
   )
 }
