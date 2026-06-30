@@ -16,14 +16,22 @@ function MobileRainbowDraw() {
     let cancelled = false
     const introTweens: gsap.core.Tween[] = []
     const newTriggers: ScrollTrigger[] = []
+    let intervalId: number | undefined
 
-    const timer = setTimeout(() => {
+    const runIntro = () => {
       if (cancelled) return
 
       const targets = ScrollTrigger.getAll().filter(tr => {
         const el = tr.vars.trigger as Element | undefined
         return el?.closest('.hero-rainbow') && !!tr.animation
       })
+
+      if (targets.length === 0) return
+
+      if (intervalId !== undefined) {
+        clearInterval(intervalId)
+        intervalId = undefined
+      }
 
       targets.forEach(tr => {
         const anim = tr.animation!
@@ -67,11 +75,28 @@ function MobileRainbowDraw() {
 
         introTweens.push(tween)
       })
-    }, 2000)
+    }
+
+    // Aguarda 500ms e então verifica a cada 100ms se os ScrollTriggers dos
+    // hero-rainbows já foram criados. Isso evita falhas de timing no load.
+    const startTimeout = window.setTimeout(() => {
+      runIntro()
+      intervalId = window.setInterval(runIntro, 100)
+    }, 500)
+
+    // Segurança: para de procurar após 5s.
+    const safetyTimeout = window.setTimeout(() => {
+      if (intervalId !== undefined) {
+        clearInterval(intervalId)
+        intervalId = undefined
+      }
+    }, 5000)
 
     return () => {
       cancelled = true
-      clearTimeout(timer)
+      clearTimeout(startTimeout)
+      clearTimeout(safetyTimeout)
+      if (intervalId !== undefined) clearInterval(intervalId)
       introTweens.forEach(t => t.kill())
       newTriggers.forEach(t => t.kill())
     }
@@ -140,7 +165,7 @@ export default function Hero() {
           {/* Logo + headline */}
           <div className="text-center flex flex-col items-center -mt-4 sm:mt-0">
             {/* Logo + Chef agrupados e centralizados */}
-            <div data-hero-logo className="flex items-center justify-center gap-0 opacity-0">
+            <div data-hero-logo className="flex items-center justify-center gap-0 opacity-0 pl-10 lg:pl-16">
               <a href="#">
                 <img
                   src="/images/logo-hero.webp"
@@ -148,7 +173,7 @@ export default function Hero() {
                   className="h-36 sm:h-40 lg:h-44 w-auto object-contain"
                 />
               </a>
-              <div data-hero-chef className="-translate-x-12 lg:-translate-x-20 w-[225px] h-[225px] opacity-0">
+              <div data-hero-chef className="-translate-x-16 lg:-translate-x-28 w-[250px] h-[250px] opacity-0">
                 <img
                   src="/images/Chef.svg"
                   alt=""
