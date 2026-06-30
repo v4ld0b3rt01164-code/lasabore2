@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { Bike, MapPin, ShieldCheck } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import RainbowBars from './RainbowBars'
+import { isSafari } from '../lib/is-safari'
 
 // Bandeira italiana — 9 barras para a perspectiva 3D (exceção: mantém 9)
 const verticalColors = [
@@ -39,6 +41,12 @@ const card = {
 }
 
 export default function Entrega() {
+  const [safari, setSafari] = useState(false)
+
+  useEffect(() => {
+    setSafari(isSafari())
+  }, [])
+
   return (
     <section
       id="entrega"
@@ -70,7 +78,7 @@ export default function Entrega() {
               className="w-full h-full object-cover"
             >
               <source src="/images/delivery.apng" type="image/apng" />
-              <source src="/images/delivery.webm" type="video/webm" />
+              {!safari && <source src="/images/delivery.webm" type="video/webm" />}
             </video>
           </div>
         </div>

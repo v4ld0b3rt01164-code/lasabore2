@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { isSafari } from '../lib/is-safari'
 
 export default function CtaFinal() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [safari, setSafari] = useState(false)
+
+  useEffect(() => {
+    setSafari(isSafari())
+  }, [])
 
   useEffect(() => {
     const video = videoRef.current
@@ -66,7 +72,7 @@ export default function CtaFinal() {
             className="w-[150px] h-[150px] -mt-4 sm:mt-0 sm:-ml-5 -translate-y-2.5 pointer-events-none block"
           >
             <source src="/images/pedido.apng" type="image/apng" />
-            <source src="/images/pedido.webm" type="video/webm" />
+            {!safari && <source src="/images/pedido.webm" type="video/webm" />}
           </video>
         </div>
       </motion.div>
