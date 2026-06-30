@@ -49,7 +49,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - Chef: 250×250 px, overlap visual com o logo via margin negativa (`ml-[-80px] lg:ml-[-120px]`). Agrupamento compensado com `pl-10 lg:pl-16` para manter o centro visual.
 - Animação de entrada teatral do Chef: logo/headline aparecem primeiro, depois o Chef cruza a tela vindo da direita (`x: 100vw` → `x: 0`, duração 1.3s, `power3.out`).
 - Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
-- RainbowBars `curve` nas laterais (`.hero-rainbow`).
+- RainbowBars `curve` nas laterais (`.hero-rainbow`), direção `up` — nascem desenhados e retraem suavemente ao scrollar (`scrollStart: 'top top'`, `scrollEnd: 'bottom center'`).
 
 ### Destaques
 - Cards estilo "cartão postal": fundo transparente, borda tracejada `2.5px` vinho, selo vermelho no canto.
@@ -87,13 +87,6 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - GSAP: usar `gsap.context()` + `ctx.revert()` no `useEffect`.
 - RainbowBars NÃO pode receber novos props nem re-renderizar — `gsap.context()` + `ctx.revert()` corrompe o SVG inline se props como `scrub` mudarem.
 - `window.innerWidth` só deve ser usado dentro de `useEffect` — uso direto causou tela preta no passado (conflito Lenis + ScrollTrigger).
-
-## Mobile Rainbow Load (Hero)
-`MobileRainbowDraw` em `Hero.tsx`:
-- Aguarda 3s após o load (fallback em 5s).
-- Anima `totalProgress()` dos ScrollTriggers de `.hero-rainbow` (duração 2.64s, `sine.inOut`).
-- Desabilita o ScrollTrigger durante a animação e recria-o sincronizado com a posição atual do scroll ao final.
-- Após o load, o rainbow fica desenhado; ao rolar, retrocede suavemente.
 
 ## Flash no Load
 Elementos do Hero nascem com `opacity-0` no CSS e entram via `.fromTo()` (não `.from()`), garantindo que não haja flash branco antes do GSAP assumir.
