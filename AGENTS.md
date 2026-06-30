@@ -56,7 +56,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - RainbowBars `straight` na lateral direita.
 
 ### Entrega
-- Header: texto centralizado + animação `delivery.svg` (150×150 px) ao lado, sem sombra.
+- Header: texto centralizado + animação `delivery.svg` (200×200 px) ao lado, sem sombra.
 - Cards estilo "ticket vintage": fundo `#FFF8E1`, formato horizontal, recortes nos cantos, linha tracejada grossa separando ícone e texto.
 - RainbowBars `straight` × 9 em perspectiva 3D no rodapé.
 
