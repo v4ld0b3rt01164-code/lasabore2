@@ -45,7 +45,7 @@ export default function Entrega() {
       className="relative w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28 overflow-hidden"
     >
       <div className="container-section relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 mb-14 sm:mb-18">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-4 mb-14 sm:mb-18">
           {/* Texto centralizado entre si */}
           <div className="max-w-2xl text-center">
             <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
