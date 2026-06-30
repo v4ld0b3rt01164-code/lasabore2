@@ -88,7 +88,8 @@ export default function Hero() {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
       tl.fromTo('[data-hero-logo]', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.8 })
         .fromTo('[data-hero-line]', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9 }, '-=0.2')
-        .fromTo('[data-hero-pizza]', { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' }, '-=0.3')
+        .fromTo('[data-hero-chef]', { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.7 }, '-=0.4')
+        .fromTo('[data-hero-pizza]', { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' }, '-=0.4')
         .fromTo('[data-hero-scroll]', { opacity: 0 }, { opacity: 1, duration: 0.6 }, '-=0.2')
     }, rootRef)
 
@@ -152,6 +153,19 @@ export default function Hero() {
             <span className="whitespace-nowrap">Sua pizza artesanal em</span><br />
               <span className="text-[#DC2626]">Miguelópolis</span>
             </h1>
+
+            {/* Chef animado */}
+            <div data-hero-chef className="mt-5 sm:mt-6 opacity-0">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-[150px] h-[150px] mx-auto"
+              >
+                <source src="/images/Chef.webm" type="video/webm" />
+              </video>
+            </div>
           </div>
 
           {/* Pizza hero */}
