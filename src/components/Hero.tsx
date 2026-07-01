@@ -17,7 +17,7 @@ function MobileRainbowDraw() {
     const introTweens: gsap.core.Tween[] = []
     const newTriggers: ScrollTrigger[] = []
 
-    const timer = setTimeout(() => {
+    const raf = requestAnimationFrame(() => {
       if (cancelled) return
 
       const targets = ScrollTrigger.getAll().filter(tr => {
@@ -38,7 +38,7 @@ function MobileRainbowDraw() {
         const proxy = { p: 0 }
         const tween = gsap.to(proxy, {
           p: 1,
-          duration: 2.64,
+          duration: 1.5,
           ease: 'sine.inOut',
           onUpdate: () => {
             if (!cancelled) anim.totalProgress(proxy.p)
@@ -67,11 +67,11 @@ function MobileRainbowDraw() {
 
         introTweens.push(tween)
       })
-    }, 2000)
+    })
 
     return () => {
       cancelled = true
-      clearTimeout(timer)
+      cancelAnimationFrame(raf)
       introTweens.forEach(t => t.kill())
       newTriggers.forEach(t => t.kill())
     }
