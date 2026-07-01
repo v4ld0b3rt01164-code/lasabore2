@@ -17,7 +17,7 @@ export default function Hero() {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
       tl.fromTo('[data-hero-logo]', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.8 })
         .fromTo('[data-hero-line]', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9 }, '-=0.2')
-        .fromTo('[data-hero-chef]', { opacity: 0, x: '100vw' }, { opacity: 1, x: 0, duration: 1.3, ease: 'power3.out' }, '+=0.2')
+        .fromTo('[data-hero-chef]', { opacity: 0, x: '100vw' }, { opacity: 1, x: 0, duration: 1.3, ease: 'power3.out' }, '-=0.3')
         .fromTo('[data-hero-pizza]', { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' }, '-=0.8')
         .fromTo('[data-hero-scroll]', { opacity: 0 }, { opacity: 1, duration: 0.6 }, '-=0.2')
     }, rootRef)
@@ -42,7 +42,6 @@ export default function Hero() {
             outline={false}
             direction="down"
             scrub
-            scrollStart="top top"
             duration={1.2}
             stagger={0.075}
           />
