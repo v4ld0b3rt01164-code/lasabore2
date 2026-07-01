@@ -13,7 +13,7 @@ export default function App() {
   useSmoothScroll()
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#f0bb0d] text-[#121212]">
+    <div className="min-h-screen overflow-x-hidden bg-bg text-ink">
       <Navbar />
       <main>
         <Hero />

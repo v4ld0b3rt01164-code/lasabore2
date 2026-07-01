@@ -79,7 +79,7 @@ export default function Entrega() {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-4 mb-14 sm:mb-18">
           {/* Texto centralizado entre si */}
           <div className="max-w-2xl text-center">
-            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
+            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-italia-red mb-4">
               // entrega
             </span>
             <h2 className="display text-black text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-5">
@@ -98,6 +98,7 @@ export default function Entrega() {
             <img
               src="/images/delivery.svg"
               alt=""
+              aria-hidden="true"
               className="w-full h-full object-cover"
             />
           </div>

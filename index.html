@@ -3,18 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Sabore — Pizzaria Artesanal</title>
-    <meta name="description" content="A verdadeira pizza italiana. Massa artesanal, ingredientes frescos e forno a lenha. Peça já!" />
-    <meta property="og:title" content="La Sabore — Pizzaria Artesanal" />
-    <meta property="og:description" content="A verdadeira pizza italiana. Massa artesanal, ingredientes frescos e forno a lenha." />
+    <title>La Sabore — Pizzaria Artesanal em Miguelópolis SP</title>
+    <meta name="description" content="Pizza artesanal feita com ingredientes frescos e forno a lenha. Peça já pelo site ou WhatsApp e receba em casa!" />
+    <link rel="canonical" href="https://lasaborepizzaria.menudino.com" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="La Sabore — Pizzaria Artesanal em Miguelópolis" />
+    <meta property="og:description" content="Pizza artesanal feita com ingredientes frescos e forno a lenha. Peça já e receba em casa!" />
+    <meta property="og:url" content="https://lasaborepizzaria.menudino.com" />
+    <meta property="og:image" content="https://lasaborepizzaria.menudino.com/images/logo-hero.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#121212" />
-    <meta name="color-scheme" content="dark" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="La Sabore — Pizzaria Artesanal em Miguelópolis" />
+    <meta name="twitter:description" content="Pizza artesanal, ingredientes frescos e forno a lenha. Peça já!" />
+    <meta name="twitter:image" content="https://lasaborepizzaria.menudino.com/images/logo-hero.webp" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#f0bb0d" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,700&display=swap&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "La Sabore Pizzaria",
+      "description": "Pizzaria artesanal em Miguelópolis-SP. Massa fina, ingredientes selecionados e bordas recheadas.",
+      "url": "https://lasaborepizzaria.menudino.com",
+      "telephone": "+5516992315122",
+      "servesCuisine": ["Pizza", "Italiana"],
+      "image": "https://lasaborepizzaria.menudino.com/images/logo-hero.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Leopoldo Carlos de Oliveira, 668",
+        "addressLocality": "Miguelópolis",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "18:00", "closes": "23:59" }
+      ],
+      "priceRange": "$$"
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

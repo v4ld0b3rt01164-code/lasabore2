@@ -30,15 +30,15 @@ export default function Localizacao() {
     >
       <div className="container-section">
         <div className="mb-10 sm:mb-12 text-center">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
+          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-italia-red mb-4">
             // onde estamos
           </span>
-          <h2 className="display text-[#121212] text-4xl sm:text-5xl md:text-6xl leading-[0.95]">
-            Venha nos <span className="text-[#DC2626]">visitar</span>
+          <h2 className="display text-ink text-4xl sm:text-5xl md:text-6xl leading-[0.95]">
+            Venha nos <span className="text-italia-red">visitar</span>
           </h2>
         </div>
 
-        <div className="max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-[#121212]/10">
+        <div className="max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-ink/10">
           <img
               src="/images/localizacao.jpg"
               alt="Fachada La Sabore Pizzaria"

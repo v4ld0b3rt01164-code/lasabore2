@@ -31,14 +31,14 @@ export default function Sobre() {
 
       <div className="container-section relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div {...fadeIn('left')}>
-          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
+          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-italia-red mb-4">
             // sobre nós
           </span>
-          <h2 className="display text-[#121212] text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-8">
-            Uma paixão que virou <span className="text-[#DC2626]">tradição</span>
+          <h2 className="display text-ink text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-8">
+            Uma paixão que virou <span className="text-italia-red">tradição</span>
           </h2>
 
-          <div className="space-y-5 text-[#121212]/70 leading-relaxed font-medium">
+          <div className="space-y-5 text-ink/70 leading-relaxed font-medium">
             <p>
               Acreditamos que uma pizza de verdade é feita com{' '}
               <span className="text-[#121212] highlight">paixão</span>. Foi desse
@@ -69,11 +69,11 @@ export default function Sobre() {
           </div>
 
           <div className="mt-8 pt-6 border-t border-[#121212]/10">
-            <p className="display text-2xl text-[#121212]">La Sabore Pizzaria</p>
-            <p className="text-sm text-[#121212]/55 mt-1">
+            <p className="display text-2xl text-ink">La Sabore Pizzaria</p>
+            <p className="text-sm text-ink/55 mt-1">
               Feita com{' '}
-              <span className="text-[#DC2626] highlight">paixão</span>. Servida com{' '}
-              <span className="text-[#DC2626] highlight">sabor</span>.
+              <span className="text-italia-red highlight">paixão</span>. Servida com{' '}
+              <span className="text-italia-red highlight">sabor</span>.
             </p>
           </div>
         </motion.div>

@@ -42,21 +42,21 @@ export default function Destaques() {
 
       <div className="container-section relative z-10">
         <div className="mb-12 sm:mb-16 max-w-2xl">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
+          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-italia-red mb-4">
             // diferenciais
           </span>
-          <h2 className="display text-[#121212] text-4xl sm:text-5xl md:text-6xl leading-[0.95]">
-            O que torna a La Sabore <span className="text-[#DC2626]">única</span>
+          <h2 className="display text-ink text-4xl sm:text-5xl md:text-6xl leading-[0.95]">
+            O que torna a La Sabore <span className="text-italia-red">única</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
           {items.map((item) => (
             <div
               key={item.title}
-              className="group relative border-[2.5px] border-dashed border-[#811933]/70 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#811933] hover:-translate-y-1"
+              className="group relative border-[2.5px] border-dashed border-wine/70 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-wine hover:-translate-y-1"
             >
               {/* Selo artesanal */}
-              <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-[#DC2626] text-white flex items-center justify-center shadow-sm rotate-12 transition-transform duration-300 group-hover:rotate-0">
+              <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-italia-red text-white flex items-center justify-center shadow-sm rotate-12 transition-transform duration-300 group-hover:rotate-0">
                 <Star size={16} fill="currentColor" />
               </div>
 

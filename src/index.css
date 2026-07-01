@@ -84,13 +84,10 @@
     transition: opacity 0.3s ease;
   }
 
-  img[loading="lazy"] {
-    opacity: 0;
-  }
-
-  img[loading="lazy"].loaded,
-  img[loading="lazy"][complete] {
-    opacity: 1;
+  *:focus-visible {
+    outline: 2px solid #DC2626;
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar {

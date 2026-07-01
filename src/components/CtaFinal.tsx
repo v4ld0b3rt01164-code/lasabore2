@@ -4,11 +4,11 @@ export default function CtaFinal() {
   return (
     <section
       id="pedido"
-      className="w-full flex justify-center bg-[#DC2626] py-24 sm:py-32 relative overflow-hidden"
+      className="w-full flex justify-center bg-italia-red py-24 sm:py-32 relative overflow-hidden"
     >
       {/* decorative circles */}
-      <div className="absolute top-[-120px] right-[-120px] w-[400px] h-[400px] rounded-full bg-[rgba(255,255,255,0.06)]" />
-      <div className="absolute bottom-[-180px] left-[-180px] w-[500px] h-[500px] rounded-full bg-[rgba(0,0,0,0.12)]" />
+      <div aria-hidden="true" className="absolute top-[-120px] right-[-120px] w-[400px] h-[400px] rounded-full bg-white/6" />
+      <div aria-hidden="true" className="absolute bottom-[-180px] left-[-180px] w-[500px] h-[500px] rounded-full bg-black/12" />
       <motion.div
         className="relative z-10 container-section text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -16,7 +16,7 @@ export default function CtaFinal() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#f0bb0d]/80 mb-4">
+        <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-bg/80 mb-4">
           // pedido
         </span>
         <h2 className="display text-white text-5xl sm:text-7xl md:text-8xl leading-[0.92] mb-6">
@@ -30,7 +30,7 @@ export default function CtaFinal() {
             href="https://lasaborepizzaria.menudino.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#121212] text-[#f0bb0d] text-sm sm:text-base font-bold px-6 sm:px-10 py-3.5 sm:py-4 rounded-full hover:bg-[#1a1a1a] transition-colors"
+            className="bg-ink text-bg text-sm sm:text-base font-bold px-6 sm:px-10 py-3.5 sm:py-4 rounded-full hover:bg-card-elev transition-colors"
           >
             Fazer Pedido
           </a>
@@ -48,6 +48,7 @@ export default function CtaFinal() {
           <img
             src="/images/pedido.svg"
             alt=""
+            aria-hidden="true"
             className="w-[200px] h-[200px] -mt-4 sm:mt-0 sm:-ml-8 -translate-y-2.5 pointer-events-none block"
           />
         </div>

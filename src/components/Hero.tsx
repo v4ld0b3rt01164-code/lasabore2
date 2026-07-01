@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       ref={rootRef}
-      className="relative min-h-screen w-full overflow-hidden bg-[#f0bb0d] flex flex-col"
+      className="relative min-h-screen w-full overflow-hidden bg-bg flex flex-col"
     >
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -80,16 +80,17 @@ export default function Hero() {
                 <img
                   src="/images/Chef.svg"
                   alt=""
+                  aria-hidden="true"
                   className="w-full h-full object-contain"
                 />
               </div>
             </div>
             <h1
               data-hero-line
-            className="display text-[#121212] text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-3 sm:mt-4 opacity-0"
+            className="display text-ink text-3xl sm:text-5xl lg:text-6xl leading-[0.95] mt-3 sm:mt-4 opacity-0"
           >
             <span className="whitespace-nowrap">Sua pizza artesanal em</span><br />
-              <span className="text-[#DC2626]">Miguelópolis</span>
+              <span className="text-italia-red">Miguelópolis</span>
             </h1>
           </div>
 
@@ -111,7 +112,7 @@ export default function Hero() {
         className="relative z-10 pb-8 flex justify-center opacity-0"
       >
         <div className="animate-bounce-down">
-          <ChevronDown size={24} className="text-[#121212]/40" />
+          <ChevronDown size={24} className="text-ink/40" />
         </div>
       </div>
 

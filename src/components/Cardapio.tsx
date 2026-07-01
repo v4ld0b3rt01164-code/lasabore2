@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import cardapio from '../data/cardapio-limpo.json'
@@ -58,8 +58,8 @@ function Tabs({ active, onSelect }: { active: string; onSelect: (id: string) => 
           onClick={() => onSelect(c.id)}
           className={`px-4 sm:px-6 py-2.5 text-sm font-bold rounded-full transition-all duration-200 border ${
             active === c.id
-              ? 'bg-[#121212] text-[#f0bb0d] border-[#121212]'
-              : 'bg-transparent text-[#121212]/70 border-[#121212]/15 hover:border-[#121212]/40'
+               ? 'bg-ink text-bg border-ink'
+              : 'bg-transparent text-ink/70 border-ink/15 hover:border-ink/40'
           }`}
         >
           {c.label}
@@ -72,26 +72,70 @@ function Tabs({ active, onSelect }: { active: string; onSelect: (id: string) => 
 export default function Cardapio() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string>('Pizzas')
+  const drawerRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
 
   const activeCat = cats.find(c => c.id === active)
   const items = activeCat?.items ?? []
 
+  // Focus trap + Escape
+  useEffect(() => {
+    if (!open) return
+
+    const drawerEl = drawerRef.current
+    if (!drawerEl) return
+
+    const closeBtn = drawerEl.querySelector<HTMLButtonElement>('[aria-label="Fechar"]')
+    requestAnimationFrame(() => closeBtn?.focus())
+
+    function handleKeyDown(e: KeyboardEvent) {
+      const el = drawerRef.current
+      if (!el) return
+      if (e.key === 'Escape') {
+        setOpen(false)
+        return
+      }
+      if (e.key === 'Tab') {
+        const focusable = el.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        )
+        if (focusable.length === 0) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      triggerRef.current?.focus()
+    }
+  }, [open])
+
   return (
     <section
       id="sabores"
-      className="w-full flex justify-center border-t border-[#121212]/10 py-24 sm:py-28"
+      className="w-full flex justify-center border-t border-ink/10 py-24 sm:py-28"
     >
       <div className="container-section">
         <div className="mb-10 sm:mb-12 text-center">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#DC2626] mb-4">
+          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-italia-red mb-4">
             // sabores
           </span>
-          <h2 className="display text-[#121212] text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-8">
+          <h2 className="display text-ink text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-8">
             O forno está aceso
           </h2>
           <button
+            ref={triggerRef}
             onClick={() => setOpen(true)}
-            className="inline-flex items-center bg-[#DC2626] text-white text-sm sm:text-base font-bold px-8 py-3.5 rounded-full hover:bg-[#EA384C] transition-colors"
+            className="inline-flex items-center bg-italia-red text-white text-sm sm:text-base font-bold px-8 py-3.5 rounded-full hover:bg-red-accent transition-colors"
           >
             Ver Cardápio
           </button>
@@ -108,24 +152,28 @@ export default function Cardapio() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 z-40 bg-[rgba(18,18,18,0.6)] backdrop-blur-sm"
+              className="fixed inset-0 z-40 bg-ink/60 backdrop-blur-sm"
             />
             {/* Drawer slides from right */}
             <motion.div
+              ref={drawerRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Cardápio"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', ease: [0.625, 0.05, 0, 1], duration: 0.5 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-2xl bg-[#f0bb0d] overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-2xl bg-bg overflow-y-auto"
             >
-              <div className="sticky top-0 z-10 bg-[#f0bb0d]/95 backdrop-blur-md border-b border-[#121212]/10 px-5 sm:px-8 py-4 flex items-center justify-between">
-                <span className="display text-2xl text-[#121212]">Cardápio</span>
+              <div className="sticky top-0 z-10 bg-bg/95 backdrop-blur-md border-b border-ink/10 px-5 sm:px-8 py-4 flex items-center justify-between">
+                <span className="display text-2xl text-ink">Cardápio</span>
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Fechar"
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-[#121212]/5 hover:bg-[#121212]/10 transition-colors"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-ink/5 hover:bg-ink/10 transition-colors"
                 >
-                  <X size={20} className="text-[#121212]" />
+                  <X size={20} className="text-ink" />
                 </button>
               </div>
 
@@ -147,7 +195,7 @@ export default function Cardapio() {
                       <motion.div
                         key={item.name}
                         variants={cardAnim}
-                        className="group bg-white border border-[#121212]/10 rounded-xl overflow-hidden transition-colors duration-300 hover:border-[#121212]/30 hover:-translate-y-1 flex flex-col"
+                        className="group bg-white border border-ink/10 rounded-xl overflow-hidden transition-colors duration-300 hover:border-ink/30 hover:-translate-y-1 flex flex-col"
                       >
                         {(item.image || catEmoji[active]) && (
                           <div className="w-full h-32 bg-[#f5f5f5] overflow-hidden shrink-0">
@@ -165,11 +213,11 @@ export default function Cardapio() {
                           </div>
                         )}
                         <div className="p-4 flex-1">
-                          <h3 className="text-sm font-bold text-[#121212] leading-tight mb-1">
+                          <h3 className="text-sm font-bold text-ink leading-tight mb-1">
                             {item.name}
                           </h3>
                           {item.description && (
-                            <p className="text-xs text-[#121212]/65 leading-relaxed">
+                            <p className="text-xs text-ink-muted leading-relaxed">
                               {item.description}
                             </p>
                           )}
