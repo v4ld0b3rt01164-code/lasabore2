@@ -42,6 +42,7 @@ export default function Hero() {
             outline={false}
             direction="down"
             scrub
+            scrollEnd="bottom+=400px top"
             duration={1.2}
             stagger={0.075}
           />
@@ -56,6 +57,7 @@ export default function Hero() {
             outline={false}
             direction="down"
             scrub
+            scrollEnd="bottom+=400px top"
             duration={1.2}
             stagger={0.075}
           />
