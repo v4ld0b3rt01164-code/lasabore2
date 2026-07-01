@@ -17,7 +17,7 @@ function MobileRainbowDraw() {
     const introTweens: gsap.core.Tween[] = []
     const newTriggers: ScrollTrigger[] = []
 
-    const raf = requestAnimationFrame(() => {
+    const timer = setTimeout(() => {
       if (cancelled) return
 
       const targets = ScrollTrigger.getAll().filter(tr => {
@@ -32,7 +32,6 @@ function MobileRainbowDraw() {
         const endVal = typeof tr.end === 'number' ? tr.end : startVal + 500
         const distance = Math.max(1, endVal - startVal)
 
-        // Pausa o ScrollTrigger para evitar conflito durante a animação de entrada.
         tr.disable(false)
 
         const proxy = { p: 0 }
@@ -46,9 +45,6 @@ function MobileRainbowDraw() {
           onComplete: () => {
             if (cancelled) return
 
-            // Remove o ScrollTrigger antigo e cria um novo que mantém o
-            // rainbow desenhado (progresso 1) na posição atual e o faz
-            // retroceder suavemente conforme o usuário rola para baixo.
             tr.kill()
             const currentScroll = window.scrollY
             const newTrigger = ScrollTrigger.create({
@@ -67,11 +63,11 @@ function MobileRainbowDraw() {
 
         introTweens.push(tween)
       })
-    })
+    }, 100)
 
     return () => {
       cancelled = true
-      cancelAnimationFrame(raf)
+      clearTimeout(timer)
       introTweens.forEach(t => t.kill())
       newTriggers.forEach(t => t.kill())
     }
