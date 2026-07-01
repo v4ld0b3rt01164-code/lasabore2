@@ -55,6 +55,7 @@ export default function Entrega() {
           opacity: 1,
           x: 0,
           duration: 0.9,
+          delay: 1.5,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '[data-delivery]',
