@@ -33,7 +33,7 @@ export default function Hero() {
       {/* rainbow-sides: par de L-curvas espelhadas (decorativo, topo) */}
       <div className="pointer-events-none absolute inset-0 z-0">
         {/* right — topo direita — entra as cores (down) */}
-        <div className="hero-rainbow absolute top-6 sm:top-2 md:top-0 right-0 sm:right-[-2em] md:right-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
+        <div className="hero-rainbow absolute top-6 sm:top-2 md:top-0 right-[-1em] sm:right-[-2em] md:right-[-3em] w-[12em] sm:w-[14em] md:w-[18em] h-auto opacity-90">
           <RainbowBars
             className="aspect-[321/626] w-full"
             variant="curve"
@@ -48,7 +48,7 @@ export default function Hero() {
           />
         </div>
         {/* left — espelho (scale -1), bottom esquerda — entra as cores (down) */}
-        <div className="hero-rainbow absolute bottom-[-1em] sm:bottom-[-4em] md:bottom-[-6em] left-0 sm:left-[-2em] md:left-[-3em] w-[10em] sm:w-[14em] md:w-[18em] h-auto opacity-90 -scale-100">
+        <div className="hero-rainbow absolute bottom-[-1em] sm:bottom-[-4em] md:bottom-[-6em] left-[-1em] sm:left-[-2em] md:left-[-3em] w-[12em] sm:w-[14em] md:w-[18em] h-auto opacity-90 -scale-100">
           <RainbowBars
             className="aspect-[321/626] w-full"
             variant="curve"
@@ -99,7 +99,7 @@ export default function Hero() {
             <img
               src="/images/pizza-hero.webp"
               alt="Pizza artesanal La Sabore"
-              className="w-full max-w-[364px] sm:max-w-[416px] lg:max-w-[749px] xl:max-w-[874px] h-auto object-contain -scale-x-100"
+              className="w-full max-w-[280px] sm:max-w-[416px] lg:max-w-[749px] xl:max-w-[874px] h-auto object-contain -scale-x-100"
               style={{ filter: 'drop-shadow(4px 4px 2px rgba(18,18,18,0.6))' }}
             />
           </div>
