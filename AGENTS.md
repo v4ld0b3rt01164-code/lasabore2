@@ -45,11 +45,15 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 ### Hero
 - Fundo `#f0bb0d`, `min-h-screen`.
 - Logo `logo-hero.webp` + animação `Chef.svg` (200×200 px) agrupados e centralizados.
-- Logo reduzido (~20%): `h-32 sm:h-36 lg:h-40`.
+- Logo reduzido (~20%): `h-32 sm:h-36 lg:h-44`.
 - Chef: 250×250 px, overlap visual com o logo via margin negativa (`ml-[-80px] lg:ml-[-120px]`). Agrupamento compensado com `pl-10 lg:pl-16` para manter o centro visual.
-- Animação de entrada teatral do Chef: logo/headline aparecem primeiro, depois o Chef cruza a tela vindo da direita (`x: 100vw` → `x: 0`, duração 1.3s, `power3.out`).
-- Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra.
+- Animação de entrada: logo/headline aparecem primeiro, depois o Chef cruza a tela vindo da direita (`x: 100vw` → `x: 0`, duração 1.3s, `power3.out`). Posição `-=0.3` (sobreposição com headline, sem delay).
+- Pizza `pizza-hero.webp` invertida (`-scale-x-100`) com sombra. Max-width mobile: `280px` (maior que isso empurra o rainbow para trás do pizza).
 - RainbowBars `curve` nas laterais (`.hero-rainbow`).
+  - Mobile: `w-[12em]`, offset `right-[-1em]` / `left-[-1em]`
+  - sm: `w-[14em]`, offset `right-[-2em]` / `left-[-2em]`
+  - md: `w-[18em]`, offset `right-[-3em]` / `left-[-3em]`
+  - Ambos usam `scrollStart` default (`clamp(top bottom)`), sem override.
 
 ### Destaques
 - Cards estilo "cartão postal": fundo transparente, borda tracejada `2.5px` vinho, selo vermelho no canto.
@@ -58,7 +62,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 
 ### Entrega
 - Header: texto centralizado + animação `delivery.svg` (200×200 px) ao lado, sem sombra.
-- Animação de entrada do delivery: dispara via ScrollTrigger quando a seção entra na tela (`start: 'top 80%'`), vindo da esquerda (`x: -100vw` → `x: 0`, duração 0.9s, `power3.out`). Dispara uma única vez (`toggleActions: 'play none none none'`).
+- Animação de entrada do delivery: ScrollTrigger `start: 'top 80%'`, `x: -100vw` → `x: 0`, duração 0.9s, `power3.out`, `delay: 0.8`. `toggleActions: 'play none none none'`.
 - Cards estilo "ticket vintage": fundo `#FFF8E1`, formato horizontal, recortes nos cantos, linha tracejada grossa separando ícone e texto.
 - RainbowBars `straight` × 9 em perspectiva 3D no rodapé.
 
@@ -87,13 +91,6 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 - GSAP: usar `gsap.context()` + `ctx.revert()` no `useEffect`.
 - RainbowBars NÃO pode receber novos props nem re-renderizar — `gsap.context()` + `ctx.revert()` corrompe o SVG inline se props como `scrub` mudarem.
 - `window.innerWidth` só deve ser usado dentro de `useEffect` — uso direto causou tela preta no passado (conflito Lenis + ScrollTrigger).
-
-## Mobile Rainbow Load (Hero)
-`MobileRainbowDraw` em `Hero.tsx`:
-- Aguarda 2s após o load.
-- Anima `totalProgress()` dos ScrollTriggers de `.hero-rainbow` (duração 2.64s, `sine.inOut`).
-- Desabilita o ScrollTrigger durante a animação e recria-o sincronizado com a posição atual do scroll ao final.
-- Após o load, o rainbow fica desenhado; ao rolar, retrocede suavemente.
 
 ## Flash no Load
 Elementos do Hero nascem com `opacity-0` no CSS e entram via `.fromTo()` (não `.from()`), garantindo que não haja flash branco antes do GSAP assumir.
