@@ -62,7 +62,7 @@ npx wrangler pages deploy dist/ --project-name lasabore2-alt --branch master
 
 ### Entrega
 - Header: texto centralizado + animação `delivery.svg` (200×200 px) ao lado, sem sombra.
-- Animação de entrada do delivery: ScrollTrigger `start: 'top 80%'`, `x: -100vw` → `x: 0`, duração 0.9s, `power3.out`, `delay: 0.8`. `toggleActions: 'play none none none'`.
+- Animação de entrada do delivery: ScrollTrigger `start: 'top 80%'`, `x: -100vw` → `x: 0`, duração 0.9s, `power3.out`, sem delay. `toggleActions: 'play none none none'`.
 - Cards estilo "ticket vintage": fundo `#FFF8E1`, formato horizontal, recortes nos cantos, linha tracejada grossa separando ícone e texto.
 - RainbowBars `straight` × 9 em perspectiva 3D no rodapé.
 
