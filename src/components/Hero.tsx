@@ -38,20 +38,18 @@ export default function Hero() {
           Desktop (>= 1024px): hero-pc.mp4
       */}
       <video
-        className="absolute inset-0 w-full h-full object-cover lg:hidden"
+        className="absolute top-16 inset-x-0 bottom-0 w-full h-full object-cover lg:hidden"
         autoPlay
         muted
-        loop
         playsInline
         aria-label="Apresentação La Sabore"
       >
         <source src="/images/hero-mobile.mp4" type="video/mp4" />
       </video>
       <video
-        className="absolute inset-0 w-full h-full object-cover hidden lg:block"
+        className="absolute top-16 inset-x-0 bottom-0 w-full h-full object-cover hidden lg:block"
         autoPlay
         muted
-        loop
         playsInline
         aria-label="Apresentação La Sabore"
       >
