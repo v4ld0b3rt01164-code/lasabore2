@@ -1,8 +1,6 @@
-import { ChevronDown } from 'lucide-react'
-
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-bg flex flex-col">
+    <section className="relative min-h-screen w-full overflow-hidden bg-bg">
       {/* RainbowBars laterais — desativados para reuso futuro em outras seções.
           Não deletar. Para reativar, descomentar e importar RainbowBars.
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -35,57 +33,30 @@ export default function Hero() {
       </div>
       */}
 
-      {/* Conteúdo: logo + headline + vídeo (Hero limpo, sem Chef/Pizza/GSAP) */}
-      <div className="relative z-10 flex-1 flex items-center pt-0 sm:pt-16 lg:pt-24">
-        <div className="container-section flex flex-col items-center text-center gap-6 lg:gap-8">
-          {/* Logo */}
-          <a href="#">
-            <img
-              src="/images/logo-hero.webp"
-              alt="La Sabore"
-              className="h-36 sm:h-40 lg:h-44 w-auto object-contain"
-            />
-          </a>
-
-          {/* Headline */}
-          <h1 className="display text-ink text-3xl sm:text-5xl lg:text-6xl leading-[0.95]">
-            <span className="whitespace-nowrap">Sua pizza artesanal em</span>
-            <br />
-            <span className="text-italia-red">Miguelópolis</span>
-          </h1>
-
-          {/* Vídeo — mobile (até 1023px) */}
-          <video
-            className="w-full max-w-[640px] h-auto object-contain lg:hidden"
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-hidden="true"
-          >
-            <source src="/images/hero-mobile.mp4" type="video/mp4" />
-          </video>
-
-          {/* Vídeo — desktop (>= 1024px) */}
-          <video
-            className="w-full max-w-[768px] h-auto object-contain hidden lg:block"
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-hidden="true"
-          >
-            <source src="/images/hero-pc.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="relative z-10 pb-8 flex justify-center">
-        <div className="animate-bounce-down">
-          <ChevronDown size={24} className="text-ink/40" />
-        </div>
-      </div>
+      {/* Vídeo HERO — ocupa toda a extensão da seção.
+          Mobile (até 1023px): hero-mobile.mp4
+          Desktop (>= 1024px): hero-pc.mp4
+      */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover lg:hidden"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-label="Apresentação La Sabore"
+      >
+        <source src="/images/hero-mobile.mp4" type="video/mp4" />
+      </video>
+      <video
+        className="absolute inset-0 w-full h-full object-cover hidden lg:block"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-label="Apresentação La Sabore"
+      >
+        <source src="/images/hero-pc.mp4" type="video/mp4" />
+      </video>
     </section>
   )
 }
