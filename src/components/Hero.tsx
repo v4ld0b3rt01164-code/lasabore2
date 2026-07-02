@@ -47,7 +47,7 @@ export default function Hero() {
         <source src="/images/hero-mobile.mp4" type="video/mp4" />
       </video>
       <video
-        className="absolute top-16 inset-x-0 bottom-0 w-full object-cover object-bottom hidden lg:block"
+        className="absolute top-16 inset-x-0 bottom-0 w-full object-contain object-bottom hidden lg:block"
         autoPlay
         muted
         playsInline
