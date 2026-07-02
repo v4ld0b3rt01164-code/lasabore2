@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-bg">
+    <section className="relative w-full overflow-hidden bg-bg pt-16">
       {/* RainbowBars laterais — desativados para reuso futuro em outras seções.
           Não deletar. Para reativar, descomentar e importar RainbowBars.
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -33,12 +33,13 @@ export default function Hero() {
       </div>
       */}
 
-      {/* Vídeo HERO — ocupa toda a extensão da seção.
-          Mobile (até 1023px): hero-mobile.mp4
-          Desktop (>= 1024px): hero-pc.mp4
+      {/* Vídeo HERO — height fluído pelo aspect ratio do vídeo (nunca corta a cena).
+          Mobile (até 1023px): hero-mobile.mp4 (9:16)
+          Desktop (>= 1024px): hero-pc.mp4 (16:9)
+          pt-16 compensa o navbar fixo (h-16 = 4rem).
       */}
       <video
-        className="absolute top-16 inset-x-0 bottom-0 w-full object-cover lg:hidden"
+        className="block w-full h-auto aspect-[9/16] object-contain lg:hidden"
         autoPlay
         muted
         playsInline
@@ -47,7 +48,7 @@ export default function Hero() {
         <source src="/images/hero-mobile.mp4" type="video/mp4" />
       </video>
       <video
-        className="absolute top-16 inset-x-0 w-full h-[calc(100vh-4rem)] object-cover object-bottom hidden lg:block"
+        className="block w-full h-auto aspect-video object-contain hidden lg:block"
         autoPlay
         muted
         playsInline
